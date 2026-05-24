@@ -1,0 +1,305 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8" />
+    <title>Michele Rinaldi</title>
+    <meta name="description" content="Esperienza PCTO di Michele...tività svolte, riflessioni personali, tecnologie utilizzate." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://files.catbox.moe/5nm396.ico" rel="shortcut icon" type="image/png" />
+
+    <!-- Fogli di stile esistenti -->
+    <link href="assets/css/animate.css" rel="stylesheet" />
+    <link href="assets/css/lineicons.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/default.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <style>     .hero-background {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background-image: url('assets/images/back.svg');
+            background-size: contain;
+            background-position: right center;
+            background-repeat: no-repeat;
+          z-index: 1;
+        }</style>
+
+    <script>
+    // JavaScript Language Switcher
+    (function() {
+        let currentLang = 'it';
+        let translations = {};
+
+        async function loadTranslations(lang) {
+            try {
+                const response = await fetch(`assets/lang/lang-index-${lang}.json`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                translations[lang] = data;
+                return data;
+            } catch (error) {
+                console.error(`Errore nel caricamento delle traduzioni per ${lang}:`, error);
+                return null;
+            }
+        }
+
+        function applyTranslations(langData) {
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(element => {
+                element.classList.add('fade-out');
+            });
+            setTimeout(() => {
+                elements.forEach(element => {
+                    const key = element.getAttribute('data-i18n');
+                    if (langData[key]) {
+                        element.textContent = langData[key];
+                    }
+                    element.classList.remove('fade-out');
+                    element.classList.add('fade-in');
+                });
+            }, 200);
+        }
+
+        async function changeLanguage(lang) {
+            if (lang === currentLang) return;
+            currentLang = lang;
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+            let langData = translations[lang];
+            if (!langData) {
+                langData = await loadTranslations(lang);
+            }
+            if (langData) {
+                applyTranslations(langData);
+                localStorage.setItem('preferred-language', lang);
+            }
+        }
+
+        function init() {
+            const savedLang = localStorage.getItem('preferred-language') || 'it';
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const lang = btn.getAttribute('data-lang');
+                    console.log('Cambio lingua a:', lang);
+                    changeLanguage(lang);
+                });
+            });
+            changeLanguage(savedLang);
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    })();
+    </script>
+    
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-left">
+                <h1 class="main-name">Michele Rinaldi</h1>
+                
+                <div class="schools-container">
+                    <div class="school-info">
+                        <div class="school-logo">
+                            <img src="assets/images/logo.iismp.png" alt="Logo IIS Marconi Pieralisi">
+                        </div>
+                        <div class="school-details">
+                            <h4 data-i18n="hero_current_student_label">Maturando presso</h4>
+                            <div class="school-name">IIS Marconi Pieralisi</div>
+                            <div class="school-address">Jesi</div>
+                            <a href='https://www.iismarconipieralisi.edu.it/servizi/percorsi-di-studio/istituto-tecnico/informatica-telecomunicazioni' target="_blank">
+                              <div class="school-field" data-i18n="hero_high_school_field">Informatica e Telecomunicazioni</div></a>
+                        </div>
+                    </div>
+                    
+                    <div class="school-info">
+                        <div class="school-logo">
+                            <img src="assets/images/logo.polimi.png" alt="Logo Politecnico di Milano">
+                        </div>
+                        <div class="school-details">
+                            <h4 data-i18n="hero_future_student_label">Futuro studente di</h4>
+                            <div class="school-name">Politecnico di Milano</div>
+                            <div class="school-address">Lecco</div>
+                            <a href='https://www.polimi.it/formazione/corsi-di-laurea/dettaglio-corso/interaction-design' target=_blank> 
+                            <div class="school-field">Interaction Design</div></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-right">
+                <img src="assets/images/foto_RinaldiMichele_1.png" alt="Michele Rinaldi"       oncontextmenu="return false;" 
+                draggable="false" 
+                style="pointer-events: none; user-select: none;" class="hero-photo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <div class="content-sections">
+        <!-- Section 1: Chi sono -->
+        <section class="section-chi-sono">
+            <div class="chi-sono-content">
+                <div class="chi-sono-text">
+                    <h2 data-i18n="story_title">La mia storia</h2>
+                    <p data-i18n="story_para1">Sono nato e cresciuto a Cupramontana e, fin da bambino, ho sempre sentito l’esigenza di esprimermi, inventare, costruire. Il mio sogno era chiaro: diventare uno youtuber di successo. Quell’idea mi faceva brillare gli occhi perché mi permetteva di unire le mie passioni: parlare davanti alla telecamera, raccontare qualcosa di mio e dare forma a ogni video partendo da zero.</p>
+                    <p data-i18n="story_para2">Il 10 agosto 2015, a nove anni, ho pubblicato il mio primo contenuto. È stato l’inizio di un’avventura durata tre anni, durante i quali ho caricato 213 video, tutti ancora online. Registravo gameplay, spiegavo curiosità storiche con mio fratello, realizzavo tutorial di magie, esperimenti e montaggi video. Creavo tutto con i mezzi che avevo e con quello che riuscivo ad apprendere da solo. Ho iniziato a usare i primi programmi di editing, mi occupavo delle grafiche e cercavo di migliorare passo dopo passo. Non era esclusivamente un passatempo: stavo imparando a creare contenuti e a strutturare un progetto personale con una cadenza settimanale.</p>
+                    <p data-i18n="story_para3">In terza media, mentre molti mi consigliavano il liceo scientifico, io avevo già scelto Informatica. Sentivo che il mio futuro sarebbe stato lì, e volevo imparare a programmare. Per me il codice non era solo tecnica, ma un mezzo per sviluppare qualcosa che unisse logica, utilità e immaginazione.</p>
+                    <p data-i18n="story_para4">Fuori dall’orario scolastico, spinto dalla curiosità, mi avvicinavo sempre di più al design. Alternavo Fusion 360 a esercizi su “Figma”, ma soprattutto trascorrevo ore su Photoshop, sperimentando, provando e rifacendo da capo. Mi divertiva creare, ma anche cercare di capire come potessi realizzare qualcosa che avesse un aspetto professionale — che fosse un’interfaccia, un logo o una locandina.</p>
+                    <p data-i18n="story_para5">Era un modo diverso di esprimermi, ma complementare alla programmazione: il codice mi dava struttura, il design libertà. E io avevo bisogno di entrambi.</p>
+                    <p data-i18n="story_para6">Con l’arrivo delle superiori è cambiato il mio modo di stare al mondo: dopo anni trascorsi sui social, ho sentito il bisogno di staccarmi e concentrarmi su me stesso. Non era un rifiuto, ma un’evoluzione. Ho iniziato ad allenarmi, a studiare con più consapevolezza, a sviluppare progetti personali che non sentivo il bisogno di condividere, ma che mi aiutavano a crescere e a migliorarmi davvero.</p>
+                    <p data-i18n="story_para7">Oggi continuo a muovermi tra codice e design, tra tecnologia e creatività. Ma soprattutto continuo a effettuare ciò che mi viene naturale: imparare, cercare, creare. A modo mio.</p>
+                </div>
+                                <div class="progetti-image">
+                <img src="assets/images/foto_RinaldiMichele_4.jpg" alt="Michele Rinaldi"       oncontextmenu="return false;" 
+                draggable="false" 
+                style="pointer-events: none; user-select: none;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Le mie passioni -->
+        <section class="section-passioni">
+            <div class="futuro-content">
+                <div class="futuro-text">
+                    <h2 data-i18n="marconi_title">Gli anni al “Marconi Pieralisi!”</h2>
+                    <p data-i18n="marconi_para1">I primi due anni al “Marconi Pieralisi” sono stati in parte condizionati dalla pandemia: molte lezioni erano a distanza e le materie poco specifiche. Solo dal terzo anno il percorso è diventato più stimolante, grazie a materie come Informatica, Sistemi e Reti, TPSIT e Intelligenza Artificiale. L’AI, in particolare, mi ha affascinato per il suo approccio basato su logica e modelli in continua evoluzione.</p>
+                    <p data-i18n="marconi_para2">Accanto allo studio tecnico, ho dato spazio alla cultura umanistica: l’educazione civica, che univa diritto, attualità e ambiente, mi ha aiutato a sviluppare il pensiero critico e a osservare le situazioni da altri punti di vista.</p>
+                    <p data-i18n="marconi_para3">Nel quarto anno mi sono candidato come rappresentante degli studenti. Sono stato eletto e ho vissuto quell’esperienza con grande impegno. È stato un ruolo complesso che mi ha insegnato cosa significhi esporsi e rappresentare gli altri anche nei momenti più delicati.</p>
+                    <p data-i18n="marconi_para4">Tra le esperienze più formative ci sono state le due edizioni dell’Hackathon Innova Young di Ancona. Nel 2023 ero il più giovane e ho curato tutta la parte visiva del progetto. Nel 2024 sono stato team leader: ho gestito il gruppo, preso decisioni rapide e imparato a guidare davvero. In entrambe le edizioni abbiamo raggiunto il terzo posto.</p>
+                    <p data-i18n="marconi_para5">Se potessi tornare indietro, frequenterei questa scuola altre cento volte. Ho anche avuto la fortuna di trovarmi subito bene con la mia classe, un gruppo ricco di personalità diverse con cui condividere ogni esperienza. A fare la differenza sono stati anche i professori: disponibili, appassionati, capaci di trasmettere entusiasmo e rendere interessante anche ciò che all’inizio sembrava lontano. Non è scontato trovare docenti che credano in quello che insegnano e ti spingano a dare il meglio, è anche grazie a loro se questi anni sono stati così pieni, significativi e belli da vivere.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: I miei progetti -->
+        <section class="section-progetti">
+            <div class="chi-sono-content">
+                <div class="chi-sono-text">
+                    <h2 data-i18n="music_title">La musica</h2>
+                    <p data-i18n="music_para1">La musica non è soltanto una passione: è parte integrante della mia quotidianità, mi accompagna da sempre, mi aiuta a concentrarmi, a liberare la mente e a dare ritmo anche alle giornate più intense. Ne ascolto in grandi quantità, ogni volta che ho le cuffie a portata di mano. Non mi lego a un genere fisso: passo con naturalezza dall’elettronica sperimentale al rap, dal pop internazionale ai suoni più alternativi e contaminati. Amo sorprendermi, scoprire nuovi linguaggi sonori, ma anche tornare a quegli album che diventano casa in determinati periodi della mia vita.</p>
+                    <p data-i18n="music_para2">Adoro l’energia dei concerti: appena posso assisto a performance dal vivo, perché sul palco la musica diventa esperienza condivisa, tangibile, reale. Vederla materializzarsi mi ricorda ogni volta perché ho iniziato a suonare.</p>
+                    <p data-i18n="music_para3">Ho iniziato a studiare musica a quattro anni, iscrivendomi al corso del Corpo Bandistico Don N. Bonanni di Cupramontana; a sei anni ho abbracciato la batteria. È sempre stato il mio strumento: quello con cui mi sento più libero di esprimermi. Nel tempo ho continuato a suonare in vari contesti: laboratori, esibizioni, piccoli gruppi e, soprattutto, all’interno dello stesso corpo bandistico con cui collaboro tuttora.</p>
+                    <p data-i18n="music_para4">Negli ultimi anni questa passione è diventata qualcosa da condividere. Oggi affianco gli insegnanti del corso musicale come educatore, animatore e docente di percussioni, sia durante il centro estivo sia nei corsi annuali. Lavoro con bambini e ragazzi, cercando di trasmettere non solo le basi tecniche, ma soprattutto l’entusiasmo e il rispetto per ciò che la musica può offrire: ascolto, coordinazione, spirito di squadra, creatività.</p>
+                    <p data-i18n="music_para5">Assumere il ruolo di guida mi ha permesso di scoprire un lato nuovo di questa passione. Una delle esperienze più emozionanti è stata vedere i miei allievi esibirsi al saggio finale. Provavo molta ansia, sentivo la responsabilità del momento, ma loro sono stati straordinari! Hanno suonato con concentrazione, coraggio e gioia, ed è stato meraviglioso vederli riuscire in ciò che avevamo preparato insieme. Ne sono profondamente orgoglioso: quella sera ha consolidato ulteriormente il mio legame con la musica e con l’insegnamento.</p>
+                </div>
+                <div class="progetti-image">
+                    <img src="assets/images/foto_RinaldiMichele_3.jpg" alt="Michele Rinaldi"       oncontextmenu="return false;" 
+                draggable="false" 
+                style="pointer-events: none; user-select: none;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Il mio futuro -->
+        <section class="section-futuro">
+            <div class="futuro-content">
+                <div class="futuro-text">
+                    <h2 data-i18n="future_title">Il mio futuro</h2>
+                    <p data-i18n="future_para1">Per molti anni ho immaginato il mio futuro a Milano, convinto che avrei studiato e costruito la mia carriera lì. L’idea di iscrivermi a Industrial Design era nata a quattordici anni e, nel tempo, era diventata un obiettivo concreto. Quest’anno ho sostenuto il test di ammissione al Politecnico di Milano per Industrial Design e a Lecco per Interaction Design, persuaso che entrambe potessero rappresentare un’evoluzione coerente del mio percorso.</p><p data-i18n="future_para2">La graduatoria di Industrial Design è uscita per prima e, rientrando nei posti disponibili, mi offriva l’opportunità di immatricolarmi subito. Eppure dentro di me era maturato un cambio di rotta: i miei interessi si stavano orientando verso un design focalizzato sull’esperienza, sulla relazione tra esseri umani e tecnologia, sulla costruzione di interazioni efficaci. Ho rinunciato a quella opportunità, con un po’ di rischio ma con altrettanta convinzione, sperando di rientrare nella graduatoria di Interaction Design. Fortunatamente, è andata come desideravo.</p>
+                    <p data-i18n="future_para3">Il corso che frequenterò a Lecco è interamente in inglese e ancora giovane, il prossimo sarà soltanto il secondo anno di attivazione. Proprio per questo mi affascina ancor di più: è un percorso dinamico, proiettato verso il futuro, che integra tecnologia, creatività, progettazione e attenzione per le persone, tutti elementi in cui mi riconosco.</p>
+                    <p data-i18n="future_para4">Durante la visita al campus ho trovato un ambiente subito accogliente: moderno, curato e, soprattutto, tranquillo. Lecco mi ha trasmesso equilibrio, ben distante dalla frenesia di Milano, e credo che questo mi aiuterà a vivere l’università con maggiore serenità, profondità e produttività. Il percorso inizierà a settembre, ma sono già entusiasta: spero che rappresenti il contesto giusto per crescere, imparare e mettermi alla prova in ciò che più mi appassiona.</p>
+                    <p data-i18n="future_para5">Guardando ancora oltre, mi immagino a fondare qualcosa di mio. Non ho ancora le idee chiare sulla forma (uno studio, un progetto indipendente, o forse altro che oggi non so definire) ma so che mi piacerebbe esserne il creatore, costruirlo da zero e sostenerlo nel tempo, quasi come si fa con un figlio. Ciò che conta per me è avere qualcosa da cui non voglio solo ottenere un profitto, ma di cui desidero prendermi cura con serietà, creatività e profondo senso di responsabilità.</p>
+
+                                        </div>
+            </div>
+        </section>
+    </div>
+    
+<!-- NAVBAR -->
+	<nav class="bottom-navbar-modern">
+    <ul class="navbar-items">
+        <li data-page="umanistica">
+            <a href="areaumanistica.html">
+                <i class="lni lni-pencil-alt"></i>
+                <span data-i18n="nav_umanistica">Umanistica</span>
+            </a>
+        </li>
+        <li data-page="tecnica">
+            <a href="areatecnica.html">
+                <i class="lni lni-cog"></i>
+                <span data-i18n="nav_tecnica">Tecnica</span>
+            </a>
+        </li>
+        <li data-page="civica">
+            <a href="educazionecivica.html">
+                <i class="lni lni-graduation"></i>
+                <span data-i18n="nav_civica">Civica</span>
+            </a>
+        </li>
+        <li data-page="home">
+            <a href="index.html" class="active">
+                <i class="lni lni-home"></i>
+                <span data-i18n="nav_home">Home</span>
+            </a>
+        </li>
+        <li data-page="pcto">
+            <a href="pcto.html">
+                <i class="lni lni-briefcase"></i>
+                <span data-i18n="nav_pcto">PCTO</span>
+            </a>
+        </li>
+        <li data-page="portfolio">
+            <a href="portfolio.html">
+                <i class="lni lni-layout"></i>
+                <span data-i18n="nav_portfolio">Portfolio</span>
+            </a>
+        </li>
+        <li data-page="contatti">
+            <a href="contatti.html">
+                <i class="lni lni-envelope"></i>
+                <span>Contatti</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+  <div class="language-switcher">
+  <button class="lang-btn active" data-lang="it">
+    <img src="assets/images/flag-it.png" alt="Italiano" class="flag-icon">
+  </button>
+  <button class="lang-btn" data-lang="en">
+    <img src="assets/images/flag-en.png" alt="English" class="flag-icon">
+  </button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer_area gray-bg section" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">  
+          <div class="footer_content text-center">
+            <div class="copyright-container">
+              <span class="copyright-text" data-i18n="footer_copyright">
+                © 2025 - Tutti i diritti riservati
+              </span>
+              <img alt="Logo" src="assets/images/logo.png" width="36" />
+            </div>
+            <p class="exam-text" data-i18n="footer_credit">
+              Sito realizzato da Rinaldi Michele per l'esame di Stato 2024/2025 presso l'IIS MARCONI PIERALISI
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+<div style="height: 120px;"></div> </footer>
+    
+    
+</body>
+</html>

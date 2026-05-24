@@ -1,0 +1,414 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Capolavoro – Il Nazismo nel contesto del '900</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent: #38a3a5;
+            --dark: #2c3e50;
+            --bg: #ffffff;
+            --text: #2c3e50;
+            --text-light: #5a6c7d;
+            --border: #e8ecef;
+            --surface: #f8fafb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .header {
+            padding: 3rem 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+            .header::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 3px;
+                background: linear-gradient(90deg, var(--accent), #57b8bb);
+                border-radius: 2px;
+            }
+
+        .logo-link {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .logo {
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 32px rgba(56, 163, 165, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+            .logo:hover {
+                transform: translateY(-2px);
+            }
+
+        .header h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            letter-spacing: -0.02em;
+        }
+
+        .header .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .content {
+            padding: 4rem 0;
+        }
+
+        .section {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background: linear-gradient(90deg, var(--accent), #57b8bb);
+            }
+
+            .section:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 12px 40px rgba(56, 163, 165, 0.1);
+            }
+
+            .section h2 {
+                color: var(--accent);
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+                font-weight: 600;
+                letter-spacing: -0.01em;
+            }
+
+            .section p {
+                font-size: 1.05rem;
+                margin-bottom: 1.3rem;
+                color: var(--text);
+                line-height: 1.8;
+            }
+
+                .section p:last-child {
+                    margin-bottom: 0;
+                }
+
+        .quote {
+            background: white;
+            border-left: 4px solid var(--accent);
+            padding: 1.8rem 2rem;
+            margin: 2rem 0;
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 20px rgba(56, 163, 165, 0.08);
+            position: relative;
+        }
+
+            .quote::before {
+                content: '"';
+                font-size: 3rem;
+                color: var(--accent);
+                opacity: 0.2;
+                position: absolute;
+                top: -5px;
+                left: 15px;
+                font-family: Georgia, serif;
+                font-weight: bold;
+            }
+
+            .quote p {
+                font-size: 1.1rem;
+                color: var(--dark);
+                margin: 0;
+                padding-left: 1rem;
+            }
+
+            .quote .cite {
+                display: block;
+                margin-top: 0.8rem;
+                font-style: normal;
+                font-size: 0.95rem;
+                color: var(--text-light);
+            }
+
+        .presentation-section {
+            background: linear-gradient(135deg, var(--accent), #57b8bb);
+            border-radius: 12px;
+            padding: 3rem;
+            text-align: center;
+            margin: 3rem 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .presentation-section::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                right: -50%;
+                width: 200%;
+                height: 200%;
+                background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+                animation: float 6s ease-in-out infinite;
+            }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .presentation-section h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .presentation-section p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            background: white;
+            color: var(--accent);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+            .cta-button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            }
+
+
+
+        .team {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+            .team h3 {
+                color: var(--accent);
+                margin-bottom: 1.5rem;
+                font-size: 1.3rem;
+                font-weight: 600;
+            }
+
+        .team-members {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .member {
+            background: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 500;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+            .member.highlight {
+                background: var(--accent);
+                color: white;
+                font-weight: 600;
+                box-shadow: 0 4px 16px rgba(56, 163, 165, 0.3);
+            }
+
+            .member:not(.highlight):hover {
+                background: var(--surface);
+                transform: translateY(-1px);
+            }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .header {
+                padding: 2rem 0;
+            }
+
+                .header h1 {
+                    font-size: 1.8rem;
+                }
+
+            .section {
+                padding: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .presentation-section {
+                padding: 2rem;
+            }
+
+            .team-members {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            iframe {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+        <div class="header">
+            <h1>Il Nazismo nel contesto del '900</h1>
+            <p class="subtitle">Capolavoro di Michele Rinaldi</p>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>Il progetto di ricerca</h2>
+                <p>
+                    Questo capolavoro nasce da un'assegnazione della professoressa Scisciani sulle cause, le conseguenze e il contesto del totalitarismo nazista. Ci siamo concentrati su un arco temporale ampio, dalla fragile Repubblica di Weimar fino alla caduta del Muro di Berlino nel 1989, per comprendere come il Novecento tedesco sia stato profondamente segnato da questi eventi storici.
+                </p>
+                <p>
+                    Il viaggio di istruzione a Monaco, Berlino e Norimberga ha arricchito notevolmente la ricerca: visitare i luoghi dove si sono svolti questi eventi mi ha permesso di comprendere la portata e l'impatto di quello che ho studiato sui libri. Camminare attraverso questi spazi carichi di storia ha dato una dimensione completamente diversa al nostro lavoro.
+                </p>
+                <p>
+                    Nel gruppo mi sono occupato principalmente della progettazione grafica della presentazione e ho approfondito in particolare il tema delle discriminazioni razziali e del sistema dei campi di concentramento. Ogni scelta visiva è stata pensata per sostenere il contenuto, non solo per decorare.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>Albert Speer: la complicità del tecnico</h2>
+                <p>
+                    Una figura che ha catturato particolarmente la mia attenzione è quella di Albert Speer, l'architetto del Reich. Speer rappresenta un tipo di complicità diversa da quella del fanatico: era un professionista competente, una mente razionale al servizio di un regime irrazionale. Non urlava slogan nelle piazze, non sfilava in divisa, ma rendeva possibile il funzionamento della macchina nazista.
+                </p>
+                <p>
+                    Durante il processo di Norimberga Speer arrivò a riconoscere che proprio la potenza dei mezzi di comunicazione moderni aveva permesso al regime di imbavagliare il pensiero critico di un intero popolo. Il suo ammonimento finale resta di sconcertante attualità nell'era digitale.
+                </p>
+
+                <div class="quote">
+                    <p>«Attraverso dispositivi tecnici quali radio e altoparlanti ottanta milioni di persone furono private del pensiero indipendente... Il telefono, il teletipo e la radio resero possibile, ad esempio, che ordini provenienti dalle sfere più alte venissero trasmessi direttamente alle unità di grado più basso, dove venivano eseguiti senza alcuna critica.»
+                        <a href="https://avalon.law.yale.edu/imt/08-31-46.asp"><span class="cite">— Albert Speer, dichiarazione finale a Norimberga, 31 agosto 1946</span></a></p>
+                </div>
+
+                <p>
+                    Speer incarna qualcosa di più sottilmente pericoloso del fanatico dichiarato: il bruocrate che sceglie di non interrogarsi. La sua testimonianza ci ricorda che la neutralità tecnica non esiste; gli ingegneri e i designer hanno sempre una responsabilità etica rispetto all'uso dei loro strumenti.
+                </p>
+            </div>
+
+             <div class="section">
+            <h2>Hannah Arendt e la banalità del male</h2>
+
+            <p>
+                L’analisi di Hannah Arendt sul totalitarismo continua a offrirci una
+                chiave di lettura decisiva: i crimini più atroci possono essere
+                compiuti da persone normali, come tante altre, che
+                rinunciano al pensiero critico e obbediscono
+                in modo meccanico alle procedure. 
+            </p>
+
+            <div class="quote">
+                <p>
+                    «Il guaio del caso Eichmann era che di uomini come lui ce n’erano tanti e che questi tanti
+      non erano perversi né sadici, bensì erano, e sono tuttora, terribilmente
+      normali. […] Questa normalità è più spaventosa di tutte le atrocità messe insieme.»
+                    <a href="https://www.pul.it/cattedra/upload_files/179/ARENDT%20-%20Banalita%20del%20male.pdf"><span class="cite">— Hannah Arendt, <em>La banalità del male:
+                        Eichmann a Gerusalemme</em>, 1963</span> </a>
+                </p>
+            </div>
+
+                 <p>
+    Riflettendo sul processo a Eichmann (funzionario nazista coinvolto nell'organizzazione delle deportazioni) Arendt mette in luce un punto cruciale: la responsabilità morale non nasce da atti straordinari, ma dalla capacità quotidiana di pensare e giudicare. Quando questa si spegne, il male può prendere forma anche nei gesti più burocratici. È qui che emerge la sua “banalità”: non nel gesto crudele, ma nell’adesione passiva a un sistema disumano. Un meccanismo che torna anche nelle parole di Albert Speer citate sopra, il quale riconobbe troppo tardi come la razionalità tecnica, se svincolata da qualsiasi coscienza, può facilmente diventare strumento di distruzione.
+</p>
+
+</div>
+
+
+            <div class="presentation-section">
+                <h2>La presentazione</h2>
+                <p>
+                    Il risultato del lavoro si concretizza in una presentazione digitale realizzata con Figma. L'obiettivo non era semplicemente trasmettere informazioni, ma creare un percorso narrativo che potesse generare consapevolezza e riflessione critica sui temi trattati.
+                </p>
+
+                <a href="https://www.figma.com/proto/OoRqHXSH8AJoKIpQ2h1bFB/Nazismo---Viaggio-d-istruzione?node-id=1-6&starting-point-node-id=1%3A6" target="_blank" class="cta-button">
+                    Visualizza la presentazione completa
+                </a>
+
+            </div>
+
+            <div class="team">
+                <h3>Gruppo di lavoro</h3>
+                <div class="team-members">
+                    <div class="member highlight">Michele Rinaldi</div>
+                    <div class="member">Luca Andreoni</div>
+                    <div class="member">Lorenzo Romagnoli</div>
+                    <div class="member">Riccardo Sabbatini Peverieri</div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

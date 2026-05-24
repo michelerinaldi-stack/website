@@ -1,0 +1,373 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Michele Rinaldi - Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://files.catbox.moe/5nm396.ico" rel="shortcut icon" type="image/png" />
+    <!-- Fogli di stile -->
+    <link href="assets/css/animate.css" rel="stylesheet" />
+    <link href="assets/css/lineicons.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/default.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.lightbox-trigger').forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault()
+
+        const imageUrl = el.getAttribute('href')
+        const instance = basicLightbox.create(`
+          <img 
+            src="${imageUrl}" 
+            style="max-width: 90vw; max-height: 90vh;" 
+            draggable="false" 
+            oncontextmenu="return false"
+          >
+        `)
+
+        instance.show()
+      })
+    })
+  })
+  document.querySelectorAll('img').forEach(img =>
+  img.addEventListener('contextmenu', e => e.preventDefault())
+);
+</script>
+
+
+
+
+</head>
+<body>
+    <div class="container">
+      <div style="height: 120px;"></div>
+      <!-- Titolo pagina -->
+      <div class="section_title text-center pb-30">
+        <h5 class="main-title" data-i18n="portfolio_section_main_title">
+          Portfolio
+        </h5>
+        <h3 class="sub_title" data-i18n="pcto_section_sub_title">
+          RACCOLTA DEI MIEI LAVORI
+        </h3>
+        <ul class="line">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    <!--====== SERVICES (PORTFOLIO PREVIEW) START ======-->
+    <section class="services_area section" id="services">
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- Arte -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="single_service mt-30">
+                        <div class="service_icon">
+                            <i class="lni lni-pencil-alt"></i>
+                        </div>
+                        <div class="service_content">
+                            <h4 class="service_title">
+                                <a data-i18n="cat_arte_title" href="portfolio.html#arte">Arte e comunicazione</a>
+                            </h4>
+                            <p class="portfolio-description" data-i18n="cat_arte_desc">
+                                Progetti creativi ed espressivi che comunicano idee o messaggi sociali e raccontano storie attraverso il linguaggio visivo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Branding -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="single_service mt-30">
+                        <div class="service_icon">
+                            <i class="lni lni-briefcase"></i>
+                        </div>
+                        <div class="service_content">
+                            <h4 class="service_title">
+                                <a data-i18n="cat_branding_title" href="portfolio.html#branding">Branding e identità visiva</a>
+                            </h4>
+                            <p class="portfolio-description" data-i18n="cat_branding_desc">
+                                Sviluppo dell'immagine coordinata di aziende o progetti, con particolare attenzione a logo, palette, tipografia e coerenza comunicativa.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Industrial Design -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="single_service mt-30">
+                        <div class="service_icon">
+                            <i class="lni lni-cog"></i>
+                        </div>
+                        <div class="service_content">
+                            <h4 class="service_title">
+                                <a data-i18n="cat_industrial_title" href="https://www.behance.net/michirina">Industrial design</a>
+                            </h4>
+                            <p class="portfolio-description" data-i18n="cat_industrial_desc">
+                                Concept e redesign di oggetti d'uso quotidiano o elettronici, unendo estetica, ergonomia e funzionalità tramite modellazione 3D e prototipazione.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Grafica Pubblicitaria -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="single_service mt-30">
+                        <div class="service_icon">
+                            <i class="lni lni-printer"></i>
+                        </div>
+                        <div class="service_content">
+                            <h4 class="service_title">
+                                <a data-i18n="cat_adv_title" href="portfolio.html#manifesti">Grafica pubblicitaria</a>
+                            </h4>
+                            <p class="portfolio-description" data-i18n="cat_adv_desc">
+                                Manifesti, locandine ed elaborati promozionali pensati per eventi, aziende o iniziative culturali, con forte impatto visivo e comunicazione efficace.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <section id="arte" class="portfolio-preview-section my-5">
+  <div class="text-center my-5">
+    <h2 class="main_title">Arte e comunicazione</h2>
+  </div>
+  <div class="container">
+    <!-- Progetto: Pax Optima Rerum -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <a href="assets/images/arte/arte_1.jpg" class="lightbox-trigger">
+          <img src="assets/images/arte/arte_1.jpg" class="img-fluid rounded shadow" alt="Pax Optima Rerum">
+        </a>
+      </div>
+      <div class="col-md-6">
+        <h3 class="mb-3">Pax Optima Rerum</h3>
+        <p class="lead">
+          Nata per un contest di merchandising del Liceo Classico “Vittorio Emanuele II” di Jesi, l’idea alla base è semplice ma potente: usare l’arte e la cultura classica per lanciare un messaggio attuale e universale.
+        </p>
+        <p class="lead">
+          La frase <strong>“Pax Optima Rerum”</strong>, che significa <em>“La pace è il bene più grande”</em>, è una citazione del poeta latino Silio Italico. È un invito a riflettere sul valore della pace, oggi più che mai, in un mondo dove i conflitti continuano a segnare la vita di milioni di persone.
+        </p>
+        <p class="lead">
+          Ad accompagnare il motto c’è l’immagine stilizzata della <em>“Fuga di Enea da Troia”</em>, ispirata al celebre dipinto di Federico Barocci. Enea che fugge con il padre e il figlio rappresenta la distruzione, il dolore, ma anche la forza e la speranza di ricostruire. È una scena profondamente umana, che parla di guerra ma anche di rinascita.
+        </p>
+        <p class="lead">
+          Insieme, parola e immagine vogliono trasmettere un messaggio chiaro: ricordare le ferite del passato per desiderare un futuro di pace.
+        </p>
+      </div>
+    </div>
+
+    <!-- Progetto: Oscilloscope -->
+    <div class="row align-items-center mb-5 flex-md-row-reverse">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <a href="assets/images/arte/arte_2.jpg" class="lightbox-trigger">
+          <img src="assets/images/arte/arte_2.jpg" class="img-fluid rounded shadow" alt="Oscilloscope">
+        </a>
+      </div>
+      <div class="col-md-6">
+        <h3 class="mb-3">Oscilloscope</h3>
+        <p class="lead">
+          Questa grafica è stata creata per il merchandising di Jack Nur, cantautore e amico, con cui condivido una visione creativa molto libera. Avevo carta bianca, e ho deciso di unire i nostri due mondi: la sua musica e la mia passione per la tecnologia e il design.
+        </p>
+        <p class="lead">
+          Così è venuto fuori questo <em>oscilloscopio vintage</em>, un oggetto tecnico, un po’ retrò, perfettamente in linea con le sonorità del suo disco. Ma più che uno strumento scientifico, l’ho immaginato come qualcosa di emotivo.
+        </p>
+        <p class="lead">
+          Sulla schiena della maglietta, l’oscilloscopio sembra collegarsi direttamente a chi lo indossa. Le sue manopole non misurano voltaggi, ma emozioni: <strong>Surge, Dopamine, Adrenaline, Momentum, Serotonin, Echo, Afterglow</strong>… tutte quelle sensazioni che ci travolgono, ci spingono, ci scuotono o ci accompagnano.
+        </p>
+        <p class="lead">
+          E al centro dello schermo, l’onda forma una parola: <strong>“Senza Sosta”</strong>. Perché a volte è davvero così che ci si sente: presi dentro a qualcosa che non si ferma mai. Ma forse è proprio da lì che nasce l’energia per andare avanti.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    <section id="branding" class="w-full py-5">
+  <div class="text-center my-5">
+    <h2 class="main_title">Branding e identità visiva</h2>
+  </div>
+  <div class="container d-flex justify-content-between gap-3 flex-wrap">
+    <a href="assets/images/brands/brand_1.jpg" class="lightbox-trigger">
+      <img src="assets/images/brands/brand_1.jpg" alt="Brand 1" />
+    </a>
+    <a href="assets/images/brands/brand_2.jpg" class="lightbox-trigger">
+      <img src="assets/images/brands/brand_2.jpg" alt="Brand 2" />
+    </a>
+    <a href="assets/images/brands/brand_3.jpg" class="lightbox-trigger">
+      <img src="assets/images/brands/brand_3.jpg" alt="Brand 3" />
+    </a>
+  </div>
+</section>
+
+
+
+<section id="manifesti" class="w-full py-5">
+  <div class="text-center my-5">
+    <h2 class="main_title">Grafica pubblicitaria</h2>
+  </div>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <a href="assets/images/manifesti/manifesti_1.jpg" class="lightbox-trigger">
+          <img src="assets/images/manifesti/manifesti_1.jpg" alt="Manifesto 1" class="img-fluid" />
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="assets/images/manifesti/manifesti_2.jpg" class="lightbox-trigger">
+          <img src="assets/images/manifesti/manifesti_2.jpg" alt="Manifesto 2" class="img-fluid" />
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="assets/images/manifesti/manifesti_3.jpg" class="lightbox-trigger">
+          <img src="assets/images/manifesti/manifesti_3.jpg" alt="Manifesto 3" class="img-fluid" />
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="assets/images/manifesti/manifesti_4.jpg" class="lightbox-trigger">
+          <img src="assets/images/manifesti/manifesti_4.jpg" alt="Manifesto 4" class="img-fluid" />
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="assets/images/manifesti/manifesti_5.jpg" class="lightbox-trigger">
+          <img src="assets/images/manifesti/manifesti_5.jpg" alt="Manifesto 5" class="img-fluid" />
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="assets/images/manifesti/manifesti_6.jpg" class="lightbox-trigger">
+          <img src="assets/images/manifesti/manifesti_6.jpg" alt="Manifesto 6" class="img-fluid" />
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="assets/images/manifesti/manifesti_7.jpg" class="lightbox-trigger">
+          <img src="assets/images/manifesti/manifesti_7.jpg" alt="Manifesto 7" class="img-fluid" />
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="assets/images/manifesti/manifesti_8.jpg" class="lightbox-trigger">
+          <img src="assets/images/manifesti/manifesti_8.jpg" alt="Manifesto 8" class="img-fluid" />
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="assets/images/manifesti/manifesti_9.jpg" class="lightbox-trigger">
+          <img src="assets/images/manifesti/manifesti_9.jpg" alt="Manifesto 9" class="img-fluid" />
+        </a>
+      </div>
+            <div class="col-md-4">
+        <a href="assets/images/manifesti/manifesti_10.jpg" class="lightbox-trigger">
+          <img src="assets/images/manifesti/manifesti_10.jpg" alt="Manifesto 10" class="img-fluid" />
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="assets/images/manifesti/manifesti_11.jpg" class="lightbox-trigger">
+          <img src="assets/images/manifesti/manifesti_11.jpg" alt="Manifesto 11" class="img-fluid" />
+        </a>
+      </div>
+     <div class="col-md-4">
+        <a href="assets/images/manifesti/manifesti_12.jpg" class="lightbox-trigger">
+          <img src="assets/images/manifesti/manifesti_12.jpg" alt="Manifesto 12" class="img-fluid" />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    <div class="cv-container">
+        <a href="assets/docs/RinaldiMichele_CV_al20250525.pdf" target="_blank" class="cv-card">
+        <div class="cv-content">
+            <div class="cv-photo">
+                <img src="assets/images/foto_RinaldiMichele_2.png" onerror="this.style.display='none'; this.nextElementSibling.style.display='cover';">
+                <div class="cv-photo-placeholder" style="display: none;">MR</div>
+            </div>
+            <div class="cv-text">
+                <h1 class="cv-title">Curriculum Vitae</h1>
+                <p class="cv-updated">Aggiornato al 27/05/2025</p>
+            </div>
+        </div>
+        <div class="cv-arrow">→</div>
+            </a>
+    </div> 
+
+    </div>  
+<!-- NAVBAR -->
+	<nav class="bottom-navbar-modern">
+    <ul class="navbar-items">
+        <li data-page="umanistica">
+            <a href="areaumanistica.html">
+                <i class="lni lni-pencil-alt"></i>
+                <span data-i18n="nav_umanistica">Umanistica</span>
+            </a>
+        </li>
+        <li data-page="tecnica">
+            <a href="areatecnica.html">
+                <i class="lni lni-cog"></i>
+                <span data-i18n="nav_tecnica">Tecnica</span>
+            </a>
+        </li>
+        <li data-page="civica">
+            <a href="educazionecivica.html">
+                <i class="lni lni-graduation"></i>
+                <span data-i18n="nav_civica">Civica</span>
+            </a>
+        </li>
+        <li data-page="home">
+            <a href="index.html">
+                <i class="lni lni-home"></i>
+                <span data-i18n="nav_home">Home</span>
+            </a>
+        </li>
+        <li data-page="pcto">
+            <a href="pcto.html">
+                <i class="lni lni-briefcase"></i>
+                <span data-i18n="nav_pcto">PCTO</span>
+            </a>
+        </li>
+        <li data-page="portfolio">
+            <a href="portfolio.html" class="active">
+                <i class="lni lni-layout"></i>
+                <span data-i18n="nav_portfolio">Portfolio</span>
+            </a>
+        </li>
+        <li data-page="contatti">
+            <a href="contatti.html">
+                <i class="lni lni-envelope"></i>
+                <span>Contatti</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<!-- FOOTER -->
+  <footer class="footer_area gray-bg section" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">  
+          <div class="footer_content text-center">
+            <div class="copyright-container">
+              <span class="copyright-text" data-i18n="footer_copyright">
+                © 2025 - Tutti i diritti riservati
+              </span>
+              <img alt="Logo" src="assets/images/logo.png" width="36" />
+            </div>
+            <p class="exam-text" data-i18n="footer_credit">
+              Sito realizzato da Rinaldi Michele per l'esame di Stato 2024/2025 presso l'IIS MARCONI PIERALISI
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+<div style="height: 120px;"></div>
+</footer>
+      
+</body>
+</html>

@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title data-i18n="page_title">Michele Rinaldi - Contatti</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://files.catbox.moe/5nm396.ico" rel="shortcut icon" type="image/png" />
+    
+    <!-- Fogli di stile -->
+    <link href="assets/css/animate.css" rel="stylesheet" />
+    <link href="assets/css/lineicons.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/default.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// JavaScript Language Switcher
+(function() {
+    let currentLang = 'it';
+    let translations = {};
+
+    async function loadTranslations(lang) {
+        try {
+            const response = await fetch(`assets/lang/lang-contatti-${lang}.json`);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            translations[lang] = data;
+            return data;
+        } catch (error) {
+            console.error(`Errore nel caricamento delle traduzioni per ${lang}:`, error);
+            return null;
+        }
+    }
+
+    function applyTranslations(langData) {
+        const elements = document.querySelectorAll('[data-i18n]');
+        elements.forEach(element => {
+            element.classList.add('fade-out');
+        });
+        setTimeout(() => {
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (langData[key]) {
+                    element.textContent = langData[key];
+                }
+                element.classList.remove('fade-out');
+                element.classList.add('fade-in');
+            });
+        }, 200);
+    }
+
+    async function changeLanguage(lang) {
+    if (lang === currentLang) return;
+    currentLang = lang;
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+    let langData = translations[lang];
+    if (!langData) {
+        langData = await loadTranslations(lang);
+    }
+    if (langData) {
+        applyTranslations(langData);
+        localStorage.setItem('preferred-language', lang);
+    }
+}
+
+    function init() {
+        const savedLang = localStorage.getItem('preferred-language') || 'it';
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = btn.getAttribute('data-lang');
+                console.log('Cambio lingua a:', lang);
+                changeLanguage(lang);
+            });
+        });
+        changeLanguage(savedLang);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();
+</script>
+</head>
+<body>
+
+    <div class="container">
+      <!-- Titolo pagina -->
+       
+      <div style="height: 120px;"></div>
+      <div class="section_title text-center pb-30">
+        <h5 class="main-title" data-i18n="contact_title">
+          Contattami
+        </h5>
+        <h3 class="sub_title" data-i18n="contact_sub_title">
+          COMPILA IL FORM
+        </h3>
+        <ul class="line">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+
+
+
+<div class="contact-container">
+        <div class="contact-wrapper" style="grid-template-columns: 1fr; max-width: 600px; justify-items: center;">
+            <div class="contact-form">
+                <h2 data-i18n="form_heading" class="form-title">Scrivimi</h2>
+                <p class="form-subtitle" data-i18n="form_intro">Sono sempre aperto a nuove opportunità e collaborazioni interessanti. Se hai un progetto in mente o vuoi semplicemente fare una chiacchierata, non esitare a contattarmi.</p>
+                <p data-i18n="form_subtitle" class="form-subtitle">Di solito rispondo entro 24 ore</p>
+                
+                <form action="https://formspree.io/f/xovwnrjq" method="POST">
+                    <div class="form-group">
+                        <label data-i18n="label_chi_sei" for="chi-sei" class="form-label">Chi sei?</label>
+                        <input
+                            type="text"
+                            id="chi-sei"
+                            name="chi-sei"
+                            class="form-input"
+                            placeholder="Es. Sono Marco, un imprenditore di Milano..."
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label data-i18n="label_messaggio" for="messaggio" class="form-label">Cosa vuoi dirmi?</label>
+                        <textarea
+                            id="messaggio"
+                            name="message"
+                            class="form-textarea"
+                            placeholder="Raccontami la tua idea, il tuo progetto, che hai in mente..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label data-i18n="label_contatto" for="contatto" class="form-label">Dove vuoi essere ricontattato?</label>
+                        <input
+                            type="text"
+                            id="contatto"
+                            name="contatto"
+                            class="form-input"
+                            placeholder="Email, telefono, LinkedIn..."
+                            required
+                        >
+                    </div>
+
+                    <button data-i18n="submit_button" type="submit" class="form-button">
+                        Invia messaggio
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    </div>
+<!-- NAVBAR -->
+	<nav class="bottom-navbar-modern">
+    <ul class="navbar-items">
+        <li data-page="umanistica">
+            <a href="areaumanistica.html">
+                <i class="lni lni-pencil-alt"></i>
+                <span data-i18n="nav_umanistica">Umanistica</span>
+            </a>
+        </li>
+        <li data-page="tecnica">
+            <a href="areatecnica.html">
+                <i class="lni lni-cog"></i>
+                <span data-i18n="nav_tecnica">Tecnica</span>
+            </a>
+        </li>
+        <li data-page="civica">
+            <a href="educazionecivica.html">
+                <i class="lni lni-graduation"></i>
+                <span data-i18n="nav_civica">Civica</span>
+            </a>
+        </li>
+        <li data-page="home">
+            <a href="index.html">
+                <i class="lni lni-home"></i>
+                <span data-i18n="nav_home">Home</span>
+            </a>
+        </li>
+        <li data-page="pcto">
+            <a href="pcto.html">
+                <i class="lni lni-briefcase"></i>
+                <span data-i18n="nav_pcto">PCTO</span>
+            </a>
+        </li>
+        <li data-page="portfolio">
+            <a href="portfolio.html">
+                <i class="lni lni-layout"></i>
+                <span data-i18n="nav_portfolio">Portfolio</span>
+            </a>
+        </li>
+        <li data-page="contatti">
+            <a href="contatti.html" class="active">
+                <i class="lni lni-envelope"></i>
+                <span data-i18n="nav_contatti">Contatti</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<div class="language-switcher">
+  <button class="lang-btn active" data-lang="it">
+    <img src="assets/images/flag-it.png" alt="Italiano" class="flag-icon">
+  </button>
+  <button class="lang-btn" data-lang="en">
+    <img src="assets/images/flag-en.png" alt="English" class="flag-icon">
+  </button>
+</div>
+
+  <!-- FOOTER -->
+  <footer class="footer_area gray-bg section">
+    <div class="container text-center">
+      <div class="copyright-container">
+        <span data-i18n="footer_copyright">© 2025 - Tutti i diritti riservati</span>
+        <img alt="Logo" src="assets/images/logo.png" width="36" />
+      </div>
+      <p data-i18n="footer_credit">Sito realizzato da Rinaldi Michele per l'esame di stato 2025</p>
+    </div>
+    <div style="height: 120px;"></div>
+  </footer>
+    
+</body>
+</html>
