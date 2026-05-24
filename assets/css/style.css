@@ -198,12 +198,8 @@ p {
     width: 64px
 }
 
-.call_to_action_box .call_to_action_content .line li:nth-of-type(2),.section_title .line li:nth-of-type(2) {
-    width: 10px
-}
-
-.call_to_action_box .call_to_action_content .line li:nth-of-type(3),.section_title .line li:nth-of-type(3) {
-    width: 7px
+.language-switcher {
+    display: none !important;
 }
 
 .header_navbar {
