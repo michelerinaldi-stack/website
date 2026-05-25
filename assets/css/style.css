@@ -3198,24 +3198,31 @@ body {
   }
 
   #branding .container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-items: center;
+    align-items: center;
   }
 
-    #branding img {
-    width: 20vw;              /* 20% della larghezza dello schermo */
-    height: 20vw;             /* quadrato: stessa misura in altezza */
+  #branding .container a {
+    width: 100%;
+    max-width: 260px;
+    display: block;
+  }
+
+  #branding img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 0.75rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    }
+  }
 
-    #branding img:hover {
+  #branding img:hover {
     transform: scale(1.03);
-}
+  }
 
 
   /* --- MANIFESTI --- */
@@ -3394,4 +3401,13 @@ img {
   width: 500px !important;
   height: auto !important;
   object-fit: cover !important;
+}
+
+/* UI UX Portfolio Images */
+.uiux-image {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
 }
