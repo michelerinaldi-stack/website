@@ -242,14 +242,22 @@ def archive_pages():
 
 
 def contact():
-    content = '''<div class="wrap contact-layout"><section class="contact-copy"><span class="eyebrow">Contatti</span><h1 class="contact-title"><em>Contatti.</em></h1><p>Puoi scrivermi per un progetto, una collaborazione o informazioni sui miei lavori. Lascia la tua email per ricevere una risposta.</p><a class="text-link" href="portfolio.html">Torna al portfolio ↗</a></section>
-    <form class="contact-form" action="https://formspree.io/f/xovwnrjq" method="post">
+    content = '''<div class="wrap contact-layout"><section class="contact-copy"><span class="eyebrow">Contatti</span><h1 class="contact-title"><em>Contatti.</em></h1><p>Puoi scrivermi per un progetto, una collaborazione o informazioni sui miei lavori. Lascia la tua email per ricevere una risposta.</p><a class="contact-email" href="mailto:michelerinaldi.info@gmail.com">michelerinaldi.info@gmail.com ↗</a><a class="text-link" href="portfolio.html">Torna al portfolio ↗</a></section>
+    <form class="contact-form" action="https://formsubmit.co/michelerinaldi.info@gmail.com" method="post" accept-charset="UTF-8">
+      <input type="hidden" name="_subject" value="Nuovo messaggio dal portfolio di Michele Rinaldi">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://michelerinaldi-stack.github.io/website/messaggio-inviato.html">
+      <input type="hidden" name="_url" value="https://michelerinaldi-stack.github.io/website/contatti.html">
+      <div hidden aria-hidden="true"><label for="website">Lascia questo campo vuoto</label><input id="website" name="_honey" type="text" tabindex="-1" autocomplete="off"></div>
       <label for="name">Nome</label><input id="name" name="name" autocomplete="name" placeholder="Il tuo nome" required maxlength="150">
       <label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="La tua email" required maxlength="254">
       <label for="message">Messaggio</label><textarea id="message" name="message" placeholder="Scrivi il tuo messaggio" required maxlength="10000"></textarea>
-      <button type="submit">Invia il messaggio ↗</button><p class="form-note">Il modulo usa Formspree per inoltrare il messaggio. Inviandolo, condividi nome, email e testo per permettermi di risponderti.</p>
+      <button type="submit">Invia il messaggio ↗</button><p class="form-note">Nome, email e messaggio vengono inoltrati tramite FormSubmit per permettermi di risponderti.</p>
     </form></div>'''
-    page('contatti.html', 'Contatti', 'Contatta Michele Rinaldi per un progetto, una collaborazione o un saluto.', content, 'contact')
+    page('contatti.html', 'Contatti', 'Scrivi a Michele Rinaldi tramite il modulo o a michelerinaldi.info@gmail.com.', content, 'contact')
+    confirmation = '<div class="wrap archive-page">' + heading('Contatti', 'Grazie per il <em>messaggio.</em>', 'Se hai lasciato la tua email, potrò risponderti lì.')
+    confirmation += '<div class="resource-links"><a href="portfolio.html">Torna al portfolio ↗</a><a href="contatti.html">Scrivi un altro messaggio ↗</a></div></div>'
+    page('messaggio-inviato.html', 'Grazie per il messaggio', 'Grazie per aver contattato Michele Rinaldi.', confirmation, 'contact')
 
 
 def main():

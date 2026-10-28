@@ -9,7 +9,7 @@ Portfolio statico, pubblicabile direttamente su GitHub Pages. Nato per l’Esame
 - **Progetti:** contesto, contributo, racconto, immagini e collegamenti.
 - **Chi sono:** il percorso tra informatica, design, video e musica.
 - **Percorso:** università, SYEEW e archivio scolastico.
-- **Contatti:** modulo Formspree del sito originale.
+- **Contatti:** modulo FormSubmit indirizzato a `michelerinaldi.info@gmail.com`.
 
 Le pagine scolastiche mantengono i nomi originali. Anche `pcto.html` rimane raggiungibile, come caso studio SYEEW. I testi del 2025 sono dichiarati storici; i programmi di allora non sono presentati come programmi futuri attuali.
 
@@ -50,7 +50,11 @@ I vecchi CSS vendor sono conservati tra gli asset, ma il nuovo sito non li caric
 
 Continua a pubblicare la radice (`/`) del ramo configurato in **Settings → Pages**. Tutti i link locali sono relativi e funzionano sotto `/website/`; non serve un dominio personalizzato.
 
-Il modulo usa l’endpoint Formspree originale. La validazione locale è verificabile senza inviare messaggi; la consegna effettiva dipende dallo stato dell’account Formspree e va verificata con un invio consapevole del proprietario. Non sono state inviate richieste durante i test.
+Il modulo usa `https://formsubmit.co/michelerinaldi.info@gmail.com`. Nome, email del visitatore e messaggio sono inoltrati a questo indirizzo. Il campo `email` consente di rispondere direttamente al mittente; `_subject` specifica l’oggetto e `_next` riporta alla pagina `messaggio-inviato.html`. Il reCAPTCHA di FormSubmit rimane attivo e un honeypot aggiunge un controllo contro gli invii automatici.
+
+**Attivazione necessaria:** il proprietario deve confermare l’indirizzo cliccando l’email di attivazione inviata da FormSubmit al primo invio. Fino a quel momento il destinatario è configurato, ma la consegna non è verificata. Il servizio può trattenere gli invii in attesa di conferma. Controllare anche Spam e Promozioni. Il collegamento `mailto:` nella pagina Contatti permette di scrivere direttamente dalla propria applicazione email.
+
+I test automatici intercettano gli invii prima della rete per controllare destinatario, campi e redirect. La ricezione effettiva deve essere verificata nella casella del proprietario dopo l’attivazione.
 
 I collegamenti a Figma, Behance, Google Drive e altri servizi rimangono esterni. L’archivio segnala che i documenti dell’account scolastico potrebbero essere inaccessibili. Il controllo locale non verifica la disponibilità dei documenti esterni.
 
