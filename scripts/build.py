@@ -6,13 +6,15 @@ import hashlib
 import json
 from pathlib import Path
 from string import Template
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECTS = json.loads((ROOT / 'data/projects.json').read_text())
 ARCHIVE = json.loads((ROOT / 'data/archive.json').read_text())
+IMAGES = json.loads((ROOT / 'data/images.json').read_text())
 BASE = Template((ROOT / 'templates/base.html').read_text())
 ASSET_VERSIONS = {kind: hashlib.sha256((ROOT / path).read_bytes()).hexdigest()[:12]
-                  for kind, path in [('css', 'assets/css/site.css'), ('js', 'assets/js/site.js')]}
+                  for kind, path in [('css', 'assets/css/site.css'), ('js', 'assets/js/site.js'), ('play', 'assets/js/play.js')]}
 OUTPUT = {}
 
 
@@ -32,10 +34,12 @@ def page(filename, title, description, content, active=''):
                             ('contatti.html', 'Contatti ↗', 'contact')]:
         current = ' aria-current="page"' if active == key else ''
         navigation.append(f'<a href="{url}"{current}>{label}</a>')
-    OUTPUT[filename] = BASE.substitute(title=esc(title), description=esc(description),
+    OUTPUT[filename] = BASE.substitute(title=esc(title), description=esc(description), logo_image=media_attributes('logo.png', '36px'),
                                        navigation=''.join(navigation), content=content,
                                        page_class='page-' + Path(filename).stem,
-                                       css_version=ASSET_VERSIONS['css'], js_version=ASSET_VERSIONS['js'])
+                                       css_version=ASSET_VERSIONS['css'], js_version=ASSET_VERSIONS['js'],
+                                       extra_scripts=(f'<script src="assets/js/play.js?v={ASSET_VERSIONS["play"]}" defer></script>'
+                                                      if filename == 'portfolio.html' else ''))
 
 
 def heading(kicker, title, description=''):
@@ -43,16 +47,21 @@ def heading(kicker, title, description=''):
     return f'<header class="page-heading"><span class="eyebrow">{kicker}</span><h1>{title}</h1>{text}</header>'
 
 
-def picture(original, alt, cover=False, eager=False):
-    source = Path(original)
-    preview = f'assets/images/previews/{source.stem}.webp'
-    # Dimensions reserve image space and prevent layout shifts.
-    dimensions = IMAGE_SIZES[source.stem]
+def media_attributes(original, sizes='(max-width: 540px) calc(100vw - 48px), 55vw'):
+    media = IMAGES[original]
+    preview = media['preview']
+    srcset = ', '.join(f'{quote(v["url"], safe="/")} {v["width"]}w' for v in media['variants'])
+    return f'src="{esc(quote(preview["url"], safe="/"))}" srcset="{esc(srcset)}" sizes="{esc(sizes)}" width="{preview["width"]}" height="{preview["height"]}"'
+
+
+def picture(original, alt, cover=False, eager=False, sizes=None):
+    media = IMAGES[original]
+    sizes = sizes or ('(min-width: 1600px) 1440px, calc(100vw - 48px)' if cover else '(max-width: 540px) calc(100vw - 48px), 55vw')
     loading = 'eager' if cover or eager else 'lazy'
-    return (f'<a class="cover-link" href="assets/images/{esc(original)}" data-lightbox>'
+    return (f'<a class="cover-link" href="{esc(quote(media["full"]["url"], safe="/"))}" '
+            f'data-lightbox data-original="assets/images/{esc(quote(original, safe="/"))}">'
             f'<img class="{"cover-image" if cover else "gallery-image"}" '
-            f'src="{preview}" alt="{esc(alt)}" width="{dimensions[0]}" height="{dimensions[1]}" '
-            f'loading="{loading}" decoding="async"></a>')
+            f'{media_attributes(original, sizes)} alt="{esc(alt)}" loading="{loading}" decoding="async"></a>')
 
 
 def resources(links):
@@ -72,7 +81,7 @@ def cards(projects, home=False):
         items.append(f'''<article class="project-card" data-category="{project['category']}"{anchor}>
   <a href="{project_url(project)}">
     <div class="project-visual" data-tone="{project['tone']}">
-      <img src="assets/images/previews/{project['cover']}.webp" alt="{esc(project['title'])} — {esc(project['discipline'])}" width="{dims[0]}" height="{dims[1]}" loading="{loading}" decoding="async">
+      <img {media_attributes(project['cover_original'])} alt="{esc(project['title'])} — {esc(project['discipline'])}" loading="{loading}" decoding="async">
       <span class="project-arrow" aria-hidden="true">↗</span>
     </div>
     <div class="project-meta"><{level}>{esc(project['title'])}</{level}><span>{esc(project['discipline'])}</span></div>
@@ -92,7 +101,7 @@ def home():
     <div class="hero-copy">
       <span class="eyebrow">Portfolio personale</span>
       <h1 id="hero-title">Michele<br><em>Rinaldi</em><span class="hero-period">.</span></h1>
-      <p class="hero-intro">Mi occupo di interfacce, grafica e identità visiva. Il mio percorso parte dall’informatica e continua nell’Interaction Design.</p>
+      <p class="hero-intro">Sono Michele, vengo da Cupramontana e studio Interaction Design al Politecnico di Milano. Prima ho studiato informatica: il codice e la grafica sono due interessi che porto avanti insieme, dai video che facevo da bambino ai progetti che raccolgo qui.</p>
       <a class="text-link" href="#lavori">I miei progetti <span aria-hidden="true">↓</span></a>
     </div>
     <figure class="hero-portrait"><img src="assets/images/foto_RinaldiMichele_1.png" alt="Michele Rinaldi" width="2015" height="2442" fetchpriority="high" decoding="async"></figure>
@@ -102,7 +111,7 @@ def home():
     <div class="section-heading"><h2 id="selected-title"><span class="index">01 /</span>Progetti selezionati</h2><p>Interaction design e comunicazione visiva</p></div>'''
     content += cards(PROJECTS[:4], home=True)
     content += '''<div class="section-end"><a class="text-link" href="portfolio.html">Vai al portfolio <span aria-hidden="true">↗</span></a></div></section>
-  <section class="about-strip"><div><span class="eyebrow">Chi sono</span><h2>Dall’informatica<br>al design.</h2></div><div><p>Vengo da Cupramontana. Ho studiato informatica al Marconi Pieralisi di Jesi e ho scelto di proseguire con Interaction Design al Politecnico di Milano. La grafica è entrata nel mio percorso attraverso i video, i progetti personali e la musica. Suono la batteria da quando avevo sei anni.</p><a class="text-link" href="chi-sono.html">La mia storia <span aria-hidden="true">↗</span></a></div></section>'''
+  <section class="about-strip"><div><span class="eyebrow">Chi sono</span><h2>La mia<br><em>storia.</em></h2></div><div><p>Sono nato e cresciuto a Cupramontana. A nove anni ho pubblicato il mio primo video: registravo, montavo e mi occupavo delle grafiche, imparando con i mezzi che avevo. È stato il primo progetto a cui ho lavorato con continuità, molto prima di scegliere informatica e poi Interaction Design. Nel frattempo la musica è sempre rimasta con me: suono la batteria da quando avevo sei anni.</p><a class="text-link" href="chi-sono.html">La mia storia <span aria-hidden="true">↗</span></a></div></section>'''
     content += contact_band() + '</div>'
     page('index.html', 'Portfolio', 'Michele Rinaldi. Progetti di interaction design, identità visiva e grafica.', content)
 
@@ -113,6 +122,10 @@ def portfolio():
         <div class="portfolio-kicker"><span>Design e comunicazione visiva</span><span>Selezione / 01—08</span></div>
         <div class="portfolio-masthead"><h1>Port<em>folio</em><span class="masthead-arrow" aria-hidden="true">↗</span></h1><p>Interfacce, identità visive<br>e progetti personali.</p></div>
       </header>
+      <div class="portfolio-modes" data-portfolio-modes hidden aria-label="Vista del portfolio">
+        <button type="button" data-mode="editorial" aria-pressed="true">Vista editoriale</button>
+        <button type="button" data-mode="desk" aria-pressed="false">Gioca con i progetti ↗</button>
+      </div>
       <div class="filters" data-project-filters aria-label="Filtra i progetti per disciplina" hidden>'''
     for key, label in [('tutti', 'Tutti i lavori'), ('interazione', 'Interazione e prodotto'), ('grafica', 'Grafica e comunicazione'), ('branding', 'Identità visiva')]:
         count = len(PROJECTS) if key == 'tutti' else sum(p['category'] == key for p in PROJECTS)
@@ -129,16 +142,35 @@ def portfolio():
             content += f'<header class="collection-header"><span class="collection-index" aria-hidden="true">{index + 1:02d}</span><div><span class="eyebrow">{esc(project["discipline"])}</span><h2><a href="{project_url(project)}">{esc(project["title"])}</a></h2><p>{esc(project["summary"])}</p></div><a class="folio-open" href="{project_url(project)}" aria-label="Apri {esc(project["title"])}">↗</a></header>'
             grid_class = 'portfolio-gallery poster-wall' if project['slug'] == 'manifesti' else 'portfolio-gallery brand-wall'
             content += f'<div class="{grid_class}">'
-            content += ''.join(picture(image, f'{project["title"]} — lavoro {i + 1}') for i, image in enumerate(project['images']))
+            content += ''.join(picture(image, f'{project["title"]} — lavoro {i + 1}', sizes='(max-width: 540px) 42vw, 30vw') for i, image in enumerate(project['images']))
             content += '</div>'
         else:
             content += f'<div class="folio-order"><span>{index + 1:02d} /</span><span>{esc(project["discipline"])}</span></div>'
             content += f'<div class="folio-stage" data-tone="{project["tone"]}">' + picture(project['cover_original'], project['title'], eager=index < 2) + '<span class="stage-hint" aria-hidden="true">Ingrandisci ↗</span></div>'
-            content += f'<div class="folio-caption"><h2><a href="{project_url(project)}">{esc(project["title"])}</a></h2><a class="folio-open" href="{project_url(project)}" aria-label="Apri il progetto {esc(project["title"])}">↗</a></div><p class="folio-summary">{esc(project["summary"])}</p>'
+            content += f'<div class="folio-caption"><h2><a href="{project_url(project)}">{esc(project["title"])}</a></h2><a class="folio-open" href="{project_url(project)}" aria-label="Apri il progetto {esc(project["title"])}">↗</a></div><p class="folio-summary">{esc(project["intro"])}</p>'
             content += f'<details class="work-details"><summary>Contesto e contributo</summary><p>{esc(project["intro"])}</p><dl class="portfolio-facts"><div><dt>Contesto</dt><dd>{esc(project["context"])}</dd></div><div><dt>Contributo</dt><dd>{esc(project["role"])}</dd></div></dl><a class="text-link" href="{project_url(project)}">Il progetto completo ↗</a></details>'
         content += '</article>'
-    content += '</div>' + contact_band() + '</div>'
+    content += '</div>' + playground() + contact_band() + '</div>'
     page('portfolio.html', 'Portfolio', 'Il portfolio di Michele Rinaldi: progetti di interaction design, identità visiva, grafica e manifesti.', content, 'portfolio')
+
+
+def playground():
+    content = '''<section class="play-desk" data-play-desk hidden aria-label="Tavolo di lavoro interattivo">
+      <div class="desk-toolbar"><p id="desk-help">Trascina le immagini. Con la tastiera: frecce per spostare, R per ruotare.</p><div><button type="button" data-desk-shuffle>Spariglia ↗</button><button type="button" data-desk-reset>Rimetti in ordine</button></div></div>
+      <div class="play-canvas" data-play-canvas>'''
+    for i, project in enumerate(PROJECTS):
+        content += f'''<div class="play-card" data-play-category="{project['category']}" data-play-index="{i}" role="group" aria-label="{esc(project['title'])}">
+          <button class="play-handle" type="button" aria-label="Sposta {esc(project['title'])}" aria-describedby="desk-help" aria-pressed="false"><img {media_attributes(project['cover_original'], "(max-width: 540px) 40vw, 220px")} alt="" draggable="false" loading="lazy"><span aria-hidden="true">↔</span></button>
+          <a href="{project_url(project)}">{esc(project['title'])} <span aria-hidden="true">↗</span></a>
+        </div>'''
+    content += '''</div><p class="desk-status" data-desk-status role="status" aria-live="polite">8 progetti sul tavolo.</p></section>
+    <section class="type-lab" data-type-lab hidden aria-label="Laboratorio di tipografia">
+      <div class="section-heading"><h2>Prova la <em>tipografia.</em></h2><p>Scrivi, cambia carattere, scompiglia le lettere.</p></div>
+      <div class="type-lab-controls"><label for="type-text">Il tuo testo<input id="type-text" type="text" value="Michele" maxlength="18" autocomplete="off" spellcheck="false"></label><div class="type-fonts" role="group" aria-label="Carattere"><button type="button" data-type-font="Manrope" aria-pressed="true">Sans</button><button type="button" data-type-font="Instrument" aria-pressed="false">Serif</button></div><label for="type-spacing">Spaziatura<input id="type-spacing" type="range" min="-6" max="12" value="-4" step="1"></label></div>
+      <div class="type-paper" data-type-paper><div class="type-sample" data-type-sample role="img"></div><span aria-hidden="true" class="type-paper-mark">Aa / 01</span></div>
+      <div class="type-lab-footer"><div role="group" aria-label="Colore del foglio"><button type="button" data-type-color="paper" aria-pressed="true">Carta</button><button type="button" data-type-color="blue" aria-pressed="false">Blu</button><button type="button" data-type-color="red" aria-pressed="false">Rosso</button></div><button class="type-mix" type="button" data-type-mix aria-pressed="false">Scompiglia le lettere ↗</button></div>
+    </section>'''
+    return content
 
 
 def project_pages():
@@ -149,7 +181,9 @@ def project_pages():
         for label, key in [('Contesto', 'context'), ('Il mio contributo', 'role'), ('Strumenti / Ambito', 'tools'), ('Risultato', 'output')]:
             content += f'<div><dt>{label}</dt><dd>{esc(project[key])}</dd></div>'
         content += '</dl></div>' + picture(project['cover_original'], project['title'], cover=True)
-        content += '<p class="image-caption">Seleziona l’immagine per vederla nel formato originale.</p>'
+        content += '<p class="image-caption">Seleziona l’immagine per ingrandirla. Nella galleria puoi aprire anche il file originale.</p>'
+        if project.get('narrative'):
+            content += '<div class="case-story prose">' + ''.join(f'<p>{esc(p)}</p>' for p in project['narrative']) + '</div>'
         for section in project['sections']:
             content += f'<section class="case-section"><h2>{esc(section["title"])}</h2><div class="prose">'
             content += ''.join(f'<p>{esc(p)}</p>' for p in section['paragraphs']) + '</div></section>'
@@ -169,7 +203,7 @@ def project_pages():
                 ('SMAU / 29 ottobre 2024', ['experience_period3_para1', 'experience_period3_para2', 'experience_period3_para3', 'experience_period3_para4']),
                 ('Riflessioni e ringraziamenti', ['review_para1', 'review_para2', 'review_thanks_lead', 'review_thanks_para', 'review_final_thanks', 'review_sign_off'])]:
                 text = ''.join(ARCHIVE['syeew'].get(key, '') for key in keys)
-                content += f'<details class="archive-entry"><summary><h3>{title}</h3></summary><div class="prose">{text}</div></details>'
+                content += f'<section class="pcto-journal"><h3>{title}</h3><div class="prose">{text}</div></section>'
             content += '</div></section>'
             content += '<div class="image-grid">' + ''.join(picture(f'syeew_smau_{i}.jpg', f'SMAU Milano 2024 — foto {i}') for i in range(1, 4)) + '</div>'
         if links:
@@ -180,12 +214,21 @@ def project_pages():
 
 
 def about():
-    content = '<div class="wrap">' + heading('Chi sono', 'Michele <em>Rinaldi.</em>')
-    content += '''<div class="portrait-layout"><img class="portrait" src="assets/images/foto_RinaldiMichele_1.png" alt="Michele Rinaldi" width="2015" height="2442"><div class="prose"><p>Vengo da Cupramontana, nelle Marche. Ho studiato informatica al Marconi Pieralisi di Jesi e ho scelto Interaction Design al Politecnico di Milano, nella sede di Lecco.</p><p>Ho iniziato a occuparmi di grafica mentre montavo i miei video. Poi sono arrivati Photoshop, Figma e Fusion 360, le prime interfacce e i lavori per eventi e musicisti.</p><p>Durante il PCTO in SYEEW ho lavorato al redesign di un’app e a una demo in Flutter. In università ho iniziato a lavorare anche su progetti di interazione in gruppo, come Night Train Ride.</p><a class="text-link" href="portfolio.html">I miei progetti ↗</a></div></div>
-    <section class="case-section"><h2>I primi video</h2><div class="prose"><p>Il 10 agosto 2015, a nove anni, ho pubblicato il mio primo video. Nei tre anni successivi ne ho realizzati 213: gameplay, curiosità storiche con mio fratello, magie, esperimenti e tutorial.</p><p>Mi occupavo di tutto, dal montaggio alle grafiche, imparando da solo. È stato il primo modo che ho trovato per unire racconto, tecnologia e un progetto tutto mio.</p></div></section>
-    <section class="portrait-layout"><div class="prose"><span class="eyebrow">Musica</span><h2 class="contact-title">La <em>batteria.</em></h2><p>Studio musica da quando avevo quattro anni e suono la batteria da quando ne avevo sei. Faccio parte del Corpo Bandistico Don N. Bonanni di Cupramontana.</p><p>Ho affiancato gli insegnanti nei corsi musicali e nei centri estivi, lavorando con bambini e ragazzi. Insegnare percussioni mi ha fatto scoprire un altro modo di condividere quello che mi appassiona.</p></div><img src="assets/images/previews/foto_RinaldiMichele_3.webp" alt="Michele durante un’esibizione con il corpo bandistico" loading="lazy" width="720" height="960"></section>'''
-    content += contact_band() + '</div>'
-    page('chi-sono.html', 'Chi sono', 'La storia di Michele Rinaldi, tra informatica, interaction design, video e musica.', content, 'about')
+    chapters = json.loads((ROOT / 'data/story.json').read_text())
+    content = '<div class="wrap story-page">' + heading('Chi sono', 'La mia <em>storia.</em>')
+    content += '<div class="story-layout"><aside class="story-portrait"><img src="assets/images/foto_RinaldiMichele_1.png" alt="Michele Rinaldi" width="2015" height="2442"><a class="text-link" href="portfolio.html">I miei progetti ↗</a></aside><article class="story-prose">'
+    for i, chapter in enumerate(chapters):
+        content += f'<section id="{chapter["id"]}" class="story-chapter">'
+        if i:
+            content += f'<h2>{esc(chapter["title"])}</h2>'
+        if chapter.get('note'):
+            content += f'<p class="story-note">{esc(chapter["note"])}</p>'
+        content += ''.join(chapter['paragraphs'])
+        if chapter['id'] == 'musica':
+            content += '<figure class="story-photo">' + picture('foto_RinaldiMichele_3.jpg', 'Durante un’esibizione con il Corpo Bandistico Don N. Bonanni') + '</figure>'
+        content += '</section>'
+    content += '</article></div>' + contact_band() + '</div>'
+    page('chi-sono.html', 'La mia storia', 'Il racconto di Michele Rinaldi: Cupramontana, i primi video, informatica, musica e la scelta di Interaction Design.', content, 'about')
 
 
 def journey():
@@ -199,11 +242,8 @@ def journey():
       <a class="archive-card" href="areatecnica.html"><span>01 / Tecnologia</span><h2>Area tecnica ↗</h2><p>Programmazione, reti, IA, matematica e gestione dei progetti.</p></a>
       <a class="archive-card" href="areaumanistica.html"><span>02 / Cultura</span><h2>Area umanistica ↗</h2><p>Letteratura, storia e il valore della memoria.</p></a>
       <a class="archive-card" href="educazionecivica.html"><span>03 / Cittadinanza</span><h2>Educazione civica ↗</h2><p>Pace, informazione e riflessioni sull’intelligenza artificiale.</p></a>
-    </div><section class="case-section"><h2>Il racconto originale</h2><div><p>La storia personale e le riflessioni scritte per l’esame, conservate come tappa del percorso.</p>'''
-    for i, entry in enumerate(ARCHIVE['story']):
-        # Mark historical future plans clearly rather than presenting them as current.
-        content += f'<details class="archive-entry"><summary><h3>{esc(entry["title"])}</h3><span>Testo del 2025</span></summary><div class="prose">' + ''.join(entry['body']) + '</div></details>'
-    content += '</div></section>' + contact_band() + '</div>'
+    </div><section class="case-section"><h2>La mia storia</h2><div><p>I video, la scuola, la musica e la scelta dell’università fanno parte dello stesso percorso. Li racconto nella pagina dedicata, dai primi video registrati a casa fino alla scelta di studiare Interaction Design.</p><a class="text-link" href="chi-sono.html">Leggi la mia storia ↗</a></div></section>'''
+    content += contact_band() + '</div>'
     page('percorso.html', 'Percorso e archivio', 'Formazione, PCTO, università e archivio scolastico di Michele Rinaldi.', content, 'journey')
 
 
@@ -242,11 +282,11 @@ def archive_pages():
 
 
 def contact():
-    content = '''<div class="wrap contact-layout"><section class="contact-copy"><span class="eyebrow">Contatti</span><h1 class="contact-title"><em>Contatti.</em></h1><p>Puoi scrivermi per un progetto, una collaborazione o informazioni sui miei lavori. Lascia la tua email per ricevere una risposta.</p><a class="contact-email" href="mailto:michelerinaldi.info@gmail.com">michelerinaldi.info@gmail.com ↗</a><a class="text-link" href="portfolio.html">Torna al portfolio ↗</a></section>
+    content = '''<div class="wrap contact-layout"><section class="contact-copy"><span class="eyebrow">Contatti</span><h1 class="contact-title"><em>Contatti.</em></h1><p>Se vuoi parlarmi di un progetto, chiedermi qualcosa su un lavoro che hai visto qui o fare due chiacchiere, puoi usare questo modulo. Mi arriveranno il tuo nome, il messaggio e l’indirizzo a cui risponderti. Se preferisci scrivere dalla tua casella, trovi anche la mia email qui sotto.</p><a class="contact-email" href="mailto:michelerinaldi.info@gmail.com">michelerinaldi.info@gmail.com ↗</a><a class="text-link" href="portfolio.html">Torna al portfolio ↗</a></section>
     <form class="contact-form" action="https://formsubmit.co/michelerinaldi.info@gmail.com" method="post" accept-charset="UTF-8">
       <input type="hidden" name="_subject" value="Nuovo messaggio dal portfolio di Michele Rinaldi">
       <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://michelerinaldi-stack.github.io/website/messaggio-inviato.html">
+      <input type="hidden" name="_next" value="https://michelerinaldi-stack.github.io/website/contatti.html">
       <input type="hidden" name="_url" value="https://michelerinaldi-stack.github.io/website/contatti.html">
       <div hidden aria-hidden="true"><label for="website">Lascia questo campo vuoto</label><input id="website" name="_honey" type="text" tabindex="-1" autocomplete="off"></div>
       <label for="name">Nome</label><input id="name" name="name" autocomplete="name" placeholder="Il tuo nome" required maxlength="150">

@@ -50,7 +50,7 @@ I vecchi CSS vendor sono conservati tra gli asset, ma il nuovo sito non li caric
 
 Continua a pubblicare la radice (`/`) del ramo configurato in **Settings → Pages**. Tutti i link locali sono relativi e funzionano sotto `/website/`; non serve un dominio personalizzato.
 
-Il modulo usa `https://formsubmit.co/michelerinaldi.info@gmail.com`. Nome, email del visitatore e messaggio sono inoltrati a questo indirizzo. Il campo `email` consente di rispondere direttamente al mittente; `_subject` specifica l’oggetto e `_next` riporta alla pagina `messaggio-inviato.html`. Il reCAPTCHA di FormSubmit rimane attivo e un honeypot aggiunge un controllo contro gli invii automatici.
+Il modulo usa `https://formsubmit.co/michelerinaldi.info@gmail.com`. Nome, email del visitatore e messaggio sono inoltrati a questo indirizzo. Il campo `email` consente di rispondere direttamente al mittente; `_subject` specifica l’oggetto e `_next` riporta esattamente a `https://michelerinaldi-stack.github.io/website/contatti.html`, come richiesto. Il reCAPTCHA di FormSubmit rimane attivo e un honeypot aggiunge un controllo contro gli invii automatici.
 
 **Attivazione necessaria:** il proprietario deve confermare l’indirizzo cliccando l’email di attivazione inviata da FormSubmit al primo invio. Fino a quel momento il destinatario è configurato, ma la consegna non è verificata. Il servizio può trattenere gli invii in attesa di conferma. Controllare anche Spam e Promozioni. Il collegamento `mailto:` nella pagina Contatti permette di scrivere direttamente dalla propria applicazione email.
 
@@ -74,3 +74,13 @@ Le interazioni sono in `assets/js/site.js` e nella sezione finale di `assets/css
 - Entrata dei contenuti allo scorrimento, indicatore di lettura e ritorno all’inizio.
 
 `prefers-reduced-motion` disattiva i movimenti, anche quando la preferenza cambia durante la visita. Gli effetti al puntatore sono attivi soltanto su dispositivi con puntatore preciso. Non ci sono animazioni continue o dipendenze aggiuntive; senza JavaScript rimangono contenuti, link alle immagini e controlli nativi.
+
+## Storia personale, playground e immagini responsive
+
+`data/story.json` contiene il racconto completo originale, nello stesso ordine e con gli stessi paragrafi. La pagina Chi sono lo presenta come un articolo continuo; il capitolo sulla scelta universitaria è contestualizzato nel 2025. Per i progetti sono state recuperate le descrizioni del portfolio originale, al posto dei riassunti introdotti nel primo redesign.
+
+Il Portfolio offre una vista editoriale e un tavolo di lavoro opzionale. Le immagini si trascinano dall’area dedicata, anche su touch; le frecce e R permettono lo stesso uso da tastiera. I pulsanti Spariglia e Rimetti in ordine agiscono soltanto sulla disposizione temporanea. Il laboratorio tipografico permette di cambiare testo, carattere, spaziatura e colori. Tutto rimane locale alla pagina e non cambia i contenuti del portfolio.
+
+Le immagini raster hanno copie WebP responsive a 480, 960 e fino a 1440 px, oltre a una copia per la galleria con lato massimo di 2560 px. Il manifest è `data/images.json`; i numeri della conversione sono in `data/image-optimization.json`. La foto principale resta nel formato PNG originale trasparente, come richiesto. SVG e JSON di animazione non vengono convertiti. Il collegamento File originale nella galleria conserva l’accesso al materiale originale.
+
+Per rigenerare i derivati dopo l’aggiunta di un’immagine, installa Pillow nell’ambiente di lavoro ed esegui `python3 scripts/optimize_images.py`, quindi `python3 scripts/build.py`. Gli originali non vengono sovrascritti. Per la sola rigenerazione HTML continua a bastare Python senza pacchetti aggiuntivi.

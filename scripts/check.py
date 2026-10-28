@@ -26,6 +26,11 @@ class Page(HTMLParser):
             self.headings += 1
         if tag == 'img' and 'alt' not in attrs:
             self.errors.append('Image without alt attribute')
+        for candidate in attrs.get('srcset', '').split(','):
+            if candidate.strip():
+                self.links.append(candidate.strip().split()[0])
+        if attrs.get('data-original'):
+            self.links.append(attrs['data-original'])
         for key in ('href', 'src', 'action'):
             if attrs.get(key):
                 self.links.append(attrs[key])

@@ -11,11 +11,12 @@
   <link rel="preload" href="assets/fonts/instrument-serif-italic.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="assets/css/site.css?v=$css_version">
   <script src="assets/js/site.js?v=$js_version" defer></script>
+  $extra_scripts
 </head>
 <body class="$page_class">
   <a class="skip-link" href="#contenuto">Vai al contenuto</a>
   <header class="site-header wrap">
-    <a class="signature" href="index.html" aria-label="Michele Rinaldi, homepage"><img src="assets/images/logo.png" alt="" width="36" height="36"><span>Michele Rinaldi<span class="signature-dot">.</span></span></a>
+    <a class="signature" href="index.html" aria-label="Michele Rinaldi, homepage"><img $logo_image alt=""><span>Michele Rinaldi<span class="signature-dot">.</span></span></a>
     <nav aria-label="Navigazione principale">$navigation</nav>
   </header>
   <main id="contenuto">$content</main>
@@ -24,6 +25,6 @@
     <nav aria-label="Altri collegamenti"><a href="portfolio.html">Portfolio</a><a href="chi-sono.html">Chi sono</a><a href="percorso.html">Percorso</a><a href="contatti.html">Contatti ↗</a></nav>
     <div class="footer-bottom"><span>Portfolio personale</span><span>© Michele Rinaldi</span></div>
   </footer>
-  <dialog class="lightbox" aria-label="Immagine ingrandita"><button type="button" class="lightbox-close" aria-label="Chiudi immagine">Chiudi ×</button><figure><img alt=""><figcaption></figcaption></figure><div class="lightbox-controls" hidden><button type="button" data-gallery-prev aria-label="Immagine precedente">←</button><span data-gallery-count role="status" aria-live="polite"></span><button type="button" data-gallery-next aria-label="Immagine successiva">→</button></div></dialog>
+  <dialog class="lightbox" aria-label="Immagine ingrandita"><a class="lightbox-original" data-gallery-original href="#" target="_blank" rel="noopener" hidden>File originale ↗</a><button type="button" class="lightbox-close" aria-label="Chiudi immagine">Chiudi ×</button><figure><img alt=""><figcaption></figcaption></figure><div class="lightbox-controls" hidden><button type="button" data-gallery-prev aria-label="Immagine precedente">←</button><span data-gallery-count role="status" aria-live="polite"></span><button type="button" data-gallery-next aria-label="Immagine successiva">→</button></div></dialog>
 </body>
 </html>

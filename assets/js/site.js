@@ -49,6 +49,7 @@ const lightbox = document.querySelector('.lightbox');
 if (lightbox && typeof lightbox.showModal === 'function') {
   const image = lightbox.querySelector('img');
   const caption = lightbox.querySelector('figcaption');
+  const original = lightbox.querySelector('[data-gallery-original]');
   const controls = lightbox.querySelector('.lightbox-controls');
   const count = lightbox.querySelector('[data-gallery-count]');
   let links = [];
@@ -59,6 +60,8 @@ if (lightbox && typeof lightbox.showModal === 'function') {
     const src = link.href;
     image.getAnimations().forEach((animation) => animation.cancel());
     image.classList.add('is-loading');
+    original.href = link.dataset.original || src;
+    original.hidden = false;
     image.src = src;
     image.alt = link.querySelector('img').alt;
     caption.textContent = image.alt;
@@ -112,6 +115,7 @@ if (lightbox && typeof lightbox.showModal === 'function') {
   lightbox.addEventListener('close', () => {
     image.getAnimations().forEach((animation) => animation.cancel());
     image.removeAttribute('src');
+    original.hidden = true;
     image.classList.remove('is-loading');
     touchStart = null;
   });

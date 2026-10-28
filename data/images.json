@@ -1,0 +1,1492 @@
+{
+  "Mask Group 2.png": {
+    "original_bytes": 4318,
+    "preview": {
+      "url": "assets/images/previews/Mask Group 2.webp",
+      "width": 1170,
+      "height": 277,
+      "bytes": 3394
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/Mask Group 2-480w.webp",
+        "width": 480,
+        "height": 114,
+        "bytes": 2662
+      },
+      {
+        "url": "assets/images/previews/Mask Group 2-960w.webp",
+        "width": 960,
+        "height": 227,
+        "bytes": 5696
+      },
+      {
+        "url": "assets/images/previews/Mask Group 2.webp",
+        "width": 1170,
+        "height": 277,
+        "bytes": 3394
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/Mask Group 2.webp",
+      "width": 1170,
+      "height": 277,
+      "bytes": 3374
+    }
+  },
+  "about_hero.png": {
+    "original_bytes": 146896,
+    "preview": {
+      "url": "assets/images/previews/about_hero.webp",
+      "width": 583,
+      "height": 421,
+      "bytes": 25294
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/about_hero-480w.webp",
+        "width": 480,
+        "height": 347,
+        "bytes": 22782
+      },
+      {
+        "url": "assets/images/previews/about_hero.webp",
+        "width": 583,
+        "height": 421,
+        "bytes": 25294
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/about_hero.webp",
+      "width": 583,
+      "height": 421,
+      "bytes": 31324
+    }
+  },
+  "arte/arte_1.jpg": {
+    "original_bytes": 2006904,
+    "preview": {
+      "url": "assets/images/previews/arte_1.webp",
+      "width": 1213,
+      "height": 1440,
+      "bytes": 147522
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/arte_1-480w.webp",
+        "width": 480,
+        "height": 570,
+        "bytes": 34488
+      },
+      {
+        "url": "assets/images/previews/arte_1-960w.webp",
+        "width": 960,
+        "height": 1140,
+        "bytes": 96598
+      },
+      {
+        "url": "assets/images/previews/arte_1.webp",
+        "width": 1213,
+        "height": 1440,
+        "bytes": 147522
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/arte_1.webp",
+      "width": 2156,
+      "height": 2560,
+      "bytes": 476360
+    }
+  },
+  "arte/arte_2.jpg": {
+    "original_bytes": 6207328,
+    "preview": {
+      "url": "assets/images/previews/arte_2.webp",
+      "width": 1213,
+      "height": 1440,
+      "bytes": 138812
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/arte_2-480w.webp",
+        "width": 480,
+        "height": 570,
+        "bytes": 32374
+      },
+      {
+        "url": "assets/images/previews/arte_2-960w.webp",
+        "width": 960,
+        "height": 1140,
+        "bytes": 90850
+      },
+      {
+        "url": "assets/images/previews/arte_2.webp",
+        "width": 1213,
+        "height": 1440,
+        "bytes": 138812
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/arte_2.webp",
+      "width": 2156,
+      "height": 2560,
+      "bytes": 423366
+    }
+  },
+  "brands/brand_1.jpg": {
+    "original_bytes": 17663,
+    "preview": {
+      "url": "assets/images/previews/brand_1.webp",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 11274
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/brand_1-480w.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 4386
+      },
+      {
+        "url": "assets/images/previews/brand_1-960w.webp",
+        "width": 960,
+        "height": 960,
+        "bytes": 9788
+      },
+      {
+        "url": "assets/images/previews/brand_1.webp",
+        "width": 1024,
+        "height": 1024,
+        "bytes": 11274
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/brand_1.webp",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 13788
+    }
+  },
+  "brands/brand_2.jpg": {
+    "original_bytes": 19979,
+    "preview": {
+      "url": "assets/images/previews/brand_2.webp",
+      "width": 582,
+      "height": 582,
+      "bytes": 13018
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/brand_2-480w.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 10148
+      },
+      {
+        "url": "assets/images/previews/brand_2.webp",
+        "width": 582,
+        "height": 582,
+        "bytes": 13018
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/brand_2.webp",
+      "width": 582,
+      "height": 582,
+      "bytes": 16038
+    }
+  },
+  "brands/brand_3.jpg": {
+    "original_bytes": 228161,
+    "preview": {
+      "url": "assets/images/previews/brand_3.webp",
+      "width": 1440,
+      "height": 1440,
+      "bytes": 16690
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/brand_3-480w.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 4122
+      },
+      {
+        "url": "assets/images/previews/brand_3-960w.webp",
+        "width": 960,
+        "height": 960,
+        "bytes": 9166
+      },
+      {
+        "url": "assets/images/previews/brand_3.webp",
+        "width": 1440,
+        "height": 1440,
+        "bytes": 16690
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/brand_3.webp",
+      "width": 2048,
+      "height": 2048,
+      "bytes": 37948
+    }
+  },
+  "brands/brand_4.jpg": {
+    "original_bytes": 29727,
+    "preview": {
+      "url": "assets/images/previews/brand_4.webp",
+      "width": 800,
+      "height": 800,
+      "bytes": 19364
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/brand_4-480w.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 10892
+      },
+      {
+        "url": "assets/images/previews/brand_4.webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 19364
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/brand_4.webp",
+      "width": 800,
+      "height": 800,
+      "bytes": 23272
+    }
+  },
+  "favicon.png": {
+    "original_bytes": 2763,
+    "preview": {
+      "url": "assets/images/previews/favicon.webp",
+      "width": 48,
+      "height": 48,
+      "bytes": 642
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/favicon.webp",
+        "width": 48,
+        "height": 48,
+        "bytes": 642
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/favicon.webp",
+      "width": 48,
+      "height": 48,
+      "bytes": 664
+    }
+  },
+  "flag-en.png": {
+    "original_bytes": 4035,
+    "preview": {
+      "url": "assets/images/previews/flag-en.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 3580
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/flag-en.webp",
+        "width": 128,
+        "height": 128,
+        "bytes": 3580
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/flag-en.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 4128
+    }
+  },
+  "flag-it.png": {
+    "original_bytes": 2367,
+    "preview": {
+      "url": "assets/images/previews/flag-it.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1992
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/flag-it.webp",
+        "width": 128,
+        "height": 128,
+        "bytes": 1992
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/flag-it.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 2258
+    }
+  },
+  "foto_RinaldiMichele_1.png": {
+    "original_bytes": 1260712,
+    "preview": {
+      "url": "assets/images/previews/foto_RinaldiMichele_1.webp",
+      "width": 1188,
+      "height": 1440,
+      "bytes": 102700
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/foto_RinaldiMichele_1-480w.webp",
+        "width": 480,
+        "height": 582,
+        "bytes": 28630
+      },
+      {
+        "url": "assets/images/previews/foto_RinaldiMichele_1-960w.webp",
+        "width": 960,
+        "height": 1163,
+        "bytes": 72108
+      },
+      {
+        "url": "assets/images/previews/foto_RinaldiMichele_1.webp",
+        "width": 1188,
+        "height": 1440,
+        "bytes": 102700
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/foto_RinaldiMichele_1.webp",
+      "width": 2015,
+      "height": 2442,
+      "bytes": 277164
+    },
+    "png": {
+      "url": "assets/images/foto_RinaldiMichele_1.png",
+      "width": 2015,
+      "height": 2442,
+      "bytes": 1260712
+    }
+  },
+  "foto_RinaldiMichele_2.png": {
+    "original_bytes": 51697,
+    "preview": {
+      "url": "assets/images/previews/foto_RinaldiMichele_2.webp",
+      "width": 248,
+      "height": 248,
+      "bytes": 7990
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/foto_RinaldiMichele_2.webp",
+        "width": 248,
+        "height": 248,
+        "bytes": 7990
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/foto_RinaldiMichele_2.webp",
+      "width": 248,
+      "height": 248,
+      "bytes": 10176
+    }
+  },
+  "foto_RinaldiMichele_3.jpg": {
+    "original_bytes": 198967,
+    "preview": {
+      "url": "assets/images/previews/foto_RinaldiMichele_3.webp",
+      "width": 456,
+      "height": 478,
+      "bytes": 43460
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/foto_RinaldiMichele_3.webp",
+        "width": 456,
+        "height": 478,
+        "bytes": 43460
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/foto_RinaldiMichele_3.webp",
+      "width": 456,
+      "height": 478,
+      "bytes": 59542
+    }
+  },
+  "foto_RinaldiMichele_4.jpg": {
+    "original_bytes": 228904,
+    "preview": {
+      "url": "assets/images/previews/foto_RinaldiMichele_4.webp",
+      "width": 565,
+      "height": 720,
+      "bytes": 46456
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/foto_RinaldiMichele_4-480w.webp",
+        "width": 480,
+        "height": 612,
+        "bytes": 32594
+      },
+      {
+        "url": "assets/images/previews/foto_RinaldiMichele_4.webp",
+        "width": 565,
+        "height": 720,
+        "bytes": 46456
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/foto_RinaldiMichele_4.webp",
+      "width": 565,
+      "height": 720,
+      "bytes": 66008
+    }
+  },
+  "foto_RinaldiMichele_5.jpg": {
+    "original_bytes": 231452,
+    "preview": {
+      "url": "assets/images/previews/foto_RinaldiMichele_5.webp",
+      "width": 565,
+      "height": 720,
+      "bytes": 36812
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/foto_RinaldiMichele_5-480w.webp",
+        "width": 480,
+        "height": 612,
+        "bytes": 27562
+      },
+      {
+        "url": "assets/images/previews/foto_RinaldiMichele_5.webp",
+        "width": 565,
+        "height": 720,
+        "bytes": 36812
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/foto_RinaldiMichele_5.webp",
+      "width": 565,
+      "height": 720,
+      "bytes": 55318
+    }
+  },
+  "hero.png": {
+    "original_bytes": 2484009,
+    "preview": {
+      "url": "assets/images/previews/hero.webp",
+      "width": 1440,
+      "height": 1440,
+      "bytes": 248164
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/hero-480w.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 22292
+      },
+      {
+        "url": "assets/images/previews/hero-960w.webp",
+        "width": 960,
+        "height": 960,
+        "bytes": 79874
+      },
+      {
+        "url": "assets/images/previews/hero.webp",
+        "width": 1440,
+        "height": 1440,
+        "bytes": 248164
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/hero.webp",
+      "width": 1536,
+      "height": 1536,
+      "bytes": 387060
+    }
+  },
+  "logo.iismp.png": {
+    "original_bytes": 15796,
+    "preview": {
+      "url": "assets/images/previews/logo.iismp.webp",
+      "width": 512,
+      "height": 512,
+      "bytes": 8506
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/logo.iismp-480w.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 14758
+      },
+      {
+        "url": "assets/images/previews/logo.iismp.webp",
+        "width": 512,
+        "height": 512,
+        "bytes": 8506
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/logo.iismp.webp",
+      "width": 512,
+      "height": 512,
+      "bytes": 9544
+    }
+  },
+  "logo.png": {
+    "original_bytes": 160602,
+    "preview": {
+      "url": "assets/images/previews/logo.webp",
+      "width": 731,
+      "height": 512,
+      "bytes": 30222
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/logo-128w.webp",
+        "width": 128,
+        "height": 90,
+        "bytes": 4542
+      },
+      {
+        "url": "assets/images/previews/logo-480w.webp",
+        "width": 480,
+        "height": 336,
+        "bytes": 32368
+      },
+      {
+        "url": "assets/images/previews/logo.webp",
+        "width": 731,
+        "height": 512,
+        "bytes": 30222
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/logo.webp",
+      "width": 731,
+      "height": 512,
+      "bytes": 31866
+    }
+  },
+  "logo.polimi.png": {
+    "original_bytes": 123778,
+    "preview": {
+      "url": "assets/images/previews/logo.polimi.webp",
+      "width": 512,
+      "height": 512,
+      "bytes": 33244
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/logo.polimi-480w.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 36020
+      },
+      {
+        "url": "assets/images/previews/logo.polimi.webp",
+        "width": 512,
+        "height": 512,
+        "bytes": 33244
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/logo.polimi.webp",
+      "width": 512,
+      "height": 512,
+      "bytes": 40686
+    }
+  },
+  "manifesti/manifesti_1.jpg": {
+    "original_bytes": 459064,
+    "preview": {
+      "url": "assets/images/previews/manifesti_1.webp",
+      "width": 1018,
+      "height": 1440,
+      "bytes": 170644
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/manifesti_1-480w.webp",
+        "width": 480,
+        "height": 679,
+        "bytes": 62666
+      },
+      {
+        "url": "assets/images/previews/manifesti_1-960w.webp",
+        "width": 960,
+        "height": 1359,
+        "bytes": 145140
+      },
+      {
+        "url": "assets/images/previews/manifesti_1.webp",
+        "width": 1018,
+        "height": 1440,
+        "bytes": 170644
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/manifesti_1.webp",
+      "width": 1190,
+      "height": 1684,
+      "bytes": 307854
+    }
+  },
+  "manifesti/manifesti_2.jpg": {
+    "original_bytes": 3126467,
+    "preview": {
+      "url": "assets/images/previews/manifesti_2.webp",
+      "width": 1018,
+      "height": 1440,
+      "bytes": 144680
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/manifesti_2-480w.webp",
+        "width": 480,
+        "height": 679,
+        "bytes": 49366
+      },
+      {
+        "url": "assets/images/previews/manifesti_2-960w.webp",
+        "width": 960,
+        "height": 1358,
+        "bytes": 124124
+      },
+      {
+        "url": "assets/images/previews/manifesti_2.webp",
+        "width": 1018,
+        "height": 1440,
+        "bytes": 144680
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/manifesti_2.webp",
+      "width": 1810,
+      "height": 2560,
+      "bytes": 402530
+    }
+  },
+  "manifesti/manifesti_3.jpg": {
+    "original_bytes": 10485760,
+    "preview": {
+      "url": "assets/images/previews/manifesti_3.webp",
+      "width": 1080,
+      "height": 1440,
+      "bytes": 101628
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/manifesti_3-480w.webp",
+        "width": 480,
+        "height": 640,
+        "bytes": 23942
+      },
+      {
+        "url": "assets/images/previews/manifesti_3-960w.webp",
+        "width": 960,
+        "height": 1280,
+        "bytes": 72882
+      },
+      {
+        "url": "assets/images/previews/manifesti_3.webp",
+        "width": 1080,
+        "height": 1440,
+        "bytes": 101628
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/manifesti_3.webp",
+      "width": 1920,
+      "height": 2560,
+      "bytes": 599472
+    }
+  },
+  "manifesti/manifesti_4.jpg": {
+    "original_bytes": 2282524,
+    "preview": {
+      "url": "assets/images/previews/manifesti_4.webp",
+      "width": 810,
+      "height": 1440,
+      "bytes": 322658
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/manifesti_4-480w.webp",
+        "width": 480,
+        "height": 853,
+        "bytes": 105798
+      },
+      {
+        "url": "assets/images/previews/manifesti_4.webp",
+        "width": 810,
+        "height": 1440,
+        "bytes": 322658
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/manifesti_4.webp",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 834306
+    }
+  },
+  "manifesti/manifesti_5.jpg": {
+    "original_bytes": 4448322,
+    "preview": {
+      "url": "assets/images/previews/manifesti_5.webp",
+      "width": 1013,
+      "height": 1440,
+      "bytes": 225324
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/manifesti_5-480w.webp",
+        "width": 480,
+        "height": 683,
+        "bytes": 26088
+      },
+      {
+        "url": "assets/images/previews/manifesti_5-960w.webp",
+        "width": 960,
+        "height": 1365,
+        "bytes": 192798
+      },
+      {
+        "url": "assets/images/previews/manifesti_5.webp",
+        "width": 1013,
+        "height": 1440,
+        "bytes": 225324
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/manifesti_5.webp",
+      "width": 1800,
+      "height": 2560,
+      "bytes": 908422
+    }
+  },
+  "manifesti/manifesti_6.jpg": {
+    "original_bytes": 3318622,
+    "preview": {
+      "url": "assets/images/previews/manifesti_6.webp",
+      "width": 1018,
+      "height": 1440,
+      "bytes": 103926
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/manifesti_6-480w.webp",
+        "width": 480,
+        "height": 679,
+        "bytes": 37918
+      },
+      {
+        "url": "assets/images/previews/manifesti_6-960w.webp",
+        "width": 960,
+        "height": 1358,
+        "bytes": 88170
+      },
+      {
+        "url": "assets/images/previews/manifesti_6.webp",
+        "width": 1018,
+        "height": 1440,
+        "bytes": 103926
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/manifesti_6.webp",
+      "width": 1810,
+      "height": 2560,
+      "bytes": 484036
+    }
+  },
+  "manifesti/manifesti_7.jpg": {
+    "original_bytes": 3890527,
+    "preview": {
+      "url": "assets/images/previews/manifesti_7.webp",
+      "width": 1018,
+      "height": 1440,
+      "bytes": 242886
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/manifesti_7-480w.webp",
+        "width": 480,
+        "height": 679,
+        "bytes": 67576
+      },
+      {
+        "url": "assets/images/previews/manifesti_7-960w.webp",
+        "width": 960,
+        "height": 1358,
+        "bytes": 211832
+      },
+      {
+        "url": "assets/images/previews/manifesti_7.webp",
+        "width": 1018,
+        "height": 1440,
+        "bytes": 242886
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/manifesti_7.webp",
+      "width": 1810,
+      "height": 2560,
+      "bytes": 759026
+    }
+  },
+  "manifesti/manifesti_8.jpg": {
+    "original_bytes": 1893127,
+    "preview": {
+      "url": "assets/images/previews/manifesti_8.webp",
+      "width": 1018,
+      "height": 1440,
+      "bytes": 117166
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/manifesti_8-480w.webp",
+        "width": 480,
+        "height": 679,
+        "bytes": 45186
+      },
+      {
+        "url": "assets/images/previews/manifesti_8-960w.webp",
+        "width": 960,
+        "height": 1358,
+        "bytes": 103464
+      },
+      {
+        "url": "assets/images/previews/manifesti_8.webp",
+        "width": 1018,
+        "height": 1440,
+        "bytes": 117166
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/manifesti_8.webp",
+      "width": 1810,
+      "height": 2560,
+      "bytes": 291012
+    }
+  },
+  "manifesti/manifesti_9.jpg": {
+    "original_bytes": 2447305,
+    "preview": {
+      "url": "assets/images/previews/manifesti_9.webp",
+      "width": 1018,
+      "height": 1440,
+      "bytes": 149452
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/manifesti_9-480w.webp",
+        "width": 480,
+        "height": 679,
+        "bytes": 56112
+      },
+      {
+        "url": "assets/images/previews/manifesti_9-960w.webp",
+        "width": 960,
+        "height": 1358,
+        "bytes": 131252
+      },
+      {
+        "url": "assets/images/previews/manifesti_9.webp",
+        "width": 1018,
+        "height": 1440,
+        "bytes": 149452
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/manifesti_9.webp",
+      "width": 1810,
+      "height": 2560,
+      "bytes": 360870
+    }
+  },
+  "shape-2.png": {
+    "original_bytes": 3802,
+    "preview": {
+      "url": "assets/images/previews/shape-2.webp",
+      "width": 1169,
+      "height": 227,
+      "bytes": 2876
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/shape-2-480w.webp",
+        "width": 480,
+        "height": 93,
+        "bytes": 2084
+      },
+      {
+        "url": "assets/images/previews/shape-2-960w.webp",
+        "width": 960,
+        "height": 186,
+        "bytes": 4364
+      },
+      {
+        "url": "assets/images/previews/shape-2.webp",
+        "width": 1169,
+        "height": 227,
+        "bytes": 2876
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/shape-2.webp",
+      "width": 1169,
+      "height": 227,
+      "bytes": 2852
+    }
+  },
+  "syeew_1.jpg": {
+    "original_bytes": 410011,
+    "preview": {
+      "url": "assets/images/previews/syeew_1.webp",
+      "width": 1185,
+      "height": 1440,
+      "bytes": 180316
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/syeew_1-480w.webp",
+        "width": 480,
+        "height": 583,
+        "bytes": 36356
+      },
+      {
+        "url": "assets/images/previews/syeew_1-960w.webp",
+        "width": 960,
+        "height": 1166,
+        "bytes": 112830
+      },
+      {
+        "url": "assets/images/previews/syeew_1.webp",
+        "width": 1185,
+        "height": 1440,
+        "bytes": 180316
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/syeew_1.webp",
+      "width": 1686,
+      "height": 2048,
+      "bytes": 509546
+    }
+  },
+  "syeew_2.jpg": {
+    "original_bytes": 122094,
+    "preview": {
+      "url": "assets/images/previews/syeew_2.webp",
+      "width": 1080,
+      "height": 1440,
+      "bytes": 74312
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/syeew_2-480w.webp",
+        "width": 480,
+        "height": 640,
+        "bytes": 25544
+      },
+      {
+        "url": "assets/images/previews/syeew_2-960w.webp",
+        "width": 960,
+        "height": 1280,
+        "bytes": 57158
+      },
+      {
+        "url": "assets/images/previews/syeew_2.webp",
+        "width": 1080,
+        "height": 1440,
+        "bytes": 74312
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/syeew_2.webp",
+      "width": 1500,
+      "height": 2000,
+      "bytes": 158032
+    }
+  },
+  "syeew_3.jpg": {
+    "original_bytes": 142665,
+    "preview": {
+      "url": "assets/images/previews/syeew_3.webp",
+      "width": 1080,
+      "height": 1440,
+      "bytes": 64980
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/syeew_3-480w.webp",
+        "width": 480,
+        "height": 640,
+        "bytes": 22342
+      },
+      {
+        "url": "assets/images/previews/syeew_3-960w.webp",
+        "width": 960,
+        "height": 1280,
+        "bytes": 50492
+      },
+      {
+        "url": "assets/images/previews/syeew_3.webp",
+        "width": 1080,
+        "height": 1440,
+        "bytes": 64980
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/syeew_3.webp",
+      "width": 1500,
+      "height": 2000,
+      "bytes": 138902
+    }
+  },
+  "syeew_banner.jpg": {
+    "original_bytes": 53233,
+    "preview": {
+      "url": "assets/images/previews/syeew_banner.webp",
+      "width": 1440,
+      "height": 811,
+      "bytes": 16174
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/syeew_banner-480w.webp",
+        "width": 480,
+        "height": 270,
+        "bytes": 4800
+      },
+      {
+        "url": "assets/images/previews/syeew_banner-960w.webp",
+        "width": 960,
+        "height": 541,
+        "bytes": 9984
+      },
+      {
+        "url": "assets/images/previews/syeew_banner.webp",
+        "width": 1440,
+        "height": 811,
+        "bytes": 16174
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/syeew_banner.webp",
+      "width": 1640,
+      "height": 924,
+      "bytes": 24840
+    }
+  },
+  "syeew_figma_1.jpg": {
+    "original_bytes": 191094,
+    "preview": {
+      "url": "assets/images/previews/syeew_figma_1.webp",
+      "width": 1257,
+      "height": 601,
+      "bytes": 49336
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/syeew_figma_1-480w.webp",
+        "width": 480,
+        "height": 229,
+        "bytes": 11164
+      },
+      {
+        "url": "assets/images/previews/syeew_figma_1-960w.webp",
+        "width": 960,
+        "height": 459,
+        "bytes": 31504
+      },
+      {
+        "url": "assets/images/previews/syeew_figma_1.webp",
+        "width": 1257,
+        "height": 601,
+        "bytes": 49336
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/syeew_figma_1.webp",
+      "width": 1257,
+      "height": 601,
+      "bytes": 63102
+    }
+  },
+  "syeew_figma_2.jpg": {
+    "original_bytes": 133850,
+    "preview": {
+      "url": "assets/images/previews/syeew_figma_2.webp",
+      "width": 1340,
+      "height": 761,
+      "bytes": 46204
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/syeew_figma_2-480w.webp",
+        "width": 480,
+        "height": 273,
+        "bytes": 9466
+      },
+      {
+        "url": "assets/images/previews/syeew_figma_2-960w.webp",
+        "width": 960,
+        "height": 545,
+        "bytes": 24898
+      },
+      {
+        "url": "assets/images/previews/syeew_figma_2.webp",
+        "width": 1340,
+        "height": 761,
+        "bytes": 46204
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/syeew_figma_2.webp",
+      "width": 1340,
+      "height": 761,
+      "bytes": 61130
+    }
+  },
+  "syeew_figma_3.jpg": {
+    "original_bytes": 116398,
+    "preview": {
+      "url": "assets/images/previews/syeew_figma_3.webp",
+      "width": 1290,
+      "height": 645,
+      "bytes": 40064
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/syeew_figma_3-480w.webp",
+        "width": 480,
+        "height": 240,
+        "bytes": 8370
+      },
+      {
+        "url": "assets/images/previews/syeew_figma_3-960w.webp",
+        "width": 960,
+        "height": 480,
+        "bytes": 24136
+      },
+      {
+        "url": "assets/images/previews/syeew_figma_3.webp",
+        "width": 1290,
+        "height": 645,
+        "bytes": 40064
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/syeew_figma_3.webp",
+      "width": 1290,
+      "height": 645,
+      "bytes": 48854
+    }
+  },
+  "syeew_flutter_1.jpg": {
+    "original_bytes": 36754,
+    "preview": {
+      "url": "assets/images/previews/syeew_flutter_1.webp",
+      "width": 1080,
+      "height": 949,
+      "bytes": 22676
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/syeew_flutter_1-480w.webp",
+        "width": 480,
+        "height": 422,
+        "bytes": 9454
+      },
+      {
+        "url": "assets/images/previews/syeew_flutter_1-960w.webp",
+        "width": 960,
+        "height": 844,
+        "bytes": 19432
+      },
+      {
+        "url": "assets/images/previews/syeew_flutter_1.webp",
+        "width": 1080,
+        "height": 949,
+        "bytes": 22676
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/syeew_flutter_1.webp",
+      "width": 1080,
+      "height": 949,
+      "bytes": 28602
+    }
+  },
+  "syeew_flutter_2.jpg": {
+    "original_bytes": 97401,
+    "preview": {
+      "url": "assets/images/previews/syeew_flutter_2.webp",
+      "width": 648,
+      "height": 1440,
+      "bytes": 37922
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/syeew_flutter_2-480w.webp",
+        "width": 480,
+        "height": 1067,
+        "bytes": 25798
+      },
+      {
+        "url": "assets/images/previews/syeew_flutter_2.webp",
+        "width": 648,
+        "height": 1440,
+        "bytes": 37922
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/syeew_flutter_2.webp",
+      "width": 921,
+      "height": 2048,
+      "bytes": 69924
+    }
+  },
+  "syeew_flutter_3.jpg": {
+    "original_bytes": 55922,
+    "preview": {
+      "url": "assets/images/previews/syeew_flutter_3.webp",
+      "width": 800,
+      "height": 521,
+      "bytes": 49140
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/syeew_flutter_3-480w.webp",
+        "width": 480,
+        "height": 313,
+        "bytes": 20164
+      },
+      {
+        "url": "assets/images/previews/syeew_flutter_3.webp",
+        "width": 800,
+        "height": 521,
+        "bytes": 49140
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/syeew_flutter_3.webp",
+      "width": 800,
+      "height": 521,
+      "bytes": 64914
+    }
+  },
+  "syeew_smau_1.jpg": {
+    "original_bytes": 82099,
+    "preview": {
+      "url": "assets/images/previews/syeew_smau_1.webp",
+      "width": 800,
+      "height": 600,
+      "bytes": 83452
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/syeew_smau_1-480w.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 34706
+      },
+      {
+        "url": "assets/images/previews/syeew_smau_1.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 83452
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/syeew_smau_1.webp",
+      "width": 800,
+      "height": 600,
+      "bytes": 111984
+    }
+  },
+  "syeew_smau_2.jpg": {
+    "original_bytes": 412173,
+    "preview": {
+      "url": "assets/images/previews/syeew_smau_2.webp",
+      "width": 1440,
+      "height": 810,
+      "bytes": 300772
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/syeew_smau_2-480w.webp",
+        "width": 480,
+        "height": 270,
+        "bytes": 50188
+      },
+      {
+        "url": "assets/images/previews/syeew_smau_2-960w.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 156338
+      },
+      {
+        "url": "assets/images/previews/syeew_smau_2.webp",
+        "width": 1440,
+        "height": 810,
+        "bytes": 300772
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/syeew_smau_2.webp",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 571418
+    }
+  },
+  "syeew_smau_3.jpg": {
+    "original_bytes": 219093,
+    "preview": {
+      "url": "assets/images/previews/syeew_smau_3.webp",
+      "width": 1080,
+      "height": 1440,
+      "bytes": 117778
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/syeew_smau_3-480w.webp",
+        "width": 480,
+        "height": 640,
+        "bytes": 26532
+      },
+      {
+        "url": "assets/images/previews/syeew_smau_3-960w.webp",
+        "width": 960,
+        "height": 1280,
+        "bytes": 87878
+      },
+      {
+        "url": "assets/images/previews/syeew_smau_3.webp",
+        "width": 1080,
+        "height": 1440,
+        "bytes": 117778
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/syeew_smau_3.webp",
+      "width": 1500,
+      "height": 2000,
+      "bytes": 285596
+    }
+  },
+  "uiux/uiux_1.png": {
+    "original_bytes": 167199,
+    "preview": {
+      "url": "assets/images/previews/uiux_1.webp",
+      "width": 1330,
+      "height": 1330,
+      "bytes": 21834
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/uiux_1-480w.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 7698
+      },
+      {
+        "url": "assets/images/previews/uiux_1-960w.webp",
+        "width": 960,
+        "height": 960,
+        "bytes": 14664
+      },
+      {
+        "url": "assets/images/previews/uiux_1.webp",
+        "width": 1330,
+        "height": 1330,
+        "bytes": 21834
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/uiux_1.webp",
+      "width": 1330,
+      "height": 1330,
+      "bytes": 28792
+    }
+  },
+  "uiux/uiux_2.png": {
+    "original_bytes": 249120,
+    "preview": {
+      "url": "assets/images/previews/uiux_2.webp",
+      "width": 1330,
+      "height": 1330,
+      "bytes": 24458
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/uiux_2-480w.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 5182
+      },
+      {
+        "url": "assets/images/previews/uiux_2-960w.webp",
+        "width": 960,
+        "height": 960,
+        "bytes": 13372
+      },
+      {
+        "url": "assets/images/previews/uiux_2.webp",
+        "width": 1330,
+        "height": 1330,
+        "bytes": 24458
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/uiux_2.webp",
+      "width": 1330,
+      "height": 1330,
+      "bytes": 31762
+    }
+  },
+  "uiux/uiux_3.png": {
+    "original_bytes": 1541037,
+    "preview": {
+      "url": "assets/images/previews/uiux_3.webp",
+      "width": 1330,
+      "height": 1330,
+      "bytes": 110230
+    },
+    "variants": [
+      {
+        "url": "assets/images/previews/uiux_3-480w.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 23598
+      },
+      {
+        "url": "assets/images/previews/uiux_3-960w.webp",
+        "width": 960,
+        "height": 960,
+        "bytes": 65406
+      },
+      {
+        "url": "assets/images/previews/uiux_3.webp",
+        "width": 1330,
+        "height": 1330,
+        "bytes": 110230
+      }
+    ],
+    "full": {
+      "url": "assets/images/optimized/uiux_3.webp",
+      "width": 1330,
+      "height": 1330,
+      "bytes": 167496
+    }
+  }
+}

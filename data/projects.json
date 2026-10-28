@@ -8,33 +8,20 @@
     "cover": "uiux_3",
     "cover_original": "uiux/uiux_3.png",
     "summary": "Prototipo interattivo di un viaggio in treno notturno.",
-    "intro": "Night Train Ride è il mio primo progetto universitario di gruppo. Abbiamo progettato in Figma un’interfaccia che simula un viaggio in treno, dalla partenza di notte all’arrivo al mattino.",
+    "intro": "Night Train Ride è stato il mio primo vero progetto universitario, sviluppato in gruppo, con l’obiettivo di creare un’interfaccia che simulasse l’esperienza di un viaggio in treno notturno, dall’inizio fino all’arrivo del mattino. L’esperienza parte da una stazione iniziale buia e rumorosa, dove l’utente “sale” sul treno e inizia il viaggio. Da quel momento l’interfaccia accompagna il percorso attraverso diverse fermate intermedie, ognuna caratterizzata da ambientazioni e atmosfere differenti che rappresentano sensazioni diverse del viaggio, come calma, isolamento, attesa o transizione. Man mano che il treno procede, il contesto cambia gradualmente, seguendo lo scorrere del tempo durante, fino ad arrivare alla destinazione finale.",
     "context": "Progetto universitario, In gruppo",
     "role": "Progettazione dell’esperienza e dell’interfaccia",
     "tools": "Figma",
     "output": "Prototipo interattivo",
-    "sections": [
-      {
-        "title": "L’idea",
-        "paragraphs": [
-          "L’esperienza comincia in una stazione buia e rumorosa. Da lì l’utente sale sul treno: ogni fermata introduce un’ambientazione e un’atmosfera differente, fino all’arrivo del mattino."
-        ]
-      },
-      {
-        "title": "Progettare un’atmosfera",
-        "paragraphs": [
-          "Calma, isolamento, attesa e transizione sono le sensazioni che hanno guidato il progetto. L’interfaccia accompagna il cambiamento del contesto durante il percorso, usando il viaggio come struttura narrativa.",
-          "È stato il mio primo vero progetto universitario: un’occasione per lavorare in gruppo su un’esperienza in cui la componente emotiva conta quanto quella funzionale."
-        ]
-      }
-    ],
+    "sections": [],
     "images": [],
     "links": [
       {
         "label": "Esplora il prototipo Figma",
         "url": "https://www.figma.com/proto/LlHJdoLKYPXEASvKPPhf60/NightTrainRide_Rinaldi?node-id=0-944&viewport=217%2C166%2C0.04&t=alPCjWNmzn6WqjyI-1&scaling=contain&content-scaling=fixed&starting-point-node-id=0%3A944&show-proto-sidebar=1&page-id=0%3A1"
       }
-    ]
+    ],
+    "narrative": []
   },
   {
     "slug": "oscilloscope",
@@ -45,32 +32,23 @@
     "cover": "arte_2",
     "cover_original": "arte/arte_2.jpg",
     "summary": "Grafica per il merchandising del cantautore Jack Nur.",
-    "intro": "Ho realizzato questa grafica per il merchandising di Jack Nur. Sono partito dal disco Senhal e dal brano Tengo la posizione per disegnare un oscilloscopio le cui manopole regolano emozioni.",
+    "intro": "Questa grafica nasce per il merchandising di Jack Nur, cantautore e amico, con cui condivido una visione creativa molto libera. Avevo carta bianca, e ho deciso di unire i nostri due mondi: la sua musica e la mia passione per la tecnologia e il design.",
     "context": "Merchandising per Jack Nur",
     "role": "Concept e progettazione grafica",
     "tools": "Grafica digitale",
     "output": "Grafica per abbigliamento",
-    "sections": [
-      {
-        "title": "Il riferimento musicale",
-        "paragraphs": [
-          "Avevo carta bianca. Sono partito dalle sonorità del disco Senhal e in particolare dal brano Tengo la posizione, immaginando un oscilloscopio vintage come punto d’incontro tra musica e tecnologia."
-        ]
-      },
-      {
-        "title": "Regolare le emozioni",
-        "paragraphs": [
-          "Le manopole non misurano voltaggi, ma emozioni: Surge, Dopamine, Adrenaline, Momentum, Serotonin, Echo e Afterglow. Lo strumento sembra collegarsi direttamente a chi lo indossa.",
-          "Al centro dello schermo, l’onda forma la scritta “Senza Sosta”: un invito a continuare a muoversi e vivere, anche quando si prova a regolare diversamente i parametri."
-        ]
-      }
-    ],
+    "sections": [],
     "images": [],
     "links": [
       {
         "label": "Ascolta Tengo la posizione",
         "url": "https://open.spotify.com/intl-it/track/5URBE0P1D1yHpZlfiuGFGG?si=5ec04c1c7ed0474a"
       }
+    ],
+    "narrative": [
+      "Il risultato è un oscilloscopio vintage, un oggetto tecnico e un po' retrò, che si associa visivamente e concettualmente alle sonorità dell'intero disco Senhal . Più che uno strumento scientifico, l'ho immaginato come qualcosa di emotivo, con un concept che parte in particolare dal brano Tengo la posizione .",
+      "Sulla schiena della maglietta, l'oscilloscopio sembra collegarsi direttamente a chi lo indossa, e le sue manopole non misurano voltaggi, ma emozioni: Surge, Dopamine, Adrenaline, Momentum, Serotonin, Echo, Afterglow .",
+      "Al centro dello schermo, l'onda forma la scritta \"Senza Sosta\" , significando che fermarsi il meno possibile è l'unico modo per godersi la vita al 100%, anche se si prova a regolare diversamente i parametri."
     ]
   },
   {
@@ -83,7 +61,7 @@
     "cover": "syeew_figma_2",
     "cover_original": "syeew_figma_2.jpg",
     "summary": "Redesign di un’app di Business Intelligence e prototipo Flutter.",
-    "intro": "Durante il PCTO del 2024 ho affiancato SYEEW, una startup di Jesi. Ho ripensato l’interfaccia di un’app di Business Intelligence e tradotto il design in un prototipo Flutter.",
+    "intro": "Nel 2024 ho avuto l'occasione di affiancare il team di SYEEW S.r.l. , una giovane realtà che sviluppa una piattaforma SaaS di Business Intelligence pensata per micro e piccole imprese. L'obiettivo? Rendere i numeri aziendali chiari come semafori: verdi quando tutto fila liscio, rossi quando serve intervenire.",
     "context": "PCTO, 2024",
     "role": "Redesign UX/UI e sviluppo del prototipo",
     "tools": "Adobe XD, Figma, Flutter e Dart",
@@ -124,7 +102,10 @@
       "syeew_flutter_2.jpg",
       "syeew_flutter_3.jpg"
     ],
-    "links": []
+    "links": [],
+    "narrative": [
+      "La squadra era di dimensioni ridotte, ciò mi ha permesso di stare a stretto contatto con tutti, capire priorità diverse e soprattutto contribuire in prima persona. Non c'era un reparto UX dedicato, così ho lavorato in autonomia, confrontandomi di frequente con il CEO e con il mio Tutor tecnico."
+    ]
   },
   {
     "slug": "pax-optima-rerum",
@@ -135,28 +116,19 @@
     "cover": "arte_1",
     "cover_original": "arte/arte_1.jpg",
     "summary": "Proposta di merchandising per il Liceo Classico di Jesi.",
-    "intro": "Ho realizzato questa proposta per un contest di merchandising del Liceo Classico Vittorio Emanuele II di Jesi, usando la citazione Pax Optima Rerum e una stilizzazione della Fuga di Enea da Troia di Federico Barocci.",
+    "intro": "Questa grafica nasce per un contest di merchandising del Liceo Classico “Vittorio Emanuele II” di Jesi e parte dall’idea di usare riferimenti del mondo classico per costruire un’immagine che possa funzionare anche oggi.",
     "context": "Proposta per un contest scolastico",
     "role": "Concept e progettazione grafica",
     "tools": "Grafica digitale",
     "output": "Proposta di merchandising",
-    "sections": [
-      {
-        "title": "Il messaggio",
-        "paragraphs": [
-          "“Pax Optima Rerum”, la pace è il bene più grande, è una citazione di Silio Italico. Ho scelto di farne l’asse centrale del progetto, perché riassume direttamente il messaggio che volevo comunicare."
-        ]
-      },
-      {
-        "title": "Parola e immagine",
-        "paragraphs": [
-          "La stilizzazione della Fuga di Enea da Troia di Federico Barocci introduce il tema della guerra, concentrandosi sul movimento e sulla continuità della narrazione.",
-          "Il riferimento classico non è una decorazione: testo e immagine lavorano insieme per dare forma a un messaggio leggibile anche nel presente."
-        ]
-      }
-    ],
+    "sections": [],
     "images": [],
-    "links": []
+    "links": [],
+    "narrative": [
+      "Il punto di partenza è la frase “Pax Optima Rerum” , cioè “La pace è il bene più grande”, una citazione di Silio Italico che ho deciso di mantenere come asse centrale del progetto perché riassumeva in modo molto diretto il tipo di messaggio che volevo comunicare.",
+      "L’immagine della Fuga di Enea da Troia , stilizzazione del dipinto di Federico Barocci, si inserisce invece come controparte visiva del testo e introduce il tema della guerra attraverso una scena già nota, concentrandosi piuttosto sul movimento e sulla continuità della narrazione.",
+      "L’insieme tra parola e immagine costruisce quindi un equilibrio abbastanza diretto, in cui il riferimento classico non viene usato come decorazione ma come parte attiva del messaggio finale."
+    ]
   },
   {
     "slug": "flairemote",
@@ -167,33 +139,20 @@
     "cover": "uiux_1",
     "cover_original": "uiux/uiux_1.png",
     "summary": "Concept di telecomando con ricarica USB-C e base dedicata.",
-    "intro": "Ho progettato Flairemote a quattordici anni: un telecomando con ricarica USB-C, indicatore della batteria e una base su cui riporlo.",
+    "intro": "A 14 anni ho ripensato completamente il classico telecomando della TV partendo da problemi molto semplici che vivevo ogni giorno a casa: perderlo continuamente tra il divano, il tavolo della cucina o la mensola della TV, e dover cambiare pile per un oggetto usato quotidianamente mi sembrava ormai inutile. Per questo ho progettato Flairemote, un telecomando con un approccio più moderno e funzionale, introducendo: ricarica tramite USB-C, LED per mostrare il livello della batteria, stand per tenerlo sempre nello stesso posto e averlo sempre carico.",
     "context": "Progetto personale, A 14 anni",
     "role": "Concept di prodotto",
     "tools": "Progettazione digitale",
     "output": "Concept, non prodotto realizzato",
-    "sections": [
-      {
-        "title": "Un problema quotidiano",
-        "paragraphs": [
-          "Il telecomando finiva sempre tra il divano, il tavolo della cucina e la mensola della TV. Cambiare continuamente pile per un oggetto usato ogni giorno mi sembrava un altro problema da affrontare."
-        ]
-      },
-      {
-        "title": "La proposta",
-        "paragraphs": [
-          "Ho introdotto una ricarica USB-C, LED per indicare il livello della batteria e uno stand che offrisse al telecomando un posto riconoscibile e una base di ricarica.",
-          "Flairemote racconta i miei primi passi nel design: osservare un’abitudine, riconoscere un attrito e provare a risolverlo attraverso la forma e la funzione."
-        ]
-      }
-    ],
+    "sections": [],
     "images": [],
     "links": [
       {
         "label": "Guarda il progetto su Behance",
         "url": "https://www.behance.net/gallery/96684721/Flairemote"
       }
-    ]
+    ],
+    "narrative": []
   },
   {
     "slug": "happyring",
@@ -204,33 +163,20 @@
     "cover": "uiux_2",
     "cover_original": "uiux/uiux_2.png",
     "summary": "Concept di citofono, app e monitor per piccoli condomini.",
-    "intro": "Ho progettato happyRing a sedici anni per una challenge di Breccia. Il concept comprende un citofono, i monitor interni e un’app, con pulsanti colorati per distinguere gli appartamenti.",
+    "intro": "A 16 anni ho progettato happyRing (per una challenge di Breccia), un citofono pensato per piccoli condomini che vogliono rendere più smart e intuitivo l’ingresso di casa, migliorando allo stesso tempo sicurezza e semplicità d’uso. L’idea nasce dall’esigenza di rendere l’accesso più rapido e moderno rispetto ai sistemi tradizionali, spesso poco pratici e non sempre immediati per ospiti e residenti. Per questo ho introdotto due concetti innovativi: il sensore di impronte digitali combinato al riconoscimento facciale tramite fotocamera e sensori dedicati, che permette di aprire il portone principale solo quando entrambi i dati biometrici coincidono, aumentando così il livello di sicurezza senza complicare l’esperienza d’uso; e i pulsanti colorati per piano, in cui ogni appartamento è associato a un tasto con un colore specifico accanto al nome, così da rendere più facile e immediata la ricerca del citofono giusto da parte degli ospiti. Anche l’app e i monitor interni seguono questa logica cromatica, mantenendo una coerenza visiva tra tutti i dispositivi collegati al sistema.",
     "context": "Challenge di Breccia, A 16 anni",
     "role": "Concept di prodotto e interfaccia",
     "tools": "Progettazione digitale",
     "output": "Concept, non sistema realizzato",
-    "sections": [
-      {
-        "title": "Orientarsi con il colore",
-        "paragraphs": [
-          "Ogni appartamento è associato a un pulsante colorato accanto al nome. La stessa logica si ritrova nell’app e nei monitor interni, per mantenere un linguaggio coerente tra i dispositivi."
-        ]
-      },
-      {
-        "title": "Esplorare l’accesso",
-        "paragraphs": [
-          "Il concept esplora anche l’uso combinato di impronta digitale e riconoscimento facciale per l’apertura del portone. È una proposta progettuale: non un sistema implementato o validato sul piano della sicurezza.",
-          "L’obiettivo era ragionare insieme sull’oggetto fisico, sull’interfaccia e sulle abitudini di chi abita un condominio."
-        ]
-      }
-    ],
+    "sections": [],
     "images": [],
     "links": [
       {
         "label": "Guarda il progetto su Behance",
         "url": "https://www.behance.net/gallery/145866507/happyRing"
       }
-    ]
+    ],
+    "narrative": []
   },
   {
     "slug": "identita-visive",
@@ -241,26 +187,22 @@
     "cover": "brand_1",
     "cover_original": "brands/brand_1.jpg",
     "summary": "Quattro progetti di logo e identità visiva.",
-    "intro": "Una raccolta di quattro lavori di identità visiva, con loghi, palette e soluzioni tipografiche differenti.",
+    "intro": "In questa raccolta ci sono quattro lavori di identità visiva. È una parte della grafica a cui mi sono avvicinato sperimentando con Photoshop e cercando di capire come dare a un progetto un aspetto riconoscibile, a partire dal logo, dai colori e dalla tipografia.",
     "context": "Raccolta di lavori",
     "role": "Progettazione grafica",
     "tools": "Grafica digitale",
     "output": "Loghi e identità visive",
-    "sections": [
-      {
-        "title": "I lavori",
-        "paragraphs": [
-          "Mi interessa il modo in cui un’identità può condensare un carattere in pochi elementi. I quattro lavori sono raccolti qui sotto."
-        ]
-      }
-    ],
+    "sections": [],
     "images": [
       "brands/brand_1.jpg",
       "brands/brand_2.jpg",
       "brands/brand_3.jpg",
       "brands/brand_4.jpg"
     ],
-    "links": []
+    "links": [],
+    "narrative": [
+      "Ho mantenuto i lavori uno accanto all’altro perché mostrano linguaggi diversi: alcuni partono soprattutto dal segno, altri dal lettering. Le immagini si possono aprire per guardare i dettagli dei singoli loghi."
+    ]
   },
   {
     "slug": "manifesti",
@@ -271,19 +213,12 @@
     "cover": "manifesti_3",
     "cover_original": "manifesti/manifesti_3.jpg",
     "summary": "Locandine per concerti, eventi e iniziative locali.",
-    "intro": "Una raccolta di nove locandine realizzate per concerti, eventi e iniziative culturali del territorio.",
+    "intro": "La musica occupa una parte importante delle mie giornate, e in questi lavori entra anche nella grafica. Qui ho raccolto le locandine per concerti, eventi e iniziative del territorio: tra queste ci sono anche i materiali legati a Jack Nur, con cui ho lavorato al progetto Oscilloscope.",
     "context": "Raccolta di lavori",
     "role": "Progettazione grafica",
     "tools": "Grafica digitale",
     "output": "Locandine e materiali promozionali",
-    "sections": [
-      {
-        "title": "Le locandine",
-        "paragraphs": [
-          "Tipografia, immagini e colore si combinano in modo diverso a seconda di quello che c’è da raccontare. Qui sotto sono raccolte le nove locandine."
-        ]
-      }
-    ],
+    "sections": [],
     "images": [
       "manifesti/manifesti_1.jpg",
       "manifesti/manifesti_2.jpg",
@@ -295,6 +230,9 @@
       "manifesti/manifesti_8.jpg",
       "manifesti/manifesti_9.jpg"
     ],
-    "links": []
+    "links": [],
+    "narrative": [
+      "Mi sono avvicinato al design facendo prove su Photoshop, rifacendo le cose da capo e cercando di ottenere un risultato che avesse un aspetto professionale. Le locandine sono uno dei modi in cui questa pratica è entrata nei miei progetti personali, insieme alle interfacce e alle identità visive."
+    ]
   }
 ]
