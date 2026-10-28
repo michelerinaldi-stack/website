@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Generate responsive WebP copies without modifying original assets. Requires Pillow."""
 import json
+import argparse
+import hashlib
 from pathlib import Path
 from PIL import Image, ImageOps, ImageFile
 
@@ -20,6 +22,12 @@ def web_copy(image, path, edge, quality):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--refresh', action='append', default=[], help='Image path relative to assets/images to refresh in browser caches')
+    args = parser.parse_args()
+    old_path = ROOT / 'data/images.json'
+    old = json.loads(old_path.read_text()) if old_path.exists() else {}
+    versioned = {key for key, value in old.items() if value.get('version')} | set(args.refresh)
     PREVIEWS.mkdir(exist_ok=True)
     OPTIMIZED.mkdir(exist_ok=True)
     manifest, dimensions, stems = {}, {}, set()
@@ -48,6 +56,8 @@ def main():
             full = web_copy(image, OPTIMIZED / (path.stem + '.webp'), 2560, 92)
             key = path.relative_to(IMAGES).as_posix()
             manifest[key] = {'original_bytes': path.stat().st_size, 'preview': preview, 'variants': variants, 'full': full}
+            if key in versioned:
+                manifest[key]['version'] = hashlib.sha256(path.read_bytes()).hexdigest()[:12]
             dimensions[path.stem] = [preview['width'], preview['height']]
             if path.name == 'foto_RinaldiMichele_1.png':
                 # Keep the original transparent PNG as explicitly requested.

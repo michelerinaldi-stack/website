@@ -47,19 +47,24 @@ def heading(kicker, title, description=''):
     return f'<header class="page-heading"><span class="eyebrow">{kicker}</span><h1>{title}</h1>{text}</header>'
 
 
+def image_url(media, path):
+    suffix = f'?v={media["version"]}' if media.get('version') else ''
+    return quote(path, safe='/') + suffix
+
+
 def media_attributes(original, sizes='(max-width: 540px) calc(100vw - 48px), 55vw'):
     media = IMAGES[original]
     preview = media['preview']
-    srcset = ', '.join(f'{quote(v["url"], safe="/")} {v["width"]}w' for v in media['variants'])
-    return f'src="{esc(quote(preview["url"], safe="/"))}" srcset="{esc(srcset)}" sizes="{esc(sizes)}" width="{preview["width"]}" height="{preview["height"]}"'
+    srcset = ', '.join(f'{image_url(media, v["url"])} {v["width"]}w' for v in media['variants'])
+    return f'src="{esc(image_url(media, preview["url"]))}" srcset="{esc(srcset)}" sizes="{esc(sizes)}" width="{preview["width"]}" height="{preview["height"]}"'
 
 
 def picture(original, alt, cover=False, eager=False, sizes=None):
     media = IMAGES[original]
     sizes = sizes or ('(min-width: 1600px) 1440px, calc(100vw - 48px)' if cover else '(max-width: 540px) calc(100vw - 48px), 55vw')
     loading = 'eager' if cover or eager else 'lazy'
-    return (f'<a class="cover-link" href="{esc(quote(media["full"]["url"], safe="/"))}" '
-            f'data-lightbox data-original="assets/images/{esc(quote(original, safe="/"))}">'
+    return (f'<a class="cover-link" href="{esc(image_url(media, media["full"]["url"]))}" '
+            f'data-lightbox data-original="{esc(image_url(media, "assets/images/" + original))}">'
             f'<img class="{"cover-image" if cover else "gallery-image"}" '
             f'{media_attributes(original, sizes)} alt="{esc(alt)}" loading="{loading}" decoding="async"></a>')
 

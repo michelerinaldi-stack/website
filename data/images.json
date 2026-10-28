@@ -674,39 +674,40 @@
     }
   },
   "manifesti/manifesti_3.jpg": {
-    "original_bytes": 10485760,
+    "original_bytes": 14149591,
     "preview": {
       "url": "assets/images/previews/manifesti_3.webp",
       "width": 1080,
       "height": 1440,
-      "bytes": 101628
+      "bytes": 137562
     },
     "variants": [
       {
         "url": "assets/images/previews/manifesti_3-480w.webp",
         "width": 480,
         "height": 640,
-        "bytes": 23942
+        "bytes": 34488
       },
       {
         "url": "assets/images/previews/manifesti_3-960w.webp",
         "width": 960,
         "height": 1280,
-        "bytes": 72882
+        "bytes": 102046
       },
       {
         "url": "assets/images/previews/manifesti_3.webp",
         "width": 1080,
         "height": 1440,
-        "bytes": 101628
+        "bytes": 137562
       }
     ],
     "full": {
       "url": "assets/images/optimized/manifesti_3.webp",
       "width": 1920,
       "height": 2560,
-      "bytes": 599472
-    }
+      "bytes": 737406
+    },
+    "version": "44b0c60bd0b8"
   },
   "manifesti/manifesti_4.jpg": {
     "original_bytes": 2282524,
