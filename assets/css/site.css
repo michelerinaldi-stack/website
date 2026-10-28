@@ -40,7 +40,7 @@ button, input, textarea { color: inherit; }
 .hero h1 { margin-top: 30px; font-size: clamp(72px, 9.4vw, 138px); font-weight: 500; line-height: .96; letter-spacing: -.065em; }
 .hero h1 em, .page-heading h1 em, .contact-title em, .contact-band h2 em { font-family: Georgia, 'Times New Roman', serif; color: var(--accent); font-weight: 400; letter-spacing: -.065em; }
 .hero-intro { max-width: 465px; margin-top: 34px; font-size: 18px; line-height: 1.7; }
-.hero-portrait { align-self: stretch; display: flex; align-items: end; background: #b3c2af; overflow: hidden; }
+.hero-portrait { align-self: stretch; display: flex; align-items: end; overflow: hidden; }
 .hero-portrait img { width: 100%; height: 100%; max-height: 620px; object-fit: cover; object-position: center top; }
 .text-link { display: inline-flex; gap: 24px; align-items: center; text-decoration: none; border-bottom: 1px solid currentColor; padding-block: 6px; font-weight: 600; font-size: 14px; }
 .text-link:hover { color: var(--accent); }
@@ -148,7 +148,7 @@ button, input, textarea { color: inherit; }
 .next-project a { font-size: clamp(24px, 4vw, 45px); text-decoration: none; letter-spacing: -.04em; }
 .next-project span { color: var(--muted); font-size: 12px; }
 .portrait-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 65px; align-items: start; padding-bottom: 40px; }
-.portrait { background: #b3c2af; max-height: 650px; width: 100%; object-fit: contain; object-position: bottom; }
+.portrait { background: transparent; max-height: 650px; width: 100%; object-fit: contain; object-position: bottom; }
 .portrait-layout .prose p { font-size: 18px; }
 .timeline { margin: 20px 0 50px; }
 .timeline-item { border-top: 1px solid var(--line); padding: 26px 0; display: grid; grid-template-columns: 150px 1fr; gap: 25px; }
