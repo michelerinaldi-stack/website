@@ -57,3 +57,16 @@ I collegamenti a Figma, Behance, Google Drive e altri servizi rimangono esterni.
 ## Accessibilità
 
 Navigazione e contenuti funzionano senza JavaScript. I filtri appaiono solo quando il relativo script è attivo; le immagini restano normali link. Il dialog della galleria supporta Escape, chiusura con pulsante e ritorno del focus. Le sezioni d’archivio usano `details` nativi. Sono inclusi link per saltare al contenuto, focus visibile, etichette dei campi e rispetto di `prefers-reduced-motion`.
+
+## Microinterazioni
+
+Le interazioni sono in `assets/js/site.js` e nella sezione finale di `assets/css/site.css`:
+
+- Le anteprime seguono leggermente il puntatore; l’area cliccabile rimane ferma.
+- I titoli reagiscono al puntatore e al tocco, conservando le legature dei font.
+- I filtri animano l’ingresso e il riposizionamento dei lavori, senza ritardare i risultati.
+- Le sezioni `details` si aprono e chiudono con animazioni interrompibili.
+- La galleria mantiene Escape e ritorno del focus, con frecce, contatore e swipe orizzontale.
+- Entrata dei contenuti allo scorrimento, indicatore di lettura e ritorno all’inizio.
+
+`prefers-reduced-motion` disattiva i movimenti, anche quando la preferenza cambia durante la visita. Gli effetti al puntatore sono attivi soltanto su dispositivi con puntatore preciso. Non ci sono animazioni continue o dipendenze aggiuntive; senza JavaScript rimangono contenuti, link alle immagini e controlli nativi.

@@ -111,7 +111,7 @@ def portfolio():
     content = '''<div class="wrap portfolio-list">
       <header class="portfolio-heading">
         <div class="portfolio-kicker"><span>Design e comunicazione visiva</span><span>Selezione / 01—08</span></div>
-        <div class="portfolio-masthead"><h1>Port<em>folio</em><span aria-hidden="true">↗</span></h1><p>Interfacce, identità visive<br>e progetti personali.</p></div>
+        <div class="portfolio-masthead"><h1>Port<em>folio</em><span class="masthead-arrow" aria-hidden="true">↗</span></h1><p>Interfacce, identità visive<br>e progetti personali.</p></div>
       </header>
       <div class="filters" data-project-filters aria-label="Filtra i progetti per disciplina" hidden>'''
     for key, label in [('tutti', 'Tutti i lavori'), ('interazione', 'Interazione e prodotto'), ('grafica', 'Grafica e comunicazione'), ('branding', 'Identità visiva')]:

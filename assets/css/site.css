@@ -101,7 +101,7 @@ button, input, textarea { color: inherit; }
 .portfolio-masthead { display: flex; align-items: end; justify-content: space-between; gap: 30px; padding-block: 17px 48px; }
 .portfolio-masthead h1 { font-size: clamp(92px, 12.7vw, 200px); font-weight: 550; letter-spacing: -.08em; line-height: .88; white-space: nowrap; }
 .portfolio-masthead h1 em { font-family: Instrument, Georgia, serif; font-weight: 400; font-size: 1.13em; letter-spacing: -.055em; }
-.portfolio-masthead h1 > span { font-size: .44em; font-weight: 400; color: var(--accent); display: inline-block; margin-left: .12em; vertical-align: .08em; }
+.portfolio-masthead h1 > .masthead-arrow { font-size: .44em; font-weight: 400; color: var(--accent); display: inline-block; margin-left: .12em; vertical-align: .08em; }
 .portfolio-masthead > p { flex-shrink: 0; font-size: 13px; line-height: 1.8; color: var(--muted); padding-bottom: 3px; }
 .filters { display: flex; gap: 28px; align-items: stretch; flex-wrap: wrap; border-top: 1px solid var(--ink); padding-block: 0; }
 .filters button { position: relative; display: inline-flex; gap: 9px; align-items: center; min-height: 58px; padding: 13px 0; border: 0; border-bottom: 2px solid transparent; background: none; font-size: 12px; color: var(--muted); white-space: nowrap; }
@@ -316,7 +316,36 @@ body:has(.lightbox[open]) { overflow: hidden; }
   .archive-entry summary { flex-direction: column; gap: 3px; }
   .next-project { gap: 15px; }
 }
+/* Small interactions share one motion system; the content never depends on it. */
+.type-word { display: inline-block; transform-origin: center 80%; }
+.work-details.is-animating, .archive-entry.is-animating { overflow: hidden; }
+.magnetic-link { transition: background .2s, color .2s; }
+.magnetic-icon { display: block; translate: var(--magnet-x, 0) var(--magnet-y, 0); transition: translate .2s ease-out; }
+.motion-plane { --tilt-x: 0deg; --tilt-y: 0deg; --image-scale: 1; }
+.folio-stage.motion-plane img, .portfolio-gallery a.motion-plane img,
+.project-card a:hover .project-visual.motion-plane img, .project-visual.motion-plane img {
+  transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) scale(var(--image-scale));
+  transition: transform .3s cubic-bezier(.2,.75,.25,1);
+}
+.folio-stage.is-tracking .stage-hint { top: var(--hint-y); left: var(--hint-x); right: auto; bottom: auto; transform: none; }
+.text-link > span { display: inline-block; transition: transform .25s cubic-bezier(.2,.75,.25,1); }
+.text-link:hover > span, .text-link:focus-visible > span { transform: translate(4px, -3px); }
+.text-link[href^="#"]:hover > span { transform: translateY(4px); }
+.site-header nav a::before { content: ''; position: absolute; inset-inline: 0; bottom: 7px; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: right; transition: transform .25s ease; }
+.site-header nav a:hover::before, .site-header nav a:focus-visible::before { transform: scaleX(1); transform-origin: left; }
+.scroll-progress { position: fixed; inset: 0 0 auto; height: 2px; background: var(--accent); transform: scaleX(var(--scroll, 0)); transform-origin: left; z-index: 15; pointer-events: none; }
+.to-top { position: fixed; bottom: 20px; right: 20px; display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); border-radius: 50%; text-decoration: none; font-size: 20px; z-index: 9; transition: background .2s, color .2s; }
+.to-top:hover { background: var(--ink); color: var(--paper); }
+.lightbox figure { padding-bottom: 55px; }
+.lightbox img { max-height: calc(100dvh - 185px); touch-action: pan-y pinch-zoom; }
+.lightbox img.is-loading { opacity: .4; }
+.lightbox-controls { position: absolute; bottom: 22px; left: 50%; translate: -50% 0; display: flex; align-items: center; gap: 26px; }
+.lightbox-controls button { width: 44px; height: 44px; border: 1px solid #89959b; border-radius: 50%; background: transparent; color: white; font-size: 22px; }
+.lightbox-controls button:hover { background: white; color: var(--ink); }
+.lightbox-controls span { min-width: 55px; text-align: center; font-size: 12px; font-variant-numeric: tabular-nums; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
+  .motion-plane img { transform: none !important; }
+  .magnetic-icon { translate: none; }
 }
