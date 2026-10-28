@@ -23,7 +23,7 @@ def project_url(project):
 
 def page(filename, title, description, content, active=''):
     navigation = []
-    for url, label, key in [('portfolio.html', 'Lavori', 'portfolio'),
+    for url, label, key in [('portfolio.html', 'Portfolio', 'portfolio'),
                             ('chi-sono.html', 'Chi sono', 'about'),
                             ('percorso.html', 'Percorso', 'journey'),
                             ('contatti.html', 'Contatti ↗', 'contact')]:
@@ -95,22 +95,44 @@ def home():
   <section id="lavori" aria-labelledby="selected-title">
     <div class="section-heading"><h2 id="selected-title"><span class="index">01 /</span>Progetti selezionati</h2><p>Interaction design e comunicazione visiva</p></div>'''
     content += cards(PROJECTS[:4], home=True)
-    content += '''<div class="section-end"><a class="text-link" href="portfolio.html">Tutti i progetti <span aria-hidden="true">↗</span></a></div></section>
+    content += '''<div class="section-end"><a class="text-link" href="portfolio.html">Vai al portfolio <span aria-hidden="true">↗</span></a></div></section>
   <section class="about-strip"><div><span class="eyebrow">Chi sono</span><h2>Dall’informatica<br>al design.</h2></div><div><p>Vengo da Cupramontana. Ho studiato informatica al Marconi Pieralisi di Jesi e ho scelto di proseguire con Interaction Design al Politecnico di Milano. La grafica è entrata nel mio percorso attraverso i video, i progetti personali e la musica. Suono la batteria da quando avevo sei anni.</p><a class="text-link" href="chi-sono.html">La mia storia <span aria-hidden="true">↗</span></a></div></section>'''
     content += contact_band() + '</div>'
     page('index.html', 'Portfolio', 'Michele Rinaldi. Progetti di interaction design, identità visiva e grafica.', content)
 
 
 def portfolio():
-    content = '<div class="wrap portfolio-list">' + heading('Portfolio / Tutti i lavori', 'I miei <em>progetti.</em>', 'Lavori personali, universitari e realizzati durante il PCTO. Per ogni progetto trovi il contesto, il mio contributo e i materiali.')
+    content = '<div class="wrap portfolio-list">' + heading('Design e comunicazione visiva', '<em>Portfolio.</em>', 'Progetti di interazione, grafica e identità visiva. Qui trovi i lavori, il loro contesto e i materiali.')
     content += '''<div class="filters" data-project-filters aria-label="Filtra i progetti per disciplina" hidden>
       <button type="button" data-filter="tutti" aria-pressed="true">Tutti i lavori</button>
       <button type="button" data-filter="interazione" aria-pressed="false">Interazione e prodotto</button>
       <button type="button" data-filter="grafica" aria-pressed="false">Grafica e comunicazione</button>
       <button type="button" data-filter="branding" aria-pressed="false">Identità visiva</button>
-    </div><p class="filter-status" data-filter-status role="status" aria-live="polite">8 progetti / Tutti i lavori</p>'''
-    content += cards(PROJECTS) + '</div>'
-    page('portfolio.html', 'Portfolio', 'Esplora i progetti di Michele Rinaldi: interaction design, prodotti, branding, manifesti e comunicazione visiva.', content, 'portfolio')
+    </div><p class="filter-status" data-filter-status role="status" aria-live="polite">Tutti i lavori: 8 progetti</p>'''
+    legacy_ids = {'night-train-ride': 'uiux', 'oscilloscope': 'arte', 'identita-visive': 'branding', 'manifesti': 'manifesti'}
+    for index, project in enumerate(PROJECTS):
+        anchor = legacy_ids.get(project['slug'], project['slug'])
+        gallery = project['slug'] in ('identita-visive', 'manifesti')
+        classes = 'portfolio-project project-card' + (' portfolio-collection' if gallery else '')
+        content += f'''<article class="{classes}" data-category="{project['category']}" id="{anchor}">
+          <div class="portfolio-copy">
+            <span class="eyebrow">{index + 1:02d} / {esc(project['discipline'])}</span>
+            <h2><a href="{project_url(project)}">{esc(project['title'])}</a></h2>
+            <p>{esc(project['intro'])}</p>'''
+        content += f'''<dl class="portfolio-facts"><div><dt>Contesto</dt><dd>{esc(project['context'])}</dd></div><div><dt>Contributo</dt><dd>{esc(project['role'])}</dd></div></dl>
+            <a class="text-link" href="{project_url(project)}">{'Tutti i materiali' if gallery else 'Il progetto completo'} <span aria-hidden="true">↗</span></a>
+          </div>'''
+        if gallery:
+            grid_class = 'portfolio-gallery poster-wall' if project['slug'] == 'manifesti' else 'portfolio-gallery brand-wall'
+            content += f'<div class="{grid_class}">'
+            for i, image in enumerate(project['images']):
+                content += picture(image, f'{project["title"]} — lavoro {i + 1}')
+            content += '</div>'
+        else:
+            content += f'<div class="portfolio-project-media" data-tone="{project["tone"]}">' + picture(project['cover_original'], project['title']) + '</div>'
+        content += '</article>'
+    content += contact_band() + '</div>'
+    page('portfolio.html', 'Portfolio', 'Il portfolio di Michele Rinaldi: progetti di interaction design, identità visiva, grafica e manifesti.', content, 'portfolio')
 
 
 def project_pages():

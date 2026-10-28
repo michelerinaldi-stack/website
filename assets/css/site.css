@@ -90,6 +90,37 @@ button, input, textarea { color: inherit; }
 .filters button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 .filter-status { color: var(--muted); font-size: 12px; margin-bottom: 24px; }
 .portfolio-list { padding-bottom: 80px; }
+.portfolio-list > .page-heading { padding-block: 55px 45px; }
+.portfolio-list > .page-heading h1 { font-size: clamp(80px, 13vw, 180px); }
+.portfolio-list > .page-heading > p { max-width: 560px; }
+.portfolio-project { display: grid; grid-template-columns: 1fr 1.25fr; align-items: center; gap: clamp(28px, 6vw, 85px); border-top: 1px solid var(--line); padding-block: 64px; }
+.portfolio-project:nth-of-type(even) .portfolio-copy { order: 2; }
+.portfolio-project:nth-of-type(even) .portfolio-project-media { order: 1; }
+.portfolio-copy h2 { margin-block: 22px; font-size: clamp(32px, 4.5vw, 62px); line-height: 1.05; letter-spacing: -.05em; font-weight: 500; }
+.portfolio-copy h2 a { text-decoration: none; }
+.portfolio-copy h2 a:hover { color: var(--accent); }
+.portfolio-copy > p { margin-top: 16px; max-width: 550px; font-size: 16px; color: var(--ink); line-height: 1.8; }
+.portfolio-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; border-top: 1px solid var(--line); margin: 26px 0 20px; padding-top: 18px; }
+.portfolio-facts dt { color: var(--muted); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 5px; }
+.portfolio-facts dd { margin: 0; font-size: 12px; }
+.portfolio-project-media { padding: clamp(20px, 3vw, 44px); background: #e4e3de; }
+.portfolio-project-media[data-tone="night"] { background: #c8d4db; }
+.portfolio-project-media[data-tone="coral"] { background: #e9b3a7; }
+.portfolio-project-media[data-tone="dark"] { background: #171b23; }
+.portfolio-project-media[data-tone="blue"] { background: #cad2df; }
+.portfolio-project-media img { width: 100%; max-height: 560px; object-fit: contain; }
+.portfolio-collection { grid-template-columns: 1fr; gap: 35px; }
+.portfolio-collection:nth-of-type(even) .portfolio-copy { order: 0; }
+.portfolio-collection .portfolio-copy { max-width: 800px; }
+.portfolio-collection .portfolio-copy > p { max-width: 650px; }
+.portfolio-collection .portfolio-facts { max-width: 550px; }
+.portfolio-gallery { display: grid; gap: 20px; align-items: start; }
+.portfolio-gallery a { display: block; overflow: hidden; background: #e4e3de; }
+.portfolio-gallery img { width: 100%; transition: transform .3s ease; }
+.portfolio-gallery a:hover img { transform: scale(1.025); }
+.brand-wall { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.brand-wall img { aspect-ratio: 1; object-fit: contain; }
+.poster-wall { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .back-link { display: inline-block; font-size: 13px; color: var(--muted); text-decoration: none; margin-top: 30px; }
 .back-link:hover { text-decoration: underline; }
 .project-intro { display: grid; grid-template-columns: 1.6fr 1fr; gap: 70px; padding-bottom: 50px; }
@@ -162,6 +193,11 @@ body:has(.lightbox[open]) { overflow: hidden; }
 .lightbox-close { position: absolute; top: 15px; right: 24px; background: none; color: white; border: 1px solid #89959b; padding: 8px 16px; }
 @media (min-width: 1500px) { .hero { padding-top: 60px; } }
 @media (max-width: 800px) {
+  .portfolio-project { grid-template-columns: 1fr; padding-block: 40px; }
+  .portfolio-project:nth-of-type(even) .portfolio-copy { order: 0; }
+  .portfolio-copy > p { max-width: none; }
+  .portfolio-project-media, .portfolio-project:nth-of-type(even) .portfolio-project-media { order: -1; }
+  .brand-wall { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .site-header { flex-wrap: wrap; padding-top: 24px; padding-bottom: 20px; gap: 15px; }
   .site-header nav { gap: 23px; }
   .hero { padding-top: 35px; gap: 35px; }
@@ -181,6 +217,8 @@ body:has(.lightbox[open]) { overflow: hidden; }
   .site-footer nav { justify-self: start; max-width: none; }
 }
 @media (max-width: 540px) {
+  .poster-wall { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .portfolio-gallery { gap: 12px; }
   .site-header { display: block; }
   .site-header nav { justify-content: space-between; gap: 12px; margin-top: 16px; }
   .site-header nav a { font-size: 13px; }
