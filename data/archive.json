@@ -1,0 +1,579 @@
+{
+  "areatecnica.html": [
+    {
+      "label": "Informatica",
+      "id": "informatica",
+      "items": [
+        {
+          "title": "FIFA 2D",
+          "date": "2023‑2024",
+          "body": [
+            "<p>\n          Ho progettato un gioco di calcetto 2D in cui i calciatori sono piccoli quadratini. L’utente può correre, passare e tirare scegliendo angolo e potenza con il mouse.<br/><br/>\n          Il menu propone single‑player (contro una IA in sviluppo), multiplayer online, tutorial e impostazioni. Registro login e risultati in un database e sto integrando un algoritmo di path‑finding per i bot e un layer socket per collegare due PC.\n        </p>"
+          ],
+          "links": [
+            {
+              "label": "Cartella di progetto",
+              "url": "https://drive.google.com/drive/folders/1QgWYl-CFo3C83QYMdBUwWMctHZ8LeX6L?usp=sharing"
+            }
+          ],
+          "embeds": []
+        },
+        {
+          "title": "Hackathon 2023 – Bynd",
+          "date": "Dicembre 2023",
+          "body": [
+            "<p>\n          Prima dell’evento di Ancona ho seguito 25 h di preparazione su MVP, web‑app responsive, business plan, version control, sicurezza e ML. Durante le 20 h di gara ho creato logo, interfaccia e pitch di <em>Bynd</em>, curandone tutta l’identità visiva.<br/><br/>\n          Essendo il più giovane del team ho imparato a trasformare idee grezze in mock‑up chiari sotto pressione; il terzo posto finale mi ha dato una grande spinta.\n        </p>"
+          ],
+          "links": [],
+          "embeds": []
+        },
+        {
+          "title": "Hackathon 2025 – Bridge",
+          "date": "Dicembre 2025",
+          "body": [
+            "<p>\n          Nel 2024‑2025 ho frequentato tre moduli da 10 h su pitch, grafica e business plan. In gara ho guidato il gruppo, coordinando task e tempi, disegnando l’interfaccia e presentando il progetto finale.<br/><br/>\n          Gestire decisioni rapide senza sovrastare i compagni è stato formativo; il terzo posto ex‑aequo mi ha insegnato quanto conti la leadership partecipativa.\n        </p>"
+          ],
+          "links": [],
+          "embeds": []
+        },
+        {
+          "title": "WeNomads – Brand Identity",
+          "date": "",
+          "body": [
+            "<p>\n          Durante il corso di Computer Graphics ho creato l’identità visiva di “WeNomads”, community per nomadi digitali: logo modulare, palette calda e linee guida UI. Il deck in Figma include mock‑up di dashboard e onboarding.\n        </p>"
+          ],
+          "links": [
+            {
+              "label": "Figma deck",
+              "url": "https://www.figma.com/deck/bzSMBeQcU5eh5SXPQBc6Mm/WeNomads-Brand?node-id=1-36&p=f&t=zuVfSOyC900jgzwE-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+            }
+          ],
+          "embeds": []
+        }
+      ]
+    },
+    {
+      "label": "Sistemi e Reti",
+      "id": "sistemi",
+      "items": [
+        {
+          "title": "Gioco di reazione LED",
+          "date": "Aprile 2024",
+          "body": [
+            "<p>\n          Ho realizzato un test di riflessi con Raspberry Pi 4: un LED centrale si spegne a un intervallo casuale\n          e due giocatori premono il proprio pulsante per fermare il cronometro. Il tempo di reazione viene\n          registrato su CSV per successive analisi dei dati e confronto delle prestazioni.\n        </p>"
+          ],
+          "links": [
+            {
+              "label": "Relazione tecnica",
+              "url": "https://drive.google.com/file/d/1pxNlQ6gWaC3hjjj40CMLt-oFLNhYfwzC/view?usp=sharing"
+            }
+          ],
+          "embeds": []
+        },
+        {
+          "title": "Gioco di memoria LED",
+          "date": "Maggio 2024",
+          "body": [
+            "<p>\n          Ho programmato un “Simon Says” luminoso: Raspberry mostra una sequenza di quattro LED che cresce\n          a ogni turno; il giocatore deve riprodurla premendo i pulsanti corrispondenti. Se completa otto step,\n          parte una festa luminosa di vittoria, altrimenti il gioco termina mostrando il punteggio.\n        </p>"
+          ],
+          "links": [
+            {
+              "label": "Relazione",
+              "url": "https://drive.google.com/file/d/1_FrV3G1Qrh2cc2CzP0c3WCkmTBmDqs3r/view?usp=sharing"
+            }
+          ],
+          "embeds": []
+        },
+        {
+          "title": "Forza 4 in Assembly",
+          "date": "",
+          "body": [
+            "<p>\n          Ho scritto Forza 4 su Emu8086: interfaccia testuale 7×6, gestione tastiera in tempo reale e piccola IA\n          difensiva. È stato un ottimo esercizio di logica a basso livello e ottimizzazione di cicli e registri.\n        </p>"
+          ],
+          "links": [
+            {
+              "label": "Relazione",
+              "url": "https://drive.google.com/file/d/1GykLGUbO_YR6a2i7Hvxa1wtSji9GMcAV/view?usp=sharing"
+            },
+            {
+              "label": "Video demo",
+              "url": "https://drive.google.com/file/d/1u5e-J0Nk9Ydx29kobn7AIphVMGx4AXUY/view?usp=sharing"
+            },
+            {
+              "label": "Codice sorgente",
+              "url": "https://drive.google.com/file/d/1393U8h7T7AncGkDv1F_abrMWadJzDxgx/view?usp=sharing"
+            }
+          ],
+          "embeds": []
+        }
+      ]
+    },
+    {
+      "label": "TPSIT",
+      "id": "tpsit",
+      "items": [
+        {
+          "title": "Materie prime per smartphone",
+          "date": "",
+          "body": [
+            "<p>\n          Ho analizzato litio, cobalto e terre rare usati nei dispositivi mobili mettendo in luce criticità ambientali\n          e geopolitiche lungo la filiera di produzione.\n        </p>"
+          ],
+          "links": [
+            {
+              "label": "Slide",
+              "url": "https://docs.google.com/presentation/d/1oXBfz20GlYyzJsTSKW5wIW3XX38PU9PZ/edit?usp=sharing"
+            }
+          ],
+          "embeds": []
+        },
+        {
+          "title": "Energia e dissipazione",
+          "date": "",
+          "body": [
+            "<p>\n          Ho studiato consumo energetico, efficienza e tecniche di raffreddamento nei device,\n          spiegando i princìpi fisici della dissipazione termica e l’impatto sull’autonomia quotidiana.\n        </p>"
+          ],
+          "links": [
+            {
+              "label": "Slide",
+              "url": "https://docs.google.com/presentation/d/11i3TnW4DE3w2ahV2gTYK7VUEK_o3BzY-6jQaHl5DGjE/edit?usp=sharing"
+            }
+          ],
+          "embeds": []
+        },
+        {
+          "title": "Android HAL – visual explainer",
+          "date": "Febbraio 2025",
+          "body": [
+            "<p>\n          Ho creato un prototipo interattivo che mostra come Android separa hardware e software\n          tramite HAL, evidenziando vantaggi di portabilità e personalizzazione per i produttori.\n        </p>"
+          ],
+          "links": [
+            {
+              "label": "Prototype",
+              "url": "https://www.figma.com/proto/xohTkk7ylv7Ye6RZkrFJ2r/HAL---Licci--Rinaldi--Traino?node-id=6-80&p=f&t=b6KD9XIw8tLoVEg1-0&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=6%3A2"
+            }
+          ],
+          "embeds": []
+        },
+        {
+          "title": "PTHREAD NF – Raylib grid",
+          "date": "Gennaio 2025",
+          "body": [
+            "<p>\n          In C e Raylib ho disegnato una griglia 6×11 che forma le lettere “NF”; i quadrati cambiano colore al click.\n          Uso Pthread per inizializzare le celle in parallelo, migliorando i tempi di avvio.\n        </p>"
+          ],
+          "links": [
+            {
+              "label": "Codice sorgente",
+              "url": "https://github.com/michirina/pthread_NF"
+            }
+          ],
+          "embeds": []
+        }
+      ]
+    },
+    {
+      "label": "IA",
+      "id": "ia",
+      "items": [
+        {
+          "title": "Regressione lineare vs Random Forest",
+          "date": "Marzo 2025",
+          "body": [
+            "<p>\n          Nel notebook metto a confronto Linear Regression e Random Forest sul dataset California Housing,\n          calcolando MSE, MAE e R² per valutare accuratezza e capacità predittiva dei due modelli.\n        </p>"
+          ],
+          "links": [
+            {
+              "label": "Notebook",
+              "url": "https://colab.research.google.com/drive/1AVoHFf5TmqtNIpE3619-G9GlhqQ1gXlP?usp=sharing"
+            }
+          ],
+          "embeds": []
+        },
+        {
+          "title": "MLP vs CNN – Minecraft Biomes",
+          "date": "Aprile 2025",
+          "body": [
+            "<p>\n          Confronto un MLP e una CNN su 41 biomi di Minecraft: dataset sbilanciato, tecniche di bilanciamento,\n          tempi di training, accuracy e confusion matrix per valutare la capacità di generalizzare sulle classi rare.\n        </p>"
+          ],
+          "links": [
+            {
+              "label": "Notebook",
+              "url": "https://colab.research.google.com/drive/1jSfLv7reqEfIa60UX6RbvKv-t0uugEGq?usp=sharing"
+            }
+          ],
+          "embeds": []
+        }
+      ]
+    },
+    {
+      "label": "Matematica",
+      "id": "matematica",
+      "items": [
+        {
+          "title": "Alla scoperta della geometria",
+          "date": "2022",
+          "body": [
+            "<p>\n          Presentazione introduttiva alla geometria euclidea: enti primitivi, figure fondamentali, criteri di\n          congruenza, formule di area e perimetro, triangoli e quadrilateri, più un focus su cerchio e teoremi\n          di Pitagora ed Euclide accompagnati da problemi svolti.\n        </p>"
+          ],
+          "links": [
+            {
+              "label": "Presentazione",
+              "url": "https://drive.google.com/file/d/16zUw8xXhn4Rde7rCOrznRHNUiG35iB2B/view?usp=sharing"
+            }
+          ],
+          "embeds": []
+        },
+        {
+          "title": "Geometria analitica e coniche",
+          "date": "2023",
+          "body": [
+            "<p>\n          Studio delle rette in varie forme ed esercizi su intersezioni, parallelismo e perpendicolarità;\n          segue l’analisi di parabola, circonferenza, ellisse e iperbole con esempi di costruzione e verifica\n          di tangenza alle rette.\n        </p>"
+          ],
+          "links": [
+            {
+              "label": "Presentazione",
+              "url": "https://drive.google.com/file/d/1H1qR9xXRFxVkuM-oZHd5QZPuclVS_c9h/view?usp=sharing"
+            }
+          ],
+          "embeds": []
+        },
+        {
+          "title": "Chi ruba di più in Serie A?",
+          "date": "2024",
+          "body": [
+            "<p>\n          Analisi statistica della percezione dei favoritismi arbitrali: sondaggio anonimo, grafici di sintesi\n          e discussione dei bias che emergono quando si parla di tifo e decisioni arbitrali.\n        </p>"
+          ],
+          "links": [
+            {
+              "label": "Slide",
+              "url": "https://docs.google.com/presentation/d/1ky38PiawQCSw1uEWZ_HMhsK30kaP66Pr/edit?usp=sharing"
+            }
+          ],
+          "embeds": []
+        }
+      ]
+    },
+    {
+      "label": "GPOI",
+      "id": "gpoi",
+      "items": [
+        {
+          "title": "Sito personale – analisi e progetto",
+          "date": "Aprile 2025",
+          "body": [
+            "<p>\n          Ho redatto la prima analisi del mio sito portfolio: requisiti, architettura delle pagine e stima costi. L’obiettivo è creare uno spazio che raccolga tutti questi progetti in modo ordinato.\n        </p>"
+          ],
+          "links": [
+            {
+              "label": "Analisi",
+              "url": "https://drive.google.com/file/d/1jlS-exLz8dkBIsRhzsSo9JXYmU_QEHlf/view?usp=sharing"
+            },
+            {
+              "label": "Budget e costi",
+              "url": "https://drive.google.com/file/d/1BrcQT7E4s6CUDkr_O7_mSrj2yxfWJJVT/view?usp=sharing"
+            },
+            {
+              "label": "Progetto",
+              "url": "https://drive.google.com/file/d/1BYm3h0psIycr5vCUnBQ8NfoWIo883mhr/view?usp=sharing"
+            }
+          ],
+          "embeds": []
+        },
+        {
+          "title": "HelpDesk – modulo Ticket",
+          "date": "Maggio 2025",
+          "body": [
+            "<p>\n          Ho progettato il modulo Ticket del sistema HelpDesk dell’IIS Marconi Pieralisi: consente di inserire, assegnare e monitorare richieste di supporto. Il lavoro copre analisi funzionale, UI e stima costi (≈ €25 000).\n        </p>"
+          ],
+          "links": [
+            {
+              "label": "Analisi",
+              "url": "https://drive.google.com/file/d/10QziT3YiTj19P-bbbEoQHS_z4K356-xy/view?usp=sharing"
+            },
+            {
+              "label": "Budget e costi",
+              "url": "https://drive.google.com/file/d/1mJS-znw47fsTdSabRHhbwLQmIzovr78J/view?usp=sharing"
+            },
+            {
+              "label": "Progetto",
+              "url": "https://drive.google.com/file/d/1TOLPvvwbQYwNdXNabILNpvTtPGH-Indm/view?usp=sharing"
+            }
+          ],
+          "embeds": []
+        },
+        {
+          "title": "HelpDesk – documento unico",
+          "date": "Giugno 2025",
+          "body": [
+            "<p>\n          Documento di sintesi con architettura, moduli, roadmap e costi complessivi (≈ €72 500) del progetto HelpDesk.\n        </p>"
+          ],
+          "links": [
+            {
+              "label": "Documento",
+              "url": "https://drive.google.com/file/d/1FDbh9Uqg_FK7l-42JCVLtOXXJmsMeGPs/view?usp=sharing"
+            }
+          ],
+          "embeds": []
+        }
+      ]
+    },
+    {
+      "label": "Inglese",
+      "id": "inglese",
+      "items": [
+        {
+          "title": "Daniel Ek – Spotify Founder",
+          "date": "Febbraio 2025",
+          "body": [
+            "<p>\n          Presentazione in inglese sulla carriera e le strategie di Daniel Ek, con riflessioni sull’impatto culturale dello streaming musicale.\n        </p>"
+          ],
+          "links": [
+            {
+              "label": "Slide",
+              "url": "https://gamma.app/docs/Daniel-Ek-c9a7dw01dilsm1p"
+            }
+          ],
+          "embeds": []
+        },
+        {
+          "title": "Corso “English 4 You” – Certificazione B2",
+          "date": "Maggio 2025",
+          "body": [
+            "<p>\n          Ho frequentato un corso intensivo da gennaio a maggio per conseguire la certificazione Cambridge B2, con focus su listening, reading, writing e speaking.\n        </p>"
+          ],
+          "links": [],
+          "embeds": []
+        }
+      ]
+    }
+  ],
+  "areaumanistica.html": [
+    {
+      "label": "",
+      "id": "",
+      "items": [
+        {
+          "title": "Ricerca sui Malavoglia",
+          "date": "Settembre 2024",
+          "body": [
+            "<p>\n          Dopo aver letto <strong>I Malavoglia</strong>, ho risposto a una serie di domande che mi hanno aiutato a <strong>comprendere meglio la storia</strong> e i <strong>temi principali</strong> del romanzo.<br/><br/>\n\n          All’inizio mi sembrava solo una <em>storia triste di una famiglia sfortunata</em>, ma approfondendo ho capito che <strong>Verga voleva raccontare molto di più</strong>. Con il suo stile diretto e realistico, tipico del <strong>Verismo</strong>, ci mostra quanto sia difficile cambiare la propria condizione e quanto il <em>peso della società e della tradizione</em> influenzi le scelte dei personaggi.<br/><br/>\n\n          Le domande mi hanno portato a riflettere sul <strong>concetto di famiglia</strong>, sul <strong>ruolo delle donne</strong>, sulla <strong>comunità</strong> e su come tutti questi elementi siano legati alla <em>lotta per la sopravvivenza</em>.<br/><br/>\n\n          È stato un modo per andare <strong>oltre la trama</strong> e cercare di capire davvero <em>cosa si nasconde dietro le parole di Verga</em>.\n        </p>"
+          ],
+          "links": [
+            {
+              "label": "Domande su \"I Malavoglia\"",
+              "url": "https://docs.google.com/document/d/1g9itFuDRb4H93ao1FfOGWV61IHau3xAX-h5QUGLZtOk/edit?usp=sharing"
+            }
+          ],
+          "embeds": []
+        },
+        {
+          "title": "Il primo Novecento",
+          "date": "Gennaio 2025",
+          "body": [
+            "<p>\n            Il primo Novecento è stato un periodo ricco di contrasti, segnato da grandi entusiasmi ma anche da profonde inquietudini.<br/><br/>\n\n            Per cercare di raccontarlo in modo più completo, ho scelto di organizzare il discorso attorno a tre concetti che mi sono sembrati fondamentali: <strong>progresso</strong>, <strong>libertà</strong> e <strong>identità</strong>. Questi temi mi hanno aiutato a mettere in evidenza sia gli straordinari cambiamenti di quegli anni, sia le contraddizioni che li accompagnano.<br/><br/>\n<strong>Il progresso</strong> è stato il primo grande tema. Il Novecento si apre con <em>incredibili scoperte scientifiche</em> e trasformazioni culturali. Le teorie di <strong>Einstein</strong> cambiano per sempre la visione dello spazio e del tempo; <strong>Freud</strong> porta alla luce l’inconscio, influenzando profondamente psicologia, letteratura e arte. La nascita della <em>fisica quantistica</em> con scienziati come Planck, Bohr e Heisenberg mette in crisi la fiducia in un mondo governato da leggi rigide e deterministiche. Si afferma così una nuova visione della realtà: fatta di probabilità, incertezze, limiti nella conoscenza.<br/><br/>\n\n            Eppure, questi progressi hanno anche un lato oscuro. <strong>La Prima Guerra Mondiale</strong>, con l’uso massiccio di nuove tecnologie belliche, dimostra come la scienza possa anche disumanizzare e distruggere. L’<em>industrializzazione</em> e la crescita urbana portano sì innovazione, ma anche alienazione, disuguaglianze e perdita dei legami con le radici locali. In reazione a tutto ciò, movimenti artistici come il <strong>Dadaismo</strong> rispondono con provocazione e rifiuto delle regole tradizionali, smascherando l’assurdità del mondo moderno.<br/><br/>\n<strong>Il secondo tema è la libertà</strong>, che nel Novecento assume forme diverse e spesso contraddittorie. L’<strong>Esistenzialismo</strong>, con Sartre, propone una libertà assoluta ma angosciante: l’uomo è libero, ma solo, privo di riferimenti, totalmente responsabile delle proprie scelte. Tuttavia, la storia ci mostra un’altra faccia: in nome della libertà collettiva e della patria, <em>milioni di persone perdono la propria libertà individuale</em> sotto guerre e regimi autoritari. Anche movimenti come il <strong>Futurismo</strong>, inizialmente portatori di energia e innovazione, finiscono per legarsi a ideali che soffocano l’individuo.<br/><br/>\n<strong>Infine, l’identità</strong>. Nel primo Novecento l’identità personale viene profondamente messa in crisi. L’individuo si ritrova sospeso tra il desiderio di autoaffermazione e una società di massa che tende a uniformare. Pensatori come <strong>Ortega y Gasset</strong> denunciano la perdita del pensiero critico; autori come <strong>Kafka, Woolf</strong> e <strong>Joyce</strong> raccontano protagonisti fragili, disorientati, incapaci di distinguere il reale dall’immaginario. Le loro opere mostrano come l’identità non sia qualcosa di fisso, ma un processo in divenire, tra spinte interiori e pressioni esterne. Anche <em>arte e propaganda</em> contribuiscono a creare identità collettive imposte, che cancellano l’individualità.<br/><br/>\n<em>Nella parte finale della mia presentazione</em>, ho voluto riportare queste riflessioni all’attualità: oggi viviamo in un mondo dove la tecnologia avanza a ritmi impressionanti, dove la comunicazione è immediata, ma dove siamo anche esposti a nuovi rischi – dalla manipolazione delle informazioni alla perdita della privacy, dalla crisi dei valori alla difficoltà di costruire un’identità autentica in mezzo a stimoli continui e contraddittori.<br/><br/>\n\n            Il Novecento ci offre una chiave preziosa per comprendere il nostro presente. Ci insegna che <strong>il progresso non è mai neutro</strong>, che <strong>la libertà è una responsabilità</strong>, e che <strong>l’identità si costruisce</strong>, giorno dopo giorno, con consapevolezza e spirito critico.\n          </p>"
+          ],
+          "links": [
+            {
+              "label": "Il primo Novecento",
+              "url": "https://www.figma.com/proto/3JvOil0YNhS03m5P9lJiBi/IL-PRIMO-NOVECENTO---Rinaldi-Michele-(Copy)?node-id=2-5&t=1qH4HvLakAn0DP6y-0&scaling=contain&content-scaling=fixed&page-id=0%3A1"
+            }
+          ],
+          "embeds": []
+        },
+        {
+          "title": "Nazismo: Viaggio tra storia e memoria",
+          "date": "Aprile 2025",
+          "body": [
+            "<p>\n            Questo lavoro di gruppo nasce da un progetto di ricerca che ci è stato assegnato con l’obiettivo di analizzare le <strong>cause</strong>, le <strong>conseguenze</strong> e il <strong>contesto storico</strong> del totalitarismo nazista.<br/><br/>\n\n            Il nostro studio ha abbracciato un ampio arco temporale: dalla <em>fragile Repubblica di Weimar</em> fino alla <strong>caduta del Muro di Berlino</strong> nel 1989. In questo modo abbiamo potuto seguire l’evoluzione della Germania lungo tutto il Novecento, riflettendo su come gli eventi legati al <strong>nazismo</strong> abbiano segnato in profondità la storia, la politica e la memoria del Paese.<br/><br/>\n\n            Un momento centrale del nostro percorso è stato il <strong>viaggio di istruzione</strong> a <em>Monaco, Berlino e Norimberga</em>. Visitare luoghi come il campo di concentramento di <strong>Dachau</strong> ha avuto un impatto fortissimo: <em>vedere con i propri occhi ciò che si è studiato nei libri</em> ha dato un significato completamente nuovo alla ricerca, trasformando nozioni teoriche in <strong>esperienze vissute</strong>.<br/><br/>\n\n            All’interno del gruppo, mi sono occupato della <strong>progettazione grafica</strong> della presentazione e ho curato in particolare la parte dedicata alle <strong>discriminazioni razziali</strong> e al <strong>sistema dei campi di concentramento</strong>.<br/><br/>\n\n            Questo progetto ha rappresentato un’occasione preziosa di <em>crescita personale e collettiva</em>, aiutandoci a sviluppare uno <strong>sguardo più consapevole e critico sul passato</strong> e a riflettere sul valore della <strong>memoria</strong> nella costruzione del presente.\n          </p>"
+          ],
+          "links": [
+            {
+              "label": "Il Nazismo nel contesto del ‘900 tedesco: ascesa e crollo di un ideologia",
+              "url": "https://www.figma.com/proto/OoRqHXSH8AJoKIpQ2h1bFB/Nazismo---Viaggio-d-istruzione?node-id=1-6&starting-point-node-id=1%3A6&t=81yrjI6G95a4Ri3P-1"
+            },
+            {
+              "label": "Il Nazismo nel contesto del ‘900 tedesco",
+              "url": "https://drive.google.com/file/d/1UJCRGpsXPHnWhfiyXWMw0iwd3TyEK20p/view?usp=sharing"
+            }
+          ],
+          "embeds": []
+        }
+      ]
+    }
+  ],
+  "educazionecivica.html": [
+    {
+      "label": "",
+      "id": "",
+      "items": [
+        {
+          "title": "La repubblica che sogna la pace nel mondo",
+          "date": "Maggio 2025",
+          "body": [
+            "<p>\n                    \"La Repubblica che sogna la pace nel mondo\" è un fumetto che ho realizzato per il progetto di UDA di Educazione Civica, utilizzando illustrazioni create con strumenti di intelligenza artificiale. <br/>\n                    Attraverso una storia ambientata nel futuro, ho voluto riflettere sui temi della pace, della disinformazione e del ruolo della verità in un mondo sempre più diviso. <br/>\n</p>",
+            "<p>\n                  Nel 2125, mentre l'Europa è attraversata da tensioni crescenti ai confini orientali e il rischio di una nuova guerra globale si fa sempre più concreto, emerge un piccolo Stato chiamato Mythosia, una giovane repubblica fondata sulla pace, sui diritti umani e sulla verità.<br/><br/>\n                  È un esperimento politico e sociale unico, governato dalla Presidente Cleo Logos, una leader che non impone, ma ispira, e che ha costruito un'intera nazione su valori opposti alla logica del conflitto.<br/><br/>\n                  Mythosia è una società avanzata, trasparente ed ecologica, dove non esistono partiti politici tradizionali, ma solo il rispetto reciproco e l'impegno civile.<br/><br/>\n                  Quando la situazione globale raggiunge un punto critico, Cleo parte per New York per tenere un discorso all'ONU, al Palazzo di Vetro. Il suo intervento non è solo politico, ma profondamente umano e morale.<br/><br/>\n                  Parla con passione e lucidità, denunciando il cinismo delle potenze che usano i popoli come pedine, e ricordando al mondo che la pace non può esistere senza giustizia.<br/><br/>\n                  Racconta la sua infanzia segnata dalla guerra, l'orrore di vedere la propria città in fiamme, e la scelta radicale di costruire un Paese disarmato, dove le risorse vengono destinate alla scuola, alla sanità e all'educazione invece che agli armamenti.<br/><br/>\n                  Critica duramente il mito della guerra necessaria, smonta la frase \"Se vuoi la pace, prepara la guerra\", e mette in guardia contro la disinformazione che oggi si diffonde attraverso i social, manipolando l'opinione pubblica, creando nemici immaginari e spaccando le società dall'interno.<br/><br/>\n                  Secondo Cleo, oggi le guerre iniziano prima nelle menti che nei campi di battaglia, e la vera sfida è culturale: combattere le bugie con l'educazione, la propaganda con la consapevolezza, l'odio con l'empatia.<br/><br/>\n                  Il suo discorso, tuttavia, viene travisato dai media internazionali: la accusano di debolezza, di utopismo, persino di arrendevolezza. La voce di Mythosia resta così isolata, circondata da un mondo che non è pronto ad accogliere la pace.<br/><br/>\n                  Intanto, fuori dai suoi confini, le bombe continuano a cadere, e la guerra prosegue come se niente fosse. Mythosia rimane un faro, ma la sua luce sembra non bastare a cambiare la rotta della storia. Cleo e il suo popolo sanno di essere soli, ma scelgono comunque di restare fedeli ai propri valori, nella speranza che, un giorno, quella luce possa ispirare qualcun altro.\n              </p>"
+          ],
+          "links": [],
+          "embeds": [
+            "https://publuu.com/flip-book/904819/1980440/page/1?embed"
+          ]
+        },
+        {
+          "title": "Writing di 200 parole (EN)",
+          "date": "Gennaio 2025",
+          "body": [
+            "<p>\n                    In questo testo ho espresso il mio punto di vista critico sull'intelligenza artificiale, contestando l'idea che possa essere considerata vera \"intelligenza\". Ho sottolineato che l'AI non pensa né comprende come gli esseri umani, ma si limita a eseguire istruzioni complesse. <br/> <br/>\n                    Ho anche messo in dubbio la convinzione che l'AI possa risolvere le grandi crisi globali, pur riconoscendone l'utilità come strumento di supporto in diversi ambiti, come il design o l'agricoltura.\n                </p>"
+          ],
+          "links": [
+            {
+              "label": "Writing (EN)",
+              "url": "https://docs.google.com/document/d/1xl6rWL3leXhD16jzC6FiIWq5sks9LbuZP713GzpzTO8/edit?usp=sharing"
+            }
+          ],
+          "embeds": []
+        },
+        {
+          "title": "Fatti e dati contro semplificazioni sull'IA: riflessioni su un intervento di Paolo Ercolani",
+          "date": "Aprile 2024",
+          "body": [
+            "<p>\n                    In questo elaborato ho analizzato e confutato alcune affermazioni contenute in un video di Paolo Ercolani sull'intelligenza artificiale, evidenziando dati imprecisi, esagerazioni e semplificazioni. Attraverso fonti verificabili e uno sguardo critico, ho cercato di promuovere un confronto basato su fatti, con l'obiettivo di contribuire a una discussione più consapevole ed equilibrata sulle implicazioni etiche dell'IA.\n                </p>"
+          ],
+          "links": [
+            {
+              "label": "Analisi discorso di Paolo Ercolani",
+              "url": "https://docs.google.com/document/d/1EFZd3ZFIwqrOdmawHeV1ZqtemWUJ49UV/edit?usp=sharing&ouid=110873018437705782757&rtpof=true&sd=true"
+            }
+          ],
+          "embeds": []
+        }
+      ]
+    }
+  ],
+  "story": [
+    {
+      "title": "La mia storia",
+      "body": [
+        "<p>Sono nato e cresciuto a Cupramontana e, fin da bambino, ho sempre sentito l’esigenza di esprimermi, inventare, costruire. Il mio sogno era chiaro: diventare uno youtuber di successo. Quell’idea mi faceva brillare gli occhi perché mi permetteva di unire le mie passioni: parlare davanti alla telecamera, raccontare qualcosa di mio e dare forma a ogni video partendo da zero.</p>",
+        "<p>Il 10 agosto 2015, a nove anni, ho pubblicato il mio primo contenuto. È stato l’inizio di un’avventura durata tre anni, durante i quali ho caricato 213 video, tutti ancora online. Registravo gameplay, spiegavo curiosità storiche con mio fratello, realizzavo tutorial di magie, esperimenti e montaggi video. Creavo tutto con i mezzi che avevo e con quello che riuscivo ad apprendere da solo. Ho iniziato a usare i primi programmi di editing, mi occupavo delle grafiche e cercavo di migliorare passo dopo passo. Non era esclusivamente un passatempo: stavo imparando a creare contenuti e a strutturare un progetto personale con una cadenza settimanale.</p>",
+        "<p>In terza media, mentre molti mi consigliavano il liceo scientifico, io avevo già scelto Informatica. Sentivo che il mio futuro sarebbe stato lì, e volevo imparare a programmare. Per me il codice non era solo tecnica, ma un mezzo per sviluppare qualcosa che unisse logica, utilità e immaginazione.</p>",
+        "<p>Fuori dall’orario scolastico, spinto dalla curiosità, mi avvicinavo sempre di più al design. Alternavo Fusion 360 a esercizi su “Figma”, ma soprattutto trascorrevo ore su Photoshop, sperimentando, provando e rifacendo da capo. Mi divertiva creare, ma anche cercare di capire come potessi realizzare qualcosa che avesse un aspetto professionale — che fosse un’interfaccia, un logo o una locandina.</p>",
+        "<p>Era un modo diverso di esprimermi, ma complementare alla programmazione: il codice mi dava struttura, il design libertà. E io avevo bisogno di entrambi.</p>",
+        "<p>Con l’arrivo delle superiori è cambiato il mio modo di stare al mondo: dopo anni trascorsi sui social, ho sentito il bisogno di staccarmi e concentrarmi su me stesso. Non era un rifiuto, ma un’evoluzione. Ho iniziato ad allenarmi, a studiare con più consapevolezza, a sviluppare progetti personali che non sentivo il bisogno di condividere, ma che mi aiutavano a crescere e a migliorarmi davvero.</p>",
+        "<p>Oggi continuo a muovermi tra codice e design, tra tecnologia e creatività. Ma soprattutto continuo a effettuare ciò che mi viene naturale: imparare, cercare, creare. A modo mio.</p>"
+      ]
+    },
+    {
+      "title": "Gli anni al “Marconi Pieralisi!”",
+      "body": [
+        "<p>I primi due anni al “Marconi Pieralisi” sono stati in parte condizionati dalla pandemia: molte lezioni erano a distanza e le materie poco specifiche. Solo dal terzo anno il percorso è diventato più stimolante, grazie a materie come Informatica, Sistemi e Reti, TPSIT e Intelligenza Artificiale. L’AI, in particolare, mi ha affascinato per il suo approccio basato su logica e modelli in continua evoluzione.</p>",
+        "<p>Accanto allo studio tecnico, ho dato spazio alla cultura umanistica: l’educazione civica, che univa diritto, attualità e ambiente, mi ha aiutato a sviluppare il pensiero critico e a osservare le situazioni da altri punti di vista.</p>",
+        "<p>Nel quarto anno mi sono candidato come rappresentante degli studenti. Sono stato eletto e ho vissuto quell’esperienza con grande impegno. È stato un ruolo complesso che mi ha insegnato cosa significhi esporsi e rappresentare gli altri anche nei momenti più delicati.</p>",
+        "<p>Tra le esperienze più formative ci sono state le due edizioni dell’Hackathon Innova Young di Ancona. Nel 2023 ero il più giovane e ho curato tutta la parte visiva del progetto. Nel 2024 sono stato team leader: ho gestito il gruppo, preso decisioni rapide e imparato a guidare davvero. In entrambe le edizioni abbiamo raggiunto il terzo posto.</p>",
+        "<p>Se potessi tornare indietro, frequenterei questa scuola altre cento volte. Ho anche avuto la fortuna di trovarmi subito bene con la mia classe, un gruppo ricco di personalità diverse con cui condividere ogni esperienza. A fare la differenza sono stati anche i professori: disponibili, appassionati, capaci di trasmettere entusiasmo e rendere interessante anche ciò che all’inizio sembrava lontano. Non è scontato trovare docenti che credano in quello che insegnano e ti spingano a dare il meglio, è anche grazie a loro se questi anni sono stati così pieni, significativi e belli da vivere.</p>"
+      ]
+    },
+    {
+      "title": "La musica",
+      "body": [
+        "<p>La musica non è soltanto una passione: è parte integrante della mia quotidianità, mi accompagna da sempre, mi aiuta a concentrarmi, a liberare la mente e a dare ritmo anche alle giornate più intense. Ne ascolto in grandi quantità, ogni volta che ho le cuffie a portata di mano. Non mi lego a un genere fisso: passo con naturalezza dall’elettronica sperimentale al rap, dal pop internazionale ai suoni più alternativi e contaminati. Amo sorprendermi, scoprire nuovi linguaggi sonori, ma anche tornare a quegli album che diventano casa in determinati periodi della mia vita.</p>",
+        "<p>Adoro l’energia dei concerti: appena posso assisto a performance dal vivo, perché sul palco la musica diventa esperienza condivisa, tangibile, reale. Vederla materializzarsi mi ricorda ogni volta perché ho iniziato a suonare.</p>",
+        "<p>Ho iniziato a studiare musica a quattro anni, iscrivendomi al corso del Corpo Bandistico Don N. Bonanni di Cupramontana; a sei anni ho abbracciato la batteria. È sempre stato il mio strumento: quello con cui mi sento più libero di esprimermi. Nel tempo ho continuato a suonare in vari contesti: laboratori, esibizioni, piccoli gruppi e, soprattutto, all’interno dello stesso corpo bandistico con cui collaboro tuttora.</p>",
+        "<p>Negli ultimi anni questa passione è diventata qualcosa da condividere. Oggi affianco gli insegnanti del corso musicale come educatore, animatore e docente di percussioni, sia durante il centro estivo sia nei corsi annuali. Lavoro con bambini e ragazzi, cercando di trasmettere non solo le basi tecniche, ma soprattutto l’entusiasmo e il rispetto per ciò che la musica può offrire: ascolto, coordinazione, spirito di squadra, creatività.</p>",
+        "<p>Assumere il ruolo di guida mi ha permesso di scoprire un lato nuovo di questa passione. Una delle esperienze più emozionanti è stata vedere i miei allievi esibirsi al saggio finale. Provavo molta ansia, sentivo la responsabilità del momento, ma loro sono stati straordinari! Hanno suonato con concentrazione, coraggio e gioia, ed è stato meraviglioso vederli riuscire in ciò che avevamo preparato insieme. Ne sono profondamente orgoglioso: quella sera ha consolidato ulteriormente il mio legame con la musica e con l’insegnamento.</p>"
+      ]
+    },
+    {
+      "title": "Il mio futuro",
+      "body": [
+        "<p>Per molti anni ho immaginato il mio futuro a Milano, convinto che avrei studiato e costruito la mia carriera lì. L’idea di iscrivermi a Industrial Design era nata a quattordici anni e, nel tempo, era diventata un obiettivo concreto. Quest’anno ho sostenuto il test di ammissione al Politecnico di Milano per Industrial Design e a Lecco per Interaction Design, persuaso che entrambe potessero rappresentare un’evoluzione coerente del mio percorso.</p>",
+        "<p>La graduatoria di Industrial Design è uscita per prima e, rientrando nei posti disponibili, mi offriva l’opportunità di immatricolarmi subito. Eppure dentro di me era maturato un cambio di rotta: i miei interessi si stavano orientando verso un design focalizzato sull’esperienza, sulla relazione tra esseri umani e tecnologia, sulla costruzione di interazioni efficaci. Ho rinunciato a quella opportunità, con un po’ di rischio ma con altrettanta convinzione, sperando di rientrare nella graduatoria di Interaction Design. Fortunatamente, è andata come desideravo.</p>",
+        "<p>Il corso che frequenterò a Lecco è interamente in inglese e ancora giovane, il prossimo sarà soltanto il secondo anno di attivazione. Proprio per questo mi affascina ancor di più: è un percorso dinamico, proiettato verso il futuro, che integra tecnologia, creatività, progettazione e attenzione per le persone, tutti elementi in cui mi riconosco.</p>",
+        "<p>Durante la visita al campus ho trovato un ambiente subito accogliente: moderno, curato e, soprattutto, tranquillo. Lecco mi ha trasmesso equilibrio, ben distante dalla frenesia di Milano, e credo che questo mi aiuterà a vivere l’università con maggiore serenità, profondità e produttività. Il percorso inizierà a settembre, ma sono già entusiasta: spero che rappresenti il contesto giusto per crescere, imparare e mettermi alla prova in ciò che più mi appassiona.</p>",
+        "<p>Guardando ancora oltre, mi immagino a fondare qualcosa di mio. Non ho ancora le idee chiare sulla forma (uno studio, un progetto indipendente, o forse altro che oggi non so definire) ma so che mi piacerebbe esserne il creatore, costruirlo da zero e sostenerlo nel tempo, quasi come si fa con un figlio. Ciò che conta per me è avere qualcosa da cui non voglio solo ottenere un profitto, ma di cui desidero prendermi cura con serietà, creatività e profondo senso di responsabilità.</p>"
+      ]
+    }
+  ],
+  "capolavoro": [
+    {
+      "title": "Il progetto di ricerca",
+      "body": [
+        "<p>\n                    Questo capolavoro nasce da un'assegnazione della professoressa Scisciani sulle cause, le conseguenze e il contesto del totalitarismo nazista. Ci siamo concentrati su un arco temporale ampio, dalla fragile Repubblica di Weimar fino alla caduta del Muro di Berlino nel 1989, per comprendere come il Novecento tedesco sia stato profondamente segnato da questi eventi storici.\n                </p>",
+        "<p>\n                    Il viaggio di istruzione a Monaco, Berlino e Norimberga ha arricchito notevolmente la ricerca: visitare i luoghi dove si sono svolti questi eventi mi ha permesso di comprendere la portata e l'impatto di quello che ho studiato sui libri. Camminare attraverso questi spazi carichi di storia ha dato una dimensione completamente diversa al nostro lavoro.\n                </p>",
+        "<p>\n                    Nel gruppo mi sono occupato principalmente della progettazione grafica della presentazione e ho approfondito in particolare il tema delle discriminazioni razziali e del sistema dei campi di concentramento. Ogni scelta visiva è stata pensata per sostenere il contenuto, non solo per decorare.\n                </p>"
+      ]
+    },
+    {
+      "title": "Albert Speer: la complicità del tecnico",
+      "body": [
+        "<p>\n                    Una figura che ha catturato particolarmente la mia attenzione è quella di Albert Speer, l'architetto del Reich. Speer rappresenta un tipo di complicità diversa da quella del fanatico: era un professionista competente, una mente razionale al servizio di un regime irrazionale. Non urlava slogan nelle piazze, non sfilava in divisa, ma rendeva possibile il funzionamento della macchina nazista.\n                </p>",
+        "<p>\n                    Durante il processo di Norimberga Speer arrivò a riconoscere che proprio la potenza dei mezzi di comunicazione moderni aveva permesso al regime di imbavagliare il pensiero critico di un intero popolo. Il suo ammonimento finale resta di sconcertante attualità nell'era digitale.\n                </p>",
+        "<p>«Attraverso dispositivi tecnici quali radio e altoparlanti ottanta milioni di persone furono private del pensiero indipendente... Il telefono, il teletipo e la radio resero possibile, ad esempio, che ordini provenienti dalle sfere più alte venissero trasmessi direttamente alle unità di grado più basso, dove venivano eseguiti senza alcuna critica.»\n                        <a href=\"https://avalon.law.yale.edu/imt/08-31-46.asp\">— Albert Speer, dichiarazione finale a Norimberga, 31 agosto 1946</a></p>",
+        "<p>\n                    Speer incarna qualcosa di più sottilmente pericoloso del fanatico dichiarato: il bruocrate che sceglie di non interrogarsi. La sua testimonianza ci ricorda che la neutralità tecnica non esiste; gli ingegneri e i designer hanno sempre una responsabilità etica rispetto all'uso dei loro strumenti.\n                </p>"
+      ]
+    },
+    {
+      "title": "Hannah Arendt e la banalità del male",
+      "body": [
+        "<p>\n                L’analisi di Hannah Arendt sul totalitarismo continua a offrirci una\n                chiave di lettura decisiva: i crimini più atroci possono essere\n                compiuti da persone normali, come tante altre, che\n                rinunciano al pensiero critico e obbediscono\n                in modo meccanico alle procedure. \n            </p>",
+        "<p>\n                    «Il guaio del caso Eichmann era che di uomini come lui ce n’erano tanti e che questi tanti\n      non erano perversi né sadici, bensì erano, e sono tuttora, terribilmente\n      normali. […] Questa normalità è più spaventosa di tutte le atrocità messe insieme.»\n                    <a href=\"https://www.pul.it/cattedra/upload_files/179/ARENDT%20-%20Banalita%20del%20male.pdf\">— Hannah Arendt, <em>La banalità del male:\n                        Eichmann a Gerusalemme</em>, 1963 </a>\n</p>",
+        "<p>\n    Riflettendo sul processo a Eichmann (funzionario nazista coinvolto nell'organizzazione delle deportazioni) Arendt mette in luce un punto cruciale: la responsabilità morale non nasce da atti straordinari, ma dalla capacità quotidiana di pensare e giudicare. Quando questa si spegne, il male può prendere forma anche nei gesti più burocratici. È qui che emerge la sua “banalità”: non nel gesto crudele, ma nell’adesione passiva a un sistema disumano. Un meccanismo che torna anche nelle parole di Albert Speer citate sopra, il quale riconobbe troppo tardi come la razionalità tecnica, se svincolata da qualsiasi coscienza, può facilmente diventare strumento di distruzione.\n</p>"
+      ]
+    }
+  ],
+  "capolavoro_links": [
+    {
+      "label": "Visualizza la presentazione completa",
+      "url": "https://www.figma.com/proto/OoRqHXSH8AJoKIpQ2h1bFB/Nazismo---Viaggio-d-istruzione?node-id=1-6&starting-point-node-id=1%3A6"
+    }
+  ],
+  "syeew": {
+    "pcto_intro_para1": "<p>\n            Lo scorso anno ho avuto l'occasione di affiancare il team di <strong>SYEEW S.r.l.</strong>, una giovane realtà che sviluppa una piattaforma SaaS di Business Intelligence pensata per micro e piccole imprese. L'obiettivo? Rendere i numeri aziendali chiari come semafori: verdi quando tutto fila liscio, rossi quando serve intervenire.\n          </p>",
+    "pcto_intro_para2": "<p>\n            La squadra era di dimensioni ridotte, ciò mi ha permesso di stare a stretto contatto con tutti, capire priorità diverse e soprattutto contribuire in prima persona. Non c'era un reparto UX dedicato, così ho lavorato in autonomia, confrontandomi di frequente con il CEO e con il mio Tutor tecnico.\n          </p>",
+    "about_syeew_para1": "<p>\n            Fondata nel 2020, <strong>SYEEW</strong> è una startup innovativa con sede a Jesi, che si propone di rivoluzionare il modo in cui micro e piccole imprese leggono i propri dati aziendali. Il suo obiettivo è semplice ma ambizioso: <em>rendere i numeri comprensibili a colpo d’occhio</em>, grazie a un’interfaccia visiva che sfrutta <strong>Business Emoji</strong> per rappresentare l’andamento economico e gestionale.\n          </p>",
+    "about_syeew_para2": "<p>\n            Dietro l’apparente semplicità si nasconde una tecnologia sofisticata, che unisce <strong>data integration</strong>, automazioni e moduli di <strong>Intelligenza Artificiale</strong>. La piattaforma raccoglie i dati da fonti diverse, li normalizza, li elabora e li restituisce in forma immediata e intuitiva, così che anche chi non ha competenze analitiche possa prendere decisioni consapevoli.\n          </p>",
+    "about_syeew_para3": "<p>\n            Nel 2022 SYEEW ha ricevuto un finanziamento pubblico pari a <strong>100 000 €</strong>, coprendo il <strong>70 %</strong> di un progetto di sviluppo regolarmente registrato nel <abbr>Registro Nazionale Trasparenza</abbr>. Un riconoscimento concreto del valore innovativo che l’azienda sta portando nel panorama italiano delle PMI.\n          </p>",
+    "modalita_lead": "<p>\n            SYEEW si adatta al tuo tempo e alle tue esigenze con quattro modalità pensate per diversi livelli di approfondimento.\n          </p>",
+    "modalita_indaffarato_desc": "<p>\n                    Questa modalità ti permette di avere un' idea immediata sull'andamento della tua azienda, senza dover dedicare tempo all'analisi. Grazie a quattro business emoji, puoi interpretare in un istante lo stato generale della situazione: positivo, negativo, stabile o da monitorare. È uno strumento visivo, istintivo, pensato per chi ha poco tempo ma vuole comunque restare sempre aggiornato.\n                  </p>",
+    "modalita_curioso_desc": "<p>\n                    Con Curioso puoi spingerti un po' oltre l'intuizione visiva e scoprire i dettagli del fatturato giornaliero, confrontandoli con un periodo selezionato. In pochi clic, ottieni una visione più chiara delle dinamiche quotidiane: quanto stai vendendo, come si sta evolvendo il business giorno per giorno. È una modalità leggera ma informativa, perfetta per osservare il presente con maggiore consapevolezza.\n                  </p>",
+    "modalita_minuzioso_desc": "<p>\n                    Questa modalità ti apre a un' analisi completa, voce per voce, con numeri precisi e confronti diretti. Puoi monitorare indicatori chiave come <em>commesse al giorno, prezzo medio, fatturato, ore x uomo giornaliere</em>. SYEEW ti mostra il livello di raggiungimento dei tuoi obiettivi, aiutandoti a capire quanto sei vicino al target. È lo strumento ideale per chi vuole entrare nel dettaglio e ottimizzare ogni aspetto.\n                  </p>",
+    "modalita_veggente_desc": "<p>\n                    Grazie all' intelligenza artificiale integrata, questa modalità ti permette di anticipare il futuro e pianificare con maggiore sicurezza. Analizzando i tuoi dati attuali e passati, SYEEW genera una previsione dell'andamento dei prossimi mesi. Puoi impostare obiettivi mensili e monitorarne l'andamento. È la modalità ideale per passare da una gestione reattiva a una gestione realmente proattiva.\n                  </p>",
+    "emoji_section_lead": "<p>\n      SYEEW trasforma i complessi dati aziendali in <strong>quattro emoji intuitive</strong> che raccontano immediatamente lo stato della tua attività.<br/>Un approccio di <em>gamification</em> che rende l'analisi business <strong>immediata, visiva e coinvolgente</strong>.\n    </p>",
+    "emoji_scrigno_desc": "<p>\n            Molto bene! Il tesoro è tuo! Rispetto al periodo precedente che hai selezionato, stai andando alla grande. Lo Scrigno ti indica che sia il <em>prezzo medio di vendita</em> che l' <em>efficienza operativa</em> della tua attività sono migliorati significativamente. La tua strategia aziendale sta dando i frutti sperati: continua così!\n          </p>",
+    "emoji_sirena_desc": "<p>\n            La Sirena nuota sempre, anche quando la corrente è contraria. Stai andando bene, però attenzione: c'è qualcosa che non va del tutto. Mentre alcuni indicatori sono positivi, l' <em>efficienza</em> o il <em>prezzo medio</em> potrebbero essere calati rispetto al periodo precedente. È il momento di analizzare più a fondo i dati per identificare l'area di miglioramento.\n          </p>",
+    "emoji_spia_desc": "<p>\n            Alla lente d'ingrandimento della Spia non sfugge nulla. È qui per segnalarti qualche insidia nascosta. Nonostante l'efficienza o il prezzo medio siano migliorati rispetto al periodo precedente, la <em>performance complessiva</em> della tua attività ha subito un calo. Potrebbe essere il momento di rivedere la strategia generale o investigare fattori esterni.\n          </p>",
+    "emoji_sfinge_desc": "<p>\n            La Sfinge, enigmatica per natura, con il suo colore rosso intenso ti dà un avvertimento chiaro e diretto: la tua performance è peggiorata rispetto al periodo precedente. Non tutto è perduto, ma è necessario un <em>intervento immediato</em> per correggere la rotta. Analizza i dati, rivedi le strategie e riprendi il controllo della situazione.\n          </p>",
+    "tool_adobe_xd_desc": "<p>\n                Punto di partenza del progetto. Ho analizzato i mockup esistenti creati dal team per comprendere la struttura iniziale dell'interfaccia e i flussi utente già definiti. Questo mi ha permesso di identificare gli elementi da mantenere e quelli da ripensare completamente durante la fase di redesign in Figma.\n              </p>",
+    "tool_figma_desc": "<p>\n                Il cuore della progettazione UX/UI. Ho creato una libreria di componenti riutilizzabili, definito un design system coerente con la brand identity di SYEEW e realizzato prototipi interattivi completi. La collaborazione in tempo reale ha facilitato i feedback con il team e la condivisione dei design con potenziali investitori.\n              </p>",
+    "tool_flutter_dart_desc": "<p>\n                Framework scelto per la sua capacità di sviluppare applicazioni native per iOS e Android con un'unica codebase. Ho implementato cinque schermate principali traducendo i design Figma in codice Dart, gestendo animazioni fluide, navigazione tra pagine e popolamento di dati mock per simulare l'esperienza utente finale.\n              </p>",
+    "tool_vscode_desc": "<p>\n                Editor principale per lo sviluppo Flutter. Configurato con le estensioni Dart e Flutter per il supporto completo al linguaggio, debug integrato e hot reload. L'ambiente mi ha permesso di testare rapidamente le modifiche sul dispositivo fisico tramite USB debugging.\n              </p>",
+    "experience_period1_para": "<p>\n          In queste tre settimane ho lavorato quasi esclusivamente in Figma, partendo dall’esportazione del file XD originale. Dopo vari tentativi di conversione automatica (che mi hanno permesso di recuperare solo circa il 40% dei layer) ho optato per una ricostruzione manuale dell’interfaccia. Il primo passo è stato creare un Design System dedicato: palette colori, tipografia gerarchica, stili di icone e una libreria di componenti (button, text field, card, dialog, snackbar).\n        </p>",
+    "experience_period2_para": "<p>\n        In queste due settimane ho tradotto il design in una struttura Flutter ben organizzata e modulare. Tutto il codice si trova nella cartella principale \"lib\", dove ho separato con cura le schermate, i modelli dati e i componenti riutilizzabili. Le varie pagine, come Login, ProfiloMaster e le sezioni tematiche dell’app (Indaffarato, Curioso, Minuzioso e Predittivo), sono raccolte nella sottocartella \"pages\". I modelli, come quelli relativi ad aziende, ASA e profili, sono gestiti in \"model\", mentre i widget comuni sono centralizzati in un unico file, che include elementi come la barra di navigazione inferiore, grafici circolari, riepiloghi e indicatori.\n\n            <br/>\n        Il file di partenza, main.dart, inizializza un set di dati dimostrativi attraverso una funzione di popolamento, imposta il tema generale dell’interfaccia e avvia l’app partendo dalla schermata di login. Da lì, l’utente accede al proprio profilo, che funge da dashboard iniziale e mostra l’elenco delle aziende disponibili. Ogni voce conduce a uno spazio dedicato, all’interno del quale è presente una barra di navigazione inferiore persistente. Questa consente di esplorare quattro diverse modalità di analisi, ciascuna progettata per rappresentare un diverso tipo di utente aziendale.\n<br/>\n        La sezione attualmente più sviluppata è quella denominata \"Indaffarato\". In essa vengono mostrati, per ciascuna ASA aziendale, un grafico di avanzamento animato e un riepilogo sotto forma di progress bar circolari. Le altre sezioni, pur presenti, sono al momento delle strutture vuote pronte per essere ampliate in futuro.\n            <br/><br/>\n\n        Per permettere la visualizzazione fluida dell’app senza connessioni reali, ho caricato i dati da file JSON locali. Questo ha reso possibile simulare l’esperienza completa dell’utente, comprese le animazioni di caricamento e le transizioni tra schermate. Ho testato il progetto direttamente su un dispositivo fisico, attivando la modalità debug via USB e mantenendo prestazioni elevate: più di 58 fotogrammi al secondo e tempi di risposta reattivi.\n<br/>\n        Al termine del lavoro ho generato un file APK installabile, accompagnato da un documento di istruzioni per la compilazione compatibile con Flutter nella versione 3.22. Questo ha permesso al team di testare l’app e iniziare a valutare l’integrazione con funzionalità future, come le API o il login avanzato.\n        </p>",
+    "experience_period3_para1": "<p>\n          In questa data ho partecipato come ospite di SYEEW alla fiera SMAU Milano, uno degli eventi italiani più importanti nel mondo dell'innovazione, delle startup e della trasformazione digitale. Pur non avendo uno stand, abbiamo vissuto la giornata in modo attivo, esplorando gli spazi, ascoltando pitch e interagendo con altri professionisti.\n        </p>",
+    "experience_period3_para2": "<p>\n          Ho ascoltato presentazioni e momenti di confronto che mi hanno fatto scoprire tante realtà emergenti; è stato molto formativo osservare come aziende di ogni tipo comunicano i propri valori, mission e risultati. Alcune con dati, altre con storytelling emozionale, altre ancora con focus sull'impatto sociale.\n        </p>",
+    "experience_period3_para3": "<p>\n          Ho annotato spunti e riflessioni che mi sono stati utili per crescere come lavoratore e designer: ho capito quanto conti l'empatia nel racconto di un prodotto e quanto il design sia uno strumento potente anche nella comunicazione strategica.\n        </p>",
+    "experience_period3_para4": "<p>\n          È stata una giornata intensa, stimolante, e diversa dal solito. Un momento per fermarsi e guardare fuori, per prendere ispirazione e poi tornare al lavoro con uno sguardo più ampio e consapevole.\n        </p>",
+    "review_para1": "<p>\n          L'esperienza in SYEEW mi ha dato un assaggio concreto di come nasce un prodotto digitale: dal foglio bianco alla demo funzionante. Ho apprezzato la fiducia concessa e la libertà di sperimentare. Allo stesso tempo ho toccato con mano la velocità delle tempistiche in startup: alcune attività, come la connessione API o i test di usabilità, sono rimaste fuori scope per ragioni di calendario.\n        </p>",
+    "review_para2": "<p>\n          Una delle cose che mi ha colpito di più è stata la totale dedizione del CEO al progetto: ogni dettaglio, ogni schermata, ogni strategia veniva curata con attenzione e passione quotidiana. Mi ha fatto riflettere molto su quanto possa essere appagante costruire qualcosa da zero, giorno dopo giorno, vederlo crescere e migliorarlo con continuità. È un approccio che sogno di poter adottare anch'io in futuro, magari su un progetto mio.\n        </p>",
+    "review_thanks_lead": "<p>\n            Desidero ringraziare di cuore ogni persona del team che ha reso possibile questa esperienza. Grazie per il tempo dedicato, per i suggerimenti precisi, per i consigli di vita, per i feedback costanti e per ogni singolo scambio di idee.\n          </p>",
+    "review_thanks_para": "<p>\n            Questa esperienza mi ha anche aiutato a fare chiarezza sul mio futuro, infatti ho capito che vorrei proseguire i miei studi nell’ambito dell’Interaction Design. È stato proprio qui che ho iniziato a riflettere in modo più profondo su come le persone si relazionano con le interfacce digitali, a partire dal compito nel primo periodo, e questo mi ha da subito affascinato ed interessato.\n          </p>",
+    "review_final_thanks": "<p>\n            Grazie ancora per aver creduto in me, per avermi affidato challenge importanti e per avermi fornito gli strumenti giusti per affrontare con consapevolezza ciò che verrà.\n          </p>",
+    "review_sign_off": "<p>\n            A presto, SYEEW SOON!\n          </p>",
+    "documents_mockup_desc": "<p>\n                Mockup con wireframes e mio redesign dell'interfaccia\n              </p>",
+    "documents_presentation_desc": "<p>\n                Presentazione del progetto, del team e della mia esperienza\n              </p>",
+    "documents_github_desc": "<p>\n                Codice sorgente completo dell’app Flutter e del back-end\n              </p>",
+    "footer_credit": "<p>\n              Sito realizzato da Rinaldi Michele per l'esame di Stato 2024/2025 presso l'IIS MARCONI PIERALISI\n            </p>"
+  },
+  "syeew_links": [
+    {
+      "label": "Mockup applicazione",
+      "url": "https://www.figma.com/proto/RXmiNTvJcI4bQm6VNsh4aT/SYEEW-Figma?node-id=1-2&p=f&t=QyUciyZHJBMt3NaA-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2007%3A1804"
+    },
+    {
+      "label": "Slide deck (EN)",
+      "url": "https://www.figma.com/deck/hJrOtqtGPKStzLSoLbEfbl/Rinaldi-PCTO?node-id=1"
+    },
+    {
+      "label": "GitHub Repository",
+      "url": "https://github.com/michirina/pcto_syeew_flutter/"
+    }
+  ]
+}
