@@ -14,7 +14,7 @@ if (filters) {
       card.hidden = category !== 'tutti' && card.dataset.category !== category;
     }
     const count = cards.filter((card) => !card.hidden).length;
-    status.textContent = `${count} progetti · ${button.textContent}`;
+    status.textContent = `${button.textContent}: ${count} progetti`;
   });
   filters.hidden = false;
 }
