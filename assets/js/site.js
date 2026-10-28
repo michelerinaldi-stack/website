@@ -7,6 +7,7 @@ if (filters) {
     const button = event.target.closest('button[data-filter]');
     if (!button) return;
     const category = button.dataset.filter;
+    document.querySelector('.portfolio-board')?.classList.toggle('is-filtered', category !== 'tutti');
     for (const control of filters.querySelectorAll('button')) {
       control.setAttribute('aria-pressed', String(control === button));
     }
@@ -14,7 +15,7 @@ if (filters) {
       card.hidden = category !== 'tutti' && card.dataset.category !== category;
     }
     const count = cards.filter((card) => !card.hidden).length;
-    status.textContent = `${button.textContent}: ${count} progetti`;
+    status.textContent = `${button.dataset.label || button.textContent.trim()}: ${count} progetti`;
   });
   filters.hidden = false;
 }

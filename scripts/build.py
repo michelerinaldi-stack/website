@@ -2,6 +2,7 @@
 """Generate GitHub Pages HTML from shared templates and JSON. Python stdlib only."""
 import argparse
 import html
+import hashlib
 import json
 from pathlib import Path
 from string import Template
@@ -10,6 +11,8 @@ ROOT = Path(__file__).resolve().parents[1]
 PROJECTS = json.loads((ROOT / 'data/projects.json').read_text())
 ARCHIVE = json.loads((ROOT / 'data/archive.json').read_text())
 BASE = Template((ROOT / 'templates/base.html').read_text())
+ASSET_VERSIONS = {kind: hashlib.sha256((ROOT / path).read_bytes()).hexdigest()[:12]
+                  for kind, path in [('css', 'assets/css/site.css'), ('js', 'assets/js/site.js')]}
 OUTPUT = {}
 
 
@@ -30,7 +33,9 @@ def page(filename, title, description, content, active=''):
         current = ' aria-current="page"' if active == key else ''
         navigation.append(f'<a href="{url}"{current}>{label}</a>')
     OUTPUT[filename] = BASE.substitute(title=esc(title), description=esc(description),
-                                       navigation=''.join(navigation), content=content)
+                                       navigation=''.join(navigation), content=content,
+                                       page_class='page-' + Path(filename).stem,
+                                       css_version=ASSET_VERSIONS['css'], js_version=ASSET_VERSIONS['js'])
 
 
 def heading(kicker, title, description=''):
@@ -38,12 +43,12 @@ def heading(kicker, title, description=''):
     return f'<header class="page-heading"><span class="eyebrow">{kicker}</span><h1>{title}</h1>{text}</header>'
 
 
-def picture(original, alt, cover=False):
+def picture(original, alt, cover=False, eager=False):
     source = Path(original)
     preview = f'assets/images/previews/{source.stem}.webp'
     # Dimensions reserve image space and prevent layout shifts.
     dimensions = IMAGE_SIZES[source.stem]
-    loading = 'eager' if cover else 'lazy'
+    loading = 'eager' if cover or eager else 'lazy'
     return (f'<a class="cover-link" href="assets/images/{esc(original)}" data-lightbox>'
             f'<img class="{"cover-image" if cover else "gallery-image"}" '
             f'src="{preview}" alt="{esc(alt)}" width="{dimensions[0]}" height="{dimensions[1]}" '
@@ -86,11 +91,12 @@ def home():
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-copy">
       <span class="eyebrow">Portfolio personale</span>
-      <h1 id="hero-title">Michele<br><em>Rinaldi</em></h1>
+      <h1 id="hero-title">Michele<br><em>Rinaldi</em><span class="hero-period">.</span></h1>
       <p class="hero-intro">Mi occupo di interfacce, grafica e identità visiva. Il mio percorso parte dall’informatica e continua nell’Interaction Design.</p>
       <a class="text-link" href="#lavori">I miei progetti <span aria-hidden="true">↓</span></a>
     </div>
     <figure class="hero-portrait"><img src="assets/images/foto_RinaldiMichele_1.png" alt="Michele Rinaldi" width="2015" height="2442" fetchpriority="high" decoding="async"></figure>
+    <div class="hero-footer"><span>Interaction Design</span><span>Grafica e identità visiva</span><span>Cupramontana / Lecco</span></div>
   </section>
   <section id="lavori" aria-labelledby="selected-title">
     <div class="section-heading"><h2 id="selected-title"><span class="index">01 /</span>Progetti selezionati</h2><p>Interaction design e comunicazione visiva</p></div>'''
@@ -102,36 +108,36 @@ def home():
 
 
 def portfolio():
-    content = '<div class="wrap portfolio-list">' + heading('Design e comunicazione visiva', '<em>Portfolio.</em>', 'Progetti di interazione, grafica e identità visiva. Qui trovi i lavori, il loro contesto e i materiali.')
-    content += '''<div class="filters" data-project-filters aria-label="Filtra i progetti per disciplina" hidden>
-      <button type="button" data-filter="tutti" aria-pressed="true">Tutti i lavori</button>
-      <button type="button" data-filter="interazione" aria-pressed="false">Interazione e prodotto</button>
-      <button type="button" data-filter="grafica" aria-pressed="false">Grafica e comunicazione</button>
-      <button type="button" data-filter="branding" aria-pressed="false">Identità visiva</button>
-    </div><p class="filter-status" data-filter-status role="status" aria-live="polite">Tutti i lavori: 8 progetti</p>'''
+    content = '''<div class="wrap portfolio-list">
+      <header class="portfolio-heading">
+        <div class="portfolio-kicker"><span>Design e comunicazione visiva</span><span>Selezione / 01—08</span></div>
+        <div class="portfolio-masthead"><h1>Port<em>folio</em><span aria-hidden="true">↗</span></h1><p>Interfacce, identità visive<br>e progetti personali.</p></div>
+      </header>
+      <div class="filters" data-project-filters aria-label="Filtra i progetti per disciplina" hidden>'''
+    for key, label in [('tutti', 'Tutti i lavori'), ('interazione', 'Interazione e prodotto'), ('grafica', 'Grafica e comunicazione'), ('branding', 'Identità visiva')]:
+        count = len(PROJECTS) if key == 'tutti' else sum(p['category'] == key for p in PROJECTS)
+        pressed = 'true' if key == 'tutti' else 'false'
+        content += f'<button type="button" data-filter="{key}" data-label="{label}" aria-pressed="{pressed}">{label}<sup aria-hidden="true">{count:02d}</sup></button>'
+    content += '</div><p class="filter-status" data-filter-status role="status" aria-live="polite">Tutti i lavori: 8 progetti</p><div class="portfolio-board">'
     legacy_ids = {'night-train-ride': 'uiux', 'oscilloscope': 'arte', 'identita-visive': 'branding', 'manifesti': 'manifesti'}
     for index, project in enumerate(PROJECTS):
         anchor = legacy_ids.get(project['slug'], project['slug'])
         gallery = project['slug'] in ('identita-visive', 'manifesti')
-        classes = 'portfolio-project project-card' + (' portfolio-collection' if gallery else '')
-        content += f'''<article class="{classes}" data-category="{project['category']}" id="{anchor}">
-          <div class="portfolio-copy">
-            <span class="eyebrow">{index + 1:02d} / {esc(project['discipline'])}</span>
-            <h2><a href="{project_url(project)}">{esc(project['title'])}</a></h2>
-            <p>{esc(project['intro'])}</p>'''
-        content += f'''<dl class="portfolio-facts"><div><dt>Contesto</dt><dd>{esc(project['context'])}</dd></div><div><dt>Contributo</dt><dd>{esc(project['role'])}</dd></div></dl>
-            <a class="text-link" href="{project_url(project)}">{'Tutti i materiali' if gallery else 'Il progetto completo'} <span aria-hidden="true">↗</span></a>
-          </div>'''
+        classes = 'folio-work project-card' + (' folio-collection' if gallery else '')
+        content += f'<article class="{classes}" data-category="{project["category"]}" data-project="{project["slug"]}" id="{anchor}">'
         if gallery:
+            content += f'<header class="collection-header"><span class="collection-index" aria-hidden="true">{index + 1:02d}</span><div><span class="eyebrow">{esc(project["discipline"])}</span><h2><a href="{project_url(project)}">{esc(project["title"])}</a></h2><p>{esc(project["summary"])}</p></div><a class="folio-open" href="{project_url(project)}" aria-label="Apri {esc(project["title"])}">↗</a></header>'
             grid_class = 'portfolio-gallery poster-wall' if project['slug'] == 'manifesti' else 'portfolio-gallery brand-wall'
             content += f'<div class="{grid_class}">'
-            for i, image in enumerate(project['images']):
-                content += picture(image, f'{project["title"]} — lavoro {i + 1}')
+            content += ''.join(picture(image, f'{project["title"]} — lavoro {i + 1}') for i, image in enumerate(project['images']))
             content += '</div>'
         else:
-            content += f'<div class="portfolio-project-media" data-tone="{project["tone"]}">' + picture(project['cover_original'], project['title']) + '</div>'
+            content += f'<div class="folio-order"><span>{index + 1:02d} /</span><span>{esc(project["discipline"])}</span></div>'
+            content += f'<div class="folio-stage" data-tone="{project["tone"]}">' + picture(project['cover_original'], project['title'], eager=index < 2) + '<span class="stage-hint" aria-hidden="true">Ingrandisci ↗</span></div>'
+            content += f'<div class="folio-caption"><h2><a href="{project_url(project)}">{esc(project["title"])}</a></h2><a class="folio-open" href="{project_url(project)}" aria-label="Apri il progetto {esc(project["title"])}">↗</a></div><p class="folio-summary">{esc(project["summary"])}</p>'
+            content += f'<details class="work-details"><summary>Contesto e contributo</summary><p>{esc(project["intro"])}</p><dl class="portfolio-facts"><div><dt>Contesto</dt><dd>{esc(project["context"])}</dd></div><div><dt>Contributo</dt><dd>{esc(project["role"])}</dd></div></dl><a class="text-link" href="{project_url(project)}">Il progetto completo ↗</a></details>'
         content += '</article>'
-    content += contact_band() + '</div>'
+    content += '</div>' + contact_band() + '</div>'
     page('portfolio.html', 'Portfolio', 'Il portfolio di Michele Rinaldi: progetti di interaction design, identità visiva, grafica e manifesti.', content, 'portfolio')
 
 

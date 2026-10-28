@@ -5,7 +5,7 @@ Portfolio statico, pubblicabile direttamente su GitHub Pages. Nato per l’Esame
 ## Struttura
 
 - **Home:** presentazione e quattro lavori selezionati.
-- **Portfolio:** otto progetti/raccolte, filtrabili per disciplina.
+- **Portfolio:** composizione asimmetrica con otto progetti/raccolte, filtri, dettagli espandibili e gallerie di loghi e manifesti.
 - **Progetti:** contesto, contributo, racconto, immagini e collegamenti.
 - **Chi sono:** il percorso tra informatica, design, video e musica.
 - **Percorso:** università, SYEEW e archivio scolastico.
@@ -41,6 +41,8 @@ Apri `http://localhost:8000`. Non servono Node, npm, framework o compilazione Ja
 Gli asset originali rimangono nei loro percorsi e non sono stati modificati. Le anteprime WebP in `assets/images/previews/` riducono il peso delle pagine; la galleria apre gli originali. Le dimensioni delle anteprime sono in `data/image-sizes.json`.
 
 Per aggiungere un’immagine, conserva l’originale in `assets/images/`, crea un’anteprima WebP con lato massimo 1440 px, registrane larghezza e altezza in `data/image-sizes.json` e usa i percorsi nella scheda del progetto. Non assegnare lo stesso nome base a immagini diverse.
+
+La tipografia usa Manrope e Instrument Serif, ospitati in `assets/fonts/` con le rispettive licenze OFL. CSS e JavaScript includono nel loro URL una firma del contenuto per aggiornare la cache dopo ogni pubblicazione.
 
 I vecchi CSS vendor sono conservati tra gli asset, ma il nuovo sito non li carica. Non ci sono font o librerie caricati da CDN, richieste a traduzioni mancanti o script locali inesistenti.
 
