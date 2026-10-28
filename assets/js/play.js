@@ -76,7 +76,8 @@
       window.dispatchEvent(new Event('resize'));
     });
   }
-  modes.hidden = false;
+  // Keep the experimental desk available only through its dedicated URL.
+  modes.hidden = new URLSearchParams(location.search).get('play') !== '1';
   // Put the alternative view beside the editorial board, before the lab.
   board.after(desk);
   document.querySelector('[data-project-filters]').addEventListener('click', event => {

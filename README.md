@@ -84,3 +84,5 @@ Il Portfolio offre una vista editoriale e un tavolo di lavoro opzionale. Le imma
 Le immagini raster hanno copie WebP responsive a 480, 960 e fino a 1440 px, oltre a una copia per la galleria con lato massimo di 2560 px. Il manifest è `data/images.json`; i numeri della conversione sono in `data/image-optimization.json`. La foto principale resta nel formato PNG originale trasparente, come richiesto. SVG e JSON di animazione non vengono convertiti. Il collegamento File originale nella galleria conserva l’accesso al materiale originale.
 
 Per rigenerare i derivati dopo l’aggiunta di un’immagine, installa Pillow nell’ambiente di lavoro ed esegui `python3 scripts/optimize_images.py`, quindi `python3 scripts/build.py`. Gli originali non vengono sovrascritti. Per la sola rigenerazione HTML continua a bastare Python senza pacchetti aggiuntivi.
+
+Il selettore del tavolo sperimentale è nascosto nella navigazione normale. Per mostrarlo aprire `portfolio.html?play=1`. Il laboratorio tipografico rimane disponibile nella pagina.
