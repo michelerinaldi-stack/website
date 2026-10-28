@@ -1,0 +1,86 @@
+[
+  {
+    "slug": "night-train-ride", "title": "Night Train Ride", "category": "interazione", "discipline": "Interaction design", "tone": "night", "cover": "uiux_3", "cover_original": "uiux/uiux_3.png",
+    "summary": "Un viaggio notturno, raccontato attraverso un’interfaccia.",
+    "intro": "Come si traduce l’atmosfera di un viaggio in un’esperienza digitale? Night Train Ride è un progetto universitario di gruppo che esplora il passaggio dalla notte al mattino attraverso le fermate di un treno.",
+    "context": "Progetto universitario · In gruppo", "role": "Progettazione dell’esperienza e dell’interfaccia", "tools": "Figma", "output": "Prototipo interattivo",
+    "sections": [
+      {"title": "L’idea", "paragraphs": ["L’esperienza comincia in una stazione buia e rumorosa. Da lì l’utente sale sul treno: ogni fermata introduce un’ambientazione e un’atmosfera differente, fino all’arrivo del mattino."]},
+      {"title": "Progettare un’atmosfera", "paragraphs": ["Calma, isolamento, attesa e transizione sono le sensazioni che hanno guidato il progetto. L’interfaccia accompagna il cambiamento del contesto durante il percorso, usando il viaggio come struttura narrativa.", "È stato il mio primo vero progetto universitario: un’occasione per lavorare in gruppo su un’esperienza in cui la componente emotiva conta quanto quella funzionale."]}
+    ],
+    "images": [], "links": [{"label": "Esplora il prototipo Figma", "url": "https://www.figma.com/proto/LlHJdoLKYPXEASvKPPhf60/NightTrainRide_Rinaldi?node-id=0-944&viewport=217%2C166%2C0.04&t=alPCjWNmzn6WqjyI-1&scaling=contain&content-scaling=fixed&starting-point-node-id=0%3A944&show-proto-sidebar=1&page-id=0%3A1"}]
+  },
+  {
+    "slug": "oscilloscope", "title": "Oscilloscope", "category": "grafica", "discipline": "Musica / Merchandising", "tone": "coral", "cover": "arte_2", "cover_original": "arte/arte_2.jpg",
+    "summary": "Un oscilloscopio vintage che, al posto dei voltaggi, misura emozioni.",
+    "intro": "Un progetto di merchandising per Jack Nur, cantautore e amico. La sua musica incontra la mia passione per tecnologia e design, sulla schiena di una maglietta.",
+    "context": "Merchandising per Jack Nur", "role": "Concept e progettazione grafica", "tools": "Grafica digitale", "output": "Grafica per abbigliamento",
+    "sections": [
+      {"title": "Dal suono all’immagine", "paragraphs": ["Avevo carta bianca. Sono partito dalle sonorità del disco Senhal e in particolare dal brano Tengo la posizione, immaginando un oscilloscopio vintage come punto d’incontro tra musica e tecnologia."]},
+      {"title": "Regolare le emozioni", "paragraphs": ["Le manopole non misurano voltaggi, ma emozioni: Surge, Dopamine, Adrenaline, Momentum, Serotonin, Echo e Afterglow. Lo strumento sembra collegarsi direttamente a chi lo indossa.", "Al centro dello schermo, l’onda forma la scritta “Senza Sosta”: un invito a continuare a muoversi e vivere, anche quando si prova a regolare diversamente i parametri."]}
+    ],
+    "images": [], "links": [{"label": "Ascolta Tengo la posizione", "url": "https://open.spotify.com/intl-it/track/5URBE0P1D1yHpZlfiuGFGG?si=5ec04c1c7ed0474a"}]
+  },
+  {
+    "slug": "syeew", "url": "pcto.html", "title": "SYEEW", "category": "interazione", "discipline": "UX/UI / Sviluppo", "tone": "blue", "cover": "syeew_figma_2", "cover_original": "syeew_figma_2.jpg",
+    "summary": "Dai dati aziendali a un’interfaccia chiara. Dal prototipo al codice.",
+    "intro": "Durante il PCTO del 2024 ho affiancato SYEEW, una startup di Jesi. Ho ripensato l’interfaccia di un’app di Business Intelligence e tradotto il design in un prototipo Flutter.",
+    "context": "PCTO · 2024", "role": "Redesign UX/UI e sviluppo del prototipo", "tools": "Adobe XD, Figma, Flutter e Dart", "output": "Design system e demo mobile",
+    "sections": [
+      {"title": "La sfida", "paragraphs": ["La piattaforma aiuta micro e piccole imprese a leggere i propri dati attraverso indicatori visivi e Business Emoji. Il punto di partenza era un mockup Adobe XD e un’applicazione difficile da aggiornare.", "In un team piccolo, senza un reparto UX dedicato, ho lavorato in autonomia confrontandomi con il CEO e il tutor tecnico. Il mio compito era rendere più coerente l’interfaccia e trovare un percorso concreto dal design al codice."]},
+      {"title": "Ricostruire in Figma", "paragraphs": ["Tra il 27 maggio e il 14 giugno 2024 ho ricostruito manualmente l’interfaccia, dopo aver verificato i limiti della conversione automatica da XD. Ho organizzato palette, gerarchie tipografiche e componenti riutilizzabili.", "Il lavoro ha portato a oltre 20 componenti e 11 schermate collegate: login, dashboard, modalità di visualizzazione, profilo e impostazioni. I feedback del team sono passati direttamente dai commenti in Figma."]},
+      {"title": "Dal design alla demo", "paragraphs": ["Dal 9 al 20 settembre 2024 ho tradotto il progetto in Flutter e Dart, separando schermate, modelli e widget condivisi. I dati JSON locali permettevano di esplorare la demo senza collegare servizi reali.", "La modalità più sviluppata era Indaffarato, con riepiloghi e indicatori animati. Le altre sezioni erano strutture predisposte per sviluppi successivi. Il risultato era un APK dimostrativo, non un’app completa collegata alle API."]},
+      {"title": "Cosa mi porto dietro", "paragraphs": ["Ho sperimentato il passaggio dal prototipo a un’app funzionante e il confronto continuo con un team. L’integrazione delle API e i test di usabilità sono rimasti fuori dal lavoro per ragioni di calendario.", "Questa esperienza ha contribuito alla mia scelta di proseguire in Interaction Design: mi interessa capire come le persone si relazionano con le interfacce, e come il codice possa dare forma a quella relazione."]}
+    ],
+    "images": ["syeew_figma_1.jpg", "syeew_figma_3.jpg", "syeew_flutter_2.jpg", "syeew_flutter_3.jpg"], "links": []
+  },
+  {
+    "slug": "pax-optima-rerum", "title": "Pax Optima Rerum", "category": "grafica", "discipline": "Arte / Comunicazione", "tone": "dark", "cover": "arte_1", "cover_original": "arte/arte_1.jpg",
+    "summary": "Il linguaggio classico diventa un messaggio contemporaneo di pace.",
+    "intro": "Una proposta grafica per il contest di merchandising del Liceo Classico Vittorio Emanuele II di Jesi. Un’immagine che mette in dialogo parola, memoria e cultura classica.",
+    "context": "Proposta per un contest scolastico", "role": "Concept e progettazione grafica", "tools": "Grafica digitale", "output": "Proposta di merchandising",
+    "sections": [
+      {"title": "Il messaggio", "paragraphs": ["“Pax Optima Rerum”, la pace è il bene più grande, è una citazione di Silio Italico. Ho scelto di farne l’asse centrale del progetto, perché riassume direttamente il messaggio che volevo comunicare."]},
+      {"title": "Parola e immagine", "paragraphs": ["La stilizzazione della Fuga di Enea da Troia di Federico Barocci introduce il tema della guerra, concentrandosi sul movimento e sulla continuità della narrazione.", "Il riferimento classico non è una decorazione: testo e immagine lavorano insieme per dare forma a un messaggio leggibile anche nel presente."]}
+    ],
+    "images": [], "links": []
+  },
+  {
+    "slug": "flairemote", "title": "Flairemote", "category": "interazione", "discipline": "Product concept", "tone": "dark", "cover": "uiux_1", "cover_original": "uiux/uiux_1.png",
+    "summary": "Ripensare il telecomando partendo dai piccoli problemi di ogni giorno.",
+    "intro": "A quattordici anni ho immaginato un telecomando più semplice da ritrovare, usare e ricaricare. Un primo esercizio di progettazione a partire da un oggetto quotidiano.",
+    "context": "Progetto personale · A 14 anni", "role": "Concept di prodotto", "tools": "Progettazione digitale", "output": "Concept, non prodotto realizzato",
+    "sections": [
+      {"title": "Un problema quotidiano", "paragraphs": ["Il telecomando finiva sempre tra il divano, il tavolo della cucina e la mensola della TV. Cambiare continuamente pile per un oggetto usato ogni giorno mi sembrava un altro problema da affrontare."]},
+      {"title": "La proposta", "paragraphs": ["Ho introdotto una ricarica USB-C, LED per indicare il livello della batteria e uno stand che offrisse al telecomando un posto riconoscibile e una base di ricarica.", "Flairemote racconta i miei primi passi nel design: osservare un’abitudine, riconoscere un attrito e provare a risolverlo attraverso la forma e la funzione."]}
+    ],
+    "images": [], "links": [{"label": "Guarda il progetto su Behance", "url": "https://www.behance.net/gallery/96684721/Flairemote"}]
+  },
+  {
+    "slug": "happyring", "title": "happyRing", "category": "interazione", "discipline": "Product / Interaction concept", "tone": "cream", "cover": "uiux_2", "cover_original": "uiux/uiux_2.png",
+    "summary": "Un citofono che usa il colore per rendere più chiaro l’ingresso di casa.",
+    "intro": "Un concept sviluppato a sedici anni per una challenge di Breccia: ripensare l’esperienza d’ingresso in un piccolo condominio, dal citofono all’app.",
+    "context": "Challenge di Breccia · A 16 anni", "role": "Concept di prodotto e interfaccia", "tools": "Progettazione digitale", "output": "Concept, non sistema realizzato",
+    "sections": [
+      {"title": "Orientarsi con il colore", "paragraphs": ["Ogni appartamento è associato a un pulsante colorato accanto al nome. La stessa logica si ritrova nell’app e nei monitor interni, per mantenere un linguaggio coerente tra i dispositivi."]},
+      {"title": "Esplorare l’accesso", "paragraphs": ["Il concept esplora anche l’uso combinato di impronta digitale e riconoscimento facciale per l’apertura del portone. È una proposta progettuale: non un sistema implementato o validato sul piano della sicurezza.", "L’obiettivo era ragionare insieme sull’oggetto fisico, sull’interfaccia e sulle abitudini di chi abita un condominio."]}
+    ],
+    "images": [], "links": [{"label": "Guarda il progetto su Behance", "url": "https://www.behance.net/gallery/145866507/happyRing"}]
+  },
+  {
+    "slug": "identita-visive", "title": "Identità visive", "category": "branding", "discipline": "Branding", "tone": "cream", "cover": "brand_1", "cover_original": "brands/brand_1.jpg",
+    "summary": "Una raccolta di loghi, segni e linguaggi visivi.",
+    "intro": "Una selezione dei miei lavori di identità visiva: esplorazioni di forma, colore e tipografia per dare a un progetto un segno riconoscibile.",
+    "context": "Raccolta di lavori", "role": "Progettazione grafica", "tools": "Grafica digitale", "output": "Loghi e identità visive",
+    "sections": [{"title": "Il segno, prima di tutto", "paragraphs": ["Mi interessa il modo in cui un’identità può condensare un carattere in pochi elementi. Qui raccolgo quattro lavori già presenti nel mio portfolio, ciascuno con un linguaggio visivo differente."]}],
+    "images": ["brands/brand_1.jpg", "brands/brand_2.jpg", "brands/brand_3.jpg", "brands/brand_4.jpg"], "links": []
+  },
+  {
+    "slug": "manifesti", "title": "Manifesti e musica", "category": "grafica", "discipline": "Grafica / Comunicazione", "tone": "coral", "cover": "manifesti_3", "cover_original": "manifesti/manifesti_3.jpg",
+    "summary": "Locandine per concerti, eventi e iniziative del territorio.",
+    "intro": "La musica è una parte della mia vita, anche fuori dal palco. In questa raccolta entra nella grafica, insieme a eventi e iniziative culturali.",
+    "context": "Raccolta di lavori", "role": "Progettazione grafica", "tools": "Grafica digitale", "output": "Locandine e materiali promozionali",
+    "sections": [{"title": "Dare un volto a un evento", "paragraphs": ["Tipografia, immagini e colore si combinano in modo diverso a seconda di quello che c’è da raccontare. Questa selezione raccoglie le nove locandine del portfolio originale."]}],
+    "images": ["manifesti/manifesti_1.jpg", "manifesti/manifesti_2.jpg", "manifesti/manifesti_3.jpg", "manifesti/manifesti_4.jpg", "manifesti/manifesti_5.jpg", "manifesti/manifesti_6.jpg", "manifesti/manifesti_7.jpg", "manifesti/manifesti_8.jpg", "manifesti/manifesti_9.jpg"], "links": []
+  }
+]
