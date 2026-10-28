@@ -86,3 +86,15 @@ Le immagini raster hanno copie WebP responsive a 480, 960 e fino a 1440 px, oltr
 Per rigenerare i derivati dopo l’aggiunta di un’immagine, installa Pillow nell’ambiente di lavoro ed esegui `python3 scripts/optimize_images.py`, quindi `python3 scripts/build.py`. Gli originali non vengono sovrascritti. Per la sola rigenerazione HTML continua a bastare Python senza pacchetti aggiuntivi.
 
 Il selettore del tavolo sperimentale è nascosto nella navigazione normale. Per mostrarlo aprire `portfolio.html?play=1`. Il laboratorio tipografico rimane disponibile nella pagina.
+
+## Aggiornamenti frequenti del portfolio
+
+Il portfolio è in una fase di aggiornamento frequente: saranno aggiunti, sostituiti e rimossi molti lavori. Mantenere i contenuti in `data/projects.json`, preservare i file originali e preferire la rimozione dalla pubblicazione quando una modifica è temporanea.
+
+- Per nascondere un intero progetto: `"published": false`; per ripristinarlo: `true`.
+- Per nascondere una sola immagine: aggiungere il suo percorso a `hidden_images` nel progetto. Rimane nell’elenco `images` e sul disco, ma scompare da tutte le gallerie pubbliche. Per ripristinarla, rimuoverla da `hidden_images`.
+- Per cambiare l’ordine: riordinare `images` o i progetti nel JSON. I primi quattro progetti pubblicati sono quelli mostrati in home.
+- Per aggiungere un’immagine: aggiungere l’originale e il percorso a `images`, poi rigenerare con `scripts/optimize_images.py` e `scripts/build.py`.
+- Per sostituire un file esistente: usare `scripts/optimize_images.py --refresh percorso/immagine.jpg` prima di rigenerare, così viene aggiornata anche la cache delle immagini.
+
+Al momento `manifesti_7.jpg`, `manifesti_8.jpg` e `manifesti_9.jpg` sono conservati ma nascosti; la raccolta pubblica contiene i primi sei manifesti.

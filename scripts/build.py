@@ -10,7 +10,11 @@ from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
 ALL_PROJECTS = json.loads((ROOT / 'data/projects.json').read_text())
-PROJECTS = [project for project in ALL_PROJECTS if project.get('published', True)]
+PROJECTS = [
+    {**project, 'images': [image for image in project['images']
+                          if image not in project.get('hidden_images', [])]}
+    for project in ALL_PROJECTS if project.get('published', True)
+]
 ARCHIVE = json.loads((ROOT / 'data/archive.json').read_text())
 IMAGES = json.loads((ROOT / 'data/images.json').read_text())
 BASE = Template((ROOT / 'templates/base.html').read_text())
