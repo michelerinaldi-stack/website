@@ -9,7 +9,8 @@ from string import Template
 from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
-PROJECTS = json.loads((ROOT / 'data/projects.json').read_text())
+ALL_PROJECTS = json.loads((ROOT / 'data/projects.json').read_text())
+PROJECTS = [project for project in ALL_PROJECTS if project.get('published', True)]
 ARCHIVE = json.loads((ROOT / 'data/archive.json').read_text())
 IMAGES = json.loads((ROOT / 'data/images.json').read_text())
 BASE = Template((ROOT / 'templates/base.html').read_text())
@@ -134,6 +135,8 @@ def portfolio():
       <div class="filters" data-project-filters aria-label="Filtra i progetti per disciplina" hidden>'''
     for key, label in [('tutti', 'Tutti i lavori'), ('interazione', 'Interazione e prodotto'), ('grafica', 'Grafica e comunicazione'), ('branding', 'Identità visiva')]:
         count = len(PROJECTS) if key == 'tutti' else sum(p['category'] == key for p in PROJECTS)
+        if not count:
+            continue
         pressed = 'true' if key == 'tutti' else 'false'
         content += f'<button type="button" data-filter="{key}" data-label="{label}" aria-pressed="{pressed}">{label}<sup aria-hidden="true">{count:02d}</sup></button>'
     content += '</div><p class="filter-status" data-filter-status role="status" aria-live="polite">Tutti i lavori: 8 progetti</p><div class="portfolio-board">'
@@ -156,6 +159,7 @@ def portfolio():
             content += f'<details class="work-details"><summary>Contesto e contributo</summary><p>{esc(project["intro"])}</p><dl class="portfolio-facts"><div><dt>Contesto</dt><dd>{esc(project["context"])}</dd></div><div><dt>Contributo</dt><dd>{esc(project["role"])}</dd></div></dl><a class="text-link" href="{project_url(project)}">Il progetto completo ↗</a></details>'
         content += '</article>'
     content += '</div>' + playground() + contact_band() + '</div>'
+    content = content.replace('Selezione / 01—08', f'Selezione / 01—{len(PROJECTS):02d}').replace('Tutti i lavori: 8 progetti', f'Tutti i lavori: {len(PROJECTS)} progetti').replace('8 progetti sul tavolo.', f'{len(PROJECTS)} progetti sul tavolo.')
     page('portfolio.html', 'Portfolio', 'Il portfolio di Michele Rinaldi: progetti di interaction design, identità visiva, grafica e manifesti.', content, 'portfolio')
 
 
@@ -179,6 +183,11 @@ def playground():
 
 
 def project_pages():
+    for project in ALL_PROJECTS:
+        if not project.get('published', True):
+            content = '<div class="wrap archive-page">' + heading('Portfolio', 'Progetto non disponibile', 'Questa pagina non è disponibile al momento.')
+            content += '<a class="text-link" href="portfolio.html">Torna al portfolio ↗</a></div>'
+            page(project_url(project), 'Progetto non disponibile', 'Torna al portfolio di Michele Rinaldi.', content, 'portfolio')
     for index, project in enumerate(PROJECTS):
         content = '<article class="wrap"><a class="back-link" href="portfolio.html">← Tutti i lavori</a>'
         content += heading(project['discipline'], esc(project['title']))
