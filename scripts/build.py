@@ -111,7 +111,7 @@ def home():
     <div class="hero-copy">
       <span class="eyebrow">Portfolio personale</span>
       <h1 id="hero-title">Michele<br><em>Rinaldi</em><span class="hero-period">.</span></h1>
-      <p class="hero-intro">Sono Michele, vengo da Cupramontana e studio Interaction Design al Politecnico di Milano. Prima ho studiato informatica: il codice e la grafica sono due interessi che porto avanti insieme, dai video che facevo da bambino ai progetti che raccolgo qui.</p>
+      <p class="hero-intro">Sono Michele, vengo da Cupramontana e studio Interaction Design al Politecnico di Milano. Da marzo lavoro di nuovo con SYEEW, questa volta come Interaction Designer. Qui raccolgo i progetti che ho realizzato all’università, per lavoro e per conto mio.</p>
       <a class="text-link" href="#lavori">I miei progetti <span aria-hidden="true">↓</span></a>
     </div>
     <figure class="hero-portrait"><img src="assets/images/foto_RinaldiMichele_1.png" alt="Michele Rinaldi" width="2015" height="2442" fetchpriority="high" decoding="async"></figure>
@@ -250,11 +250,12 @@ def about():
 
 
 def journey():
-    content = '<div class="wrap">' + heading('Percorso / Appunti e archivio', 'Il mio <em>percorso.</em>', 'Gli studi, il PCTO e i materiali dell’esame di maturità del 2025.')
+    content = '<div class="wrap">' + heading('Percorso / Appunti e archivio', 'Il mio <em>percorso.</em>', 'Il lavoro in SYEEW, l’università e i materiali che ho raccolto durante la scuola.')
     content += '''<div class="timeline">
+    <div class="timeline-item"><span>Da marzo / In corso</span><div><h3>Interaction Designer / SYEEW</h3><p>Sono rientrato nel team e sto ridisegnando le interfacce su cui avevo lavorato tre anni fa, quando iniziavo a usare Figma.</p><a class="text-link" href="pcto.html">Il lavoro in SYEEW ↗</a></div></div>
     <div class="timeline-item"><span>Università</span><div><h3>Interaction Design / Politecnico di Milano</h3><p>Il corso a Lecco e i primi progetti universitari di gruppo, tra cui Night Train Ride.</p></div></div>
     <div class="timeline-item"><span>2024 / PCTO</span><div><h3>SYEEW / Redesign e sviluppo Flutter</h3><p>Redesign dell’interfaccia in Figma e sviluppo di un prototipo mobile in Flutter.</p><a class="text-link" href="pcto.html">Leggi il caso studio ↗</a></div></div>
-    <div class="timeline-item"><span>Scuola / Esame 2024/2025</span><div><h3>Informatica / IIS Marconi Pieralisi</h3><p>Programmazione, sistemi, intelligenza artificiale, ma anche cultura umanistica e cittadinanza. Il sito è nato per raccogliere questi lavori in occasione della maturità.</p></div></div>
+    <div class="timeline-item"><span>Scuola / Esame 2024/2025</span><div><h3>Informatica / IIS Marconi Pieralisi</h3><p>Ho studiato informatica al Marconi Pieralisi. Il sito è nato per raccogliere i miei lavori in occasione della maturità: qui sotto ci sono ancora i materiali delle diverse materie.</p></div></div>
     </div><div class="section-heading"><h2><span class="index">Archivio /</span>I lavori della scuola</h2><p>Materiali e approfondimenti.</p></div>
     <div class="archive-grid">
       <a class="archive-card" href="areatecnica.html"><span>01 / Tecnologia</span><h2>Area tecnica ↗</h2><p>Programmazione, reti, IA, matematica e gestione dei progetti.</p></a>
