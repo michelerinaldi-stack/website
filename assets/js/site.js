@@ -287,98 +287,84 @@ reducedMotion.addEventListener('change', () => {
   document.getAnimations().forEach((animation) => animation.cancel());
 });
 
-// Inline story annotations: hover, keyboard focus or a tap on the same words.
-const storyWords = [...document.querySelectorAll('[data-story-effect]')];
-if (storyWords.length) {
-  const annotation = document.createElement('aside');
-  annotation.id = 'story-annotation';
-  annotation.className = 'story-annotation';
-  annotation.hidden = true;
-  const fragments = {
-    code: '<span class="story-annotation-label">Informatica / Ciao, mondo</span><pre class="story-code"><b>function</b> saluta(nome) {\n  <b>return</b> `Ciao, ${nome}!`;\n}\nsaluta("Michele");</pre>',
-    music: '<span class="story-annotation-label">Musica / Un piccolo ritmo</span><div class="story-equalizer" aria-hidden="true">' + [15, 29, 20, 40, 25, 34, 17, 28, 13].map((h) => `<i style="--bar-height:${h}px"></i>`).join('') + '</div><div class="story-beat"><span>4/4</span><span>1 &nbsp; 2 &nbsp; 3 &nbsp; 4</span></div>',
-    design: '<span class="story-annotation-label">Design / Prove in Figma</span><div class="story-design"><em>Michele</em></div><div class="story-swatches" aria-hidden="true"><i></i><i></i><i></i></div>',
-  };
-  document.body.append(annotation);
-  let active = null;
-  let pinned = false;
-  let closeTimer;
-  const close = () => {
-    clearTimeout(closeTimer);
-    active?.setAttribute('aria-expanded', 'false');
-    active = null;
-    pinned = false;
-    annotation.hidden = true;
-    annotation.getAnimations({ subtree: true }).forEach((motion) => motion.cancel());
-  };
-  const position = () => {
-    if (!active) return;
-    const word = active.getBoundingClientRect();
-    annotation.hidden = word.bottom < 0 || word.top > innerHeight;
-    if (annotation.hidden) return;
-    const box = annotation.getBoundingClientRect();
-    annotation.style.left = `${Math.min(innerWidth - box.width - 16, Math.max(16, word.left))}px`;
-    const below = word.bottom + 10;
-    annotation.style.top = `${below + box.height < innerHeight - 16 ? below : Math.max(16, word.top - box.height - 10)}px`;
-  };
-  const show = (button) => {
-    clearTimeout(closeTimer);
-    if (active === button) return;
-    close();
-    active = button;
-    annotation.dataset.kind = button.dataset.storyEffect;
-    annotation.innerHTML = fragments[button.dataset.storyEffect];
-    annotation.setAttribute('aria-label', `Appunto su ${button.textContent}`);
-    annotation.hidden = false;
-    button.setAttribute('aria-expanded', 'true');
-    position();
-    animate(annotation, [{ opacity: 0, transform: 'translateY(4px)' }, { opacity: 1, transform: 'none' }], { duration: 180 });
-    annotation.querySelectorAll('.story-equalizer i').forEach((bar, i) => {
-      animate(bar, [{ transform: 'scaleY(.4)' }, { transform: 'scaleY(1)' }, { transform: 'scaleY(.55)' }, { transform: 'scaleY(1)' }], { duration: 500 + i * 35, iterations: 2 });
-    });
-    const sample = annotation.querySelector('.story-design em');
-    if (sample) animate(sample, [{ transform: 'rotate(-3deg)' }, { transform: 'rotate(1deg)' }, { transform: 'none' }], { duration: 430 });
-    const code = annotation.querySelector('.story-code');
-    if (code) animate(code, [{ opacity: .2 }, { opacity: 1 }], { duration: 450 });
-  };
-  const scheduleClose = () => {
-    clearTimeout(closeTimer);
-    if (!pinned) closeTimer = setTimeout(close, 180);
-  };
-  for (const word of storyWords) {
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.className = 'story-word';
-    button.dataset.storyEffect = word.dataset.storyEffect;
-    button.dataset.label = word.textContent;
-    button.setAttribute('aria-expanded', 'false');
-    button.setAttribute('aria-controls', annotation.id);
-    const label = document.createElement('span');
-    label.textContent = word.textContent;
-    button.append(label);
-    word.replaceWith(button);
-    button.addEventListener('pointerenter', (event) => {
-      if (event.pointerType !== 'touch') show(button);
-    });
-    button.addEventListener('pointerleave', scheduleClose);
-    button.addEventListener('focus', () => requestAnimationFrame(() => {
-      if (document.activeElement === button) show(button);
-    }));
-    button.addEventListener('blur', scheduleClose);
-    button.addEventListener('click', () => {
-      if (active === button && pinned) close();
-      else { show(button); pinned = true; }
-    });
+// Decorative marks stay inline: no extra controls or hidden reading content.
+for (const word of document.querySelectorAll('.story-spark')) {
+  const text = word.textContent;
+  const kind = word.dataset.spark;
+  const copy = document.createElement('span');
+  copy.className = 'spark-copy';
+  copy.textContent = text;
+  const space = document.createElement('span');
+  space.className = 'spark-space';
+  space.textContent = text;
+  space.setAttribute('aria-hidden', 'true');
+  word.replaceChildren(copy, space);
+  word.classList.add('is-ready');
+  if (word.dataset.trace) {
+    const trace = document.createElement('span');
+    trace.className = 'spark-trace';
+    trace.setAttribute('aria-hidden', 'true');
+    trace.textContent = word.dataset.trace;
+    word.append(trace);
   }
-  annotation.addEventListener('pointerenter', () => clearTimeout(closeTimer));
-  annotation.addEventListener('pointerleave', scheduleClose);
-  document.addEventListener('keydown', (event) => { if (event.key === 'Escape') close(); });
-  document.addEventListener('click', (event) => {
-    if (!event.target.closest('.story-word, .story-annotation')) close();
+  if (['music', 'beat'].includes(kind)) {
+    const wave = document.createElement('span');
+    wave.className = 'spark-wave';
+    wave.setAttribute('aria-hidden', 'true');
+    for (let i = 0; i < 12; i++) wave.append(document.createElement('i'));
+    word.append(wave);
+  }
+  if (['music', 'beat', 'number', 'jitter', 'jump'].includes(kind)) {
+    copy.setAttribute('aria-hidden', 'true');
+    const readable = document.createElement('span');
+    readable.className = 'spark-readable';
+    readable.textContent = text;
+    word.append(readable);
+    copy.replaceChildren(...[...text].map((letter) => {
+      const span = document.createElement('span');
+      span.className = 'spark-letter';
+      span.setAttribute('aria-hidden', 'true');
+      span.textContent = letter === ' ' ? '\u00a0' : letter;
+      return span;
+    }));
+  }
+  let timer;
+  let lastPlayed = -Infinity;
+  const reset = () => {
+    clearTimeout(timer);
+    word.classList.remove('is-active');
+    word.getAnimations({ subtree: true }).forEach((motion) => motion.cancel());
+  };
+  const play = () => {
+    if (performance.now() - lastPlayed < 700) return;
+    reset();
+    lastPlayed = performance.now();
+    word.classList.add('is-active');
+    for (const [i, letter] of [...word.querySelectorAll('.spark-letter')].entries()) {
+      let frames;
+      if (kind === 'jitter') frames = [{ transform: 'none' }, { transform: 'translateX(-1px)' }, { transform: 'translateX(1px)' }, { transform: 'none' }];
+      else if (kind === 'number') frames = [{ transform: 'none' }, { transform: 'translateY(-2px)' }, { transform: 'none' }];
+      else frames = [{ transform: 'none' }, { transform: `translateY(${kind === 'jump' ? -4 : -2}px)` }, { transform: 'none' }];
+      animate(letter, frames, { duration: kind === 'jitter' ? 220 : 360, delay: i * 22 });
+    }
+    word.querySelectorAll('.spark-wave i').forEach((bar, i) => {
+      animate(bar, [{ transform: 'scaleY(.5)' }, { transform: `scaleY(${i % 3 === 0 ? 2 : 1.3})` }, { transform: 'scaleY(.5)' }], { duration: kind === 'beat' ? 240 : 380, delay: (i % 4) * 45, iterations: 2 });
+    });
+    const trace = word.querySelector('.spark-trace');
+    if (trace) animate(trace, [{ clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)' }], { duration: 320, easing: 'steps(12, end)' });
+    timer = setTimeout(reset, 1500);
+  };
+  word.addEventListener('pointerenter', (event) => { if (event.pointerType !== 'touch') play(); });
+  word.addEventListener('pointerleave', (event) => { if (event.pointerType !== 'touch') reset(); });
+  // A short tap plays the detail; a swipe remains ordinary page scrolling.
+  let touch = null;
+  word.addEventListener('pointerdown', (event) => {
+    if (event.pointerType === 'touch') touch = { x: event.clientX, y: event.clientY };
   });
-  window.addEventListener('scroll', () => {
-    if (active === document.activeElement) position();
-    else close();
-  }, { passive: true });
-  window.addEventListener('resize', close);
+  word.addEventListener('pointerup', (event) => {
+    if (touch && Math.hypot(event.clientX - touch.x, event.clientY - touch.y) < 10) play();
+    touch = null;
+  });
+  word.addEventListener('pointercancel', () => { touch = null; reset(); });
+  reducedMotion.addEventListener('change', reset);
 }
