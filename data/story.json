@@ -5,8 +5,8 @@
     "paragraphs": [
       "<p>Sono nato e cresciuto a Cupramontana. Da bambino volevo fare lo youtuber: mi piaceva stare davanti alla telecamera e inventarmi qualcosa da registrare. Poi c’erano i video da montare e le grafiche da preparare, e finivo per passare parecchio tempo anche su quelle.</p>",
       "<p>Il 10 agosto 2015, a nove anni, ho pubblicato il mio primo video. Nei tre anni successivi ne ho caricati 213, ancora tutti online. Registravo gameplay, spiegavo curiosità storiche con mio fratello, provavo magie ed esperimenti. Facevo tutto con i mezzi che avevo, cercando da solo come usare i programmi di montaggio e come sistemare le grafiche. Pubblicare ogni settimana mi teneva impegnato: c’era sempre un video da finire o un’idea per quello dopo.</p>",
-      "<p>In terza media molti mi consigliavano il liceo scientifico, ma io avevo già scelto Informatica. Volevo imparare a programmare e provare a realizzare le cose che avevo in testa.</p>",
-      "<p>Fuori da scuola passavo ore su Photoshop, facendo prove e ricominciando da capo quando il risultato non mi convinceva. Usavo anche Fusion 360 e cominciavo a provare Figma. Volevo capire come si arrivasse a un’interfaccia, un logo o una locandina fatti bene.</p>",
+      "<p>In terza media molti mi consigliavano il liceo scientifico, ma io avevo già scelto <strong data-story-effect=\"code\">Informatica</strong>. Volevo imparare a programmare e provare a realizzare le cose che avevo in testa.</p>",
+      "<p>Fuori da scuola passavo ore su Photoshop, facendo prove e ricominciando da capo quando il risultato non mi convinceva. Usavo anche Fusion 360 e cominciavo a provare <strong data-story-effect=\"design\">Figma</strong>. Volevo capire come si arrivasse a un’interfaccia, un logo o una locandina fatti bene.</p>",
       "<p>Alle superiori ho iniziato a pubblicare meno. Avevo voglia di stare un po’ lontano dai social e di dedicare più tempo allo studio, all’allenamento e ai miei progetti. Alcuni li tenevo per me, altri sono finiti in questo portfolio.</p>"
     ]
   },
@@ -25,8 +25,8 @@
     "id": "musica",
     "title": "La musica",
     "paragraphs": [
-      "<p>Ascolto musica ogni volta che ho le cuffie a portata di mano. Passo dall’elettronica sperimentale al rap, dal pop a cose più alternative, senza fermarmi su un genere. Mi piace scoprire dischi nuovi, ma ci sono album su cui torno per mesi. Appena posso vado anche ai concerti: vedere suonare dal vivo mi fa venire ancora più voglia di suonare.</p>",
-      "<p>Ho iniziato a studiare musica a quattro anni, nei corsi del Corpo Bandistico Don N. Bonanni di Cupramontana. A sei ho scelto la batteria e da allora ho continuato tra laboratori, piccoli gruppi, esibizioni e la banda, con cui suono tuttora.</p>",
+      "<p>Ascolto <strong data-story-effect=\"music\">musica</strong> ogni volta che ho le cuffie a portata di mano. Passo dall’elettronica sperimentale al rap, dal pop a cose più alternative, senza fermarmi su un genere. Mi piace scoprire dischi nuovi, ma ci sono album su cui torno per mesi. Appena posso vado anche ai concerti: vedere suonare dal vivo mi fa venire ancora più voglia di suonare.</p>",
+      "<p>Ho iniziato a studiare musica a quattro anni, nei corsi del Corpo Bandistico Don N. Bonanni di Cupramontana. A sei ho scelto la <strong data-story-effect=\"music\">batteria</strong> e da allora ho continuato tra laboratori, piccoli gruppi, esibizioni e la banda, con cui suono tuttora.</p>",
       "<p>Oggi collaboro anche ai corsi musicali come educatore, animatore e docente di percussioni, durante il centro estivo e nei corsi annuali. Lavoro con bambini e ragazzi: proviamo i ritmi, impariamo ad ascoltarci e a suonare insieme.</p>",
       "<p>Al saggio finale dei miei allievi ero parecchio in ansia. Avevamo preparato i brani insieme e volevo che andasse bene. Vederli sul palco, concentrati e contenti di suonare, è stato un momento che ricordo con molto affetto.</p>"
     ]

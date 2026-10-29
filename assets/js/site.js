@@ -286,3 +286,99 @@ reducedMotion.addEventListener('change', () => {
   detailAnimations.clear();
   document.getAnimations().forEach((animation) => animation.cancel());
 });
+
+// Inline story annotations: hover, keyboard focus or a tap on the same words.
+const storyWords = [...document.querySelectorAll('[data-story-effect]')];
+if (storyWords.length) {
+  const annotation = document.createElement('aside');
+  annotation.id = 'story-annotation';
+  annotation.className = 'story-annotation';
+  annotation.hidden = true;
+  const fragments = {
+    code: '<span class="story-annotation-label">Informatica / Ciao, mondo</span><pre class="story-code"><b>function</b> saluta(nome) {\n  <b>return</b> `Ciao, ${nome}!`;\n}\nsaluta("Michele");</pre>',
+    music: '<span class="story-annotation-label">Musica / Un piccolo ritmo</span><div class="story-equalizer" aria-hidden="true">' + [15, 29, 20, 40, 25, 34, 17, 28, 13].map((h) => `<i style="--bar-height:${h}px"></i>`).join('') + '</div><div class="story-beat"><span>4/4</span><span>1 &nbsp; 2 &nbsp; 3 &nbsp; 4</span></div>',
+    design: '<span class="story-annotation-label">Design / Prove in Figma</span><div class="story-design"><em>Michele</em></div><div class="story-swatches" aria-hidden="true"><i></i><i></i><i></i></div>',
+  };
+  document.body.append(annotation);
+  let active = null;
+  let pinned = false;
+  let closeTimer;
+  const close = () => {
+    clearTimeout(closeTimer);
+    active?.setAttribute('aria-expanded', 'false');
+    active = null;
+    pinned = false;
+    annotation.hidden = true;
+    annotation.getAnimations({ subtree: true }).forEach((motion) => motion.cancel());
+  };
+  const position = () => {
+    if (!active) return;
+    const word = active.getBoundingClientRect();
+    annotation.hidden = word.bottom < 0 || word.top > innerHeight;
+    if (annotation.hidden) return;
+    const box = annotation.getBoundingClientRect();
+    annotation.style.left = `${Math.min(innerWidth - box.width - 16, Math.max(16, word.left))}px`;
+    const below = word.bottom + 10;
+    annotation.style.top = `${below + box.height < innerHeight - 16 ? below : Math.max(16, word.top - box.height - 10)}px`;
+  };
+  const show = (button) => {
+    clearTimeout(closeTimer);
+    if (active === button) return;
+    close();
+    active = button;
+    annotation.dataset.kind = button.dataset.storyEffect;
+    annotation.innerHTML = fragments[button.dataset.storyEffect];
+    annotation.setAttribute('aria-label', `Appunto su ${button.textContent}`);
+    annotation.hidden = false;
+    button.setAttribute('aria-expanded', 'true');
+    position();
+    animate(annotation, [{ opacity: 0, transform: 'translateY(4px)' }, { opacity: 1, transform: 'none' }], { duration: 180 });
+    annotation.querySelectorAll('.story-equalizer i').forEach((bar, i) => {
+      animate(bar, [{ transform: 'scaleY(.4)' }, { transform: 'scaleY(1)' }, { transform: 'scaleY(.55)' }, { transform: 'scaleY(1)' }], { duration: 500 + i * 35, iterations: 2 });
+    });
+    const sample = annotation.querySelector('.story-design em');
+    if (sample) animate(sample, [{ transform: 'rotate(-3deg)' }, { transform: 'rotate(1deg)' }, { transform: 'none' }], { duration: 430 });
+    const code = annotation.querySelector('.story-code');
+    if (code) animate(code, [{ opacity: .2 }, { opacity: 1 }], { duration: 450 });
+  };
+  const scheduleClose = () => {
+    clearTimeout(closeTimer);
+    if (!pinned) closeTimer = setTimeout(close, 180);
+  };
+  for (const word of storyWords) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'story-word';
+    button.dataset.storyEffect = word.dataset.storyEffect;
+    button.dataset.label = word.textContent;
+    button.setAttribute('aria-expanded', 'false');
+    button.setAttribute('aria-controls', annotation.id);
+    const label = document.createElement('span');
+    label.textContent = word.textContent;
+    button.append(label);
+    word.replaceWith(button);
+    button.addEventListener('pointerenter', (event) => {
+      if (event.pointerType !== 'touch') show(button);
+    });
+    button.addEventListener('pointerleave', scheduleClose);
+    button.addEventListener('focus', () => requestAnimationFrame(() => {
+      if (document.activeElement === button) show(button);
+    }));
+    button.addEventListener('blur', scheduleClose);
+    button.addEventListener('click', () => {
+      if (active === button && pinned) close();
+      else { show(button); pinned = true; }
+    });
+  }
+  annotation.addEventListener('pointerenter', () => clearTimeout(closeTimer));
+  annotation.addEventListener('pointerleave', scheduleClose);
+  document.addEventListener('keydown', (event) => { if (event.key === 'Escape') close(); });
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('.story-word, .story-annotation')) close();
+  });
+  window.addEventListener('scroll', () => {
+    if (active === document.activeElement) position();
+    else close();
+  }, { passive: true });
+  window.addEventListener('resize', close);
+}

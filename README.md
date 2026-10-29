@@ -98,3 +98,5 @@ Il portfolio è in una fase di aggiornamento frequente: saranno aggiunti, sostit
 - Per sostituire un file esistente: usare `scripts/optimize_images.py --refresh percorso/immagine.jpg` prima di rigenerare, così viene aggiornata anche la cache delle immagini.
 
 Al momento `manifesti_7.jpg`, `manifesti_8.jpg` e `manifesti_9.jpg` sono conservati ma nascosti; la raccolta pubblica contiene i primi sei manifesti.
+
+In Chi sono, quattro parole del racconto hanno annotazioni interattive: Informatica (codice), Figma (tipografia e palette), musica e batteria (ritmo visivo senza audio). Si indicano con `data-story-effect="code|design|music"` in `data/story.json`; senza JavaScript rimangono normali parole in grassetto. Mouse e focus mostrano l’annotazione, clic o tocco la mantengono aperta; Escape, un secondo clic o un clic esterno la chiudono. Le animazioni sono brevi e finite e rispettano la riduzione del movimento. Le parole riservano lo spazio del peso maggiore per evitare spostamenti del testo.
