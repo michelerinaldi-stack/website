@@ -287,83 +287,92 @@ reducedMotion.addEventListener('change', () => {
   document.getAnimations().forEach((animation) => animation.cancel());
 });
 
-// Decorative marks stay inline: no extra controls or hidden reading content.
+// Each story detail has a specific response; all decorative content is hidden from AT.
+const storySvg = (body, viewBox = '0 0 100 10') => `<svg viewBox="${viewBox}" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">${body}</svg>`;
+const storyMarks = {
+  record: '<i></i>', timeline: '<i></i>', terminal: 'print("Ciao!");', braces: '<span>{</span><span>}</span>',
+  brush: '<i></i>', rewind: '', volume: '', selection: '<i></i>'.repeat(4),
+  network: storySvg('<path d="M3 5H97" opacity=".3"/><circle cx="3" cy="5" r="2"/><circle cx="50" cy="5" r="2"/><circle cx="97" cy="5" r="2"/><circle class="spark-packet" cx="3" cy="5" r="1.5" fill="currentColor"/>'),
+  ballot: storySvg('<rect x="1" y="1" width="8" height="8"/><path class="spark-check" d="m3 4 2 2 6-6"/>','0 0 13 10'),
+  podium: '<i></i>'.repeat(3), equalizer: '<i></i>'.repeat(9),
+  live: storySvg('<path d="M12 8q3-5 6 0M8 8q7-11 14 0M4 8q11-16 22 0"/>','0 0 30 10'),
+  drums: '<i></i>'.repeat(4), metronome: storySvg('<path d="m4 9 4-8 4 8Z" opacity=".3"/><path class="spark-pendulum" d="M8 9V0"/>','0 0 16 10'),
+  interaction: storySvg('<path d="M1 0v8l2-2 2 3 1-1-2-3h3Z" fill="currentColor"/>','0 0 8 10'),
+  waiting: '<i></i>'.repeat(3), settle: storySvg('<path d="M0 5q12-6 25 0t25 0t25 0t25 0"/>'), build: '<i></i>'.repeat(3),
+};
 for (const word of document.querySelectorAll('.story-spark')) {
   const text = word.textContent;
   const kind = word.dataset.spark;
-  const copy = document.createElement('span');
-  copy.className = 'spark-copy';
-  copy.textContent = text;
-  const space = document.createElement('span');
-  space.className = 'spark-space';
-  space.textContent = text;
-  space.setAttribute('aria-hidden', 'true');
-  word.replaceChildren(copy, space);
-  word.classList.add('is-ready');
-  if (word.dataset.trace) {
-    const trace = document.createElement('span');
-    trace.className = 'spark-trace';
-    trace.setAttribute('aria-hidden', 'true');
-    trace.textContent = word.dataset.trace;
-    word.append(trace);
-  }
-  if (['music', 'beat'].includes(kind)) {
-    const wave = document.createElement('span');
-    wave.className = 'spark-wave';
-    wave.setAttribute('aria-hidden', 'true');
-    for (let i = 0; i < 12; i++) wave.append(document.createElement('i'));
-    word.append(wave);
-  }
-  if (['music', 'beat', 'number', 'jitter', 'jump'].includes(kind)) {
+  const copy = document.createElement('span'); copy.className = 'spark-copy'; copy.textContent = text;
+  const space = document.createElement('span'); space.className = 'spark-space'; space.textContent = text; space.setAttribute('aria-hidden', 'true');
+  const mark = document.createElement('span'); mark.className = 'spark-mark'; mark.setAttribute('aria-hidden', 'true');
+  if (kind === 'terminal') { mark.classList.add('spark-trace'); mark.textContent = storyMarks[kind]; }
+  else mark.innerHTML = storyMarks[kind] || '';
+  word.replaceChildren(copy, space, mark); word.classList.add('is-ready');
+  if (kind === 'together') {
     copy.setAttribute('aria-hidden', 'true');
-    const readable = document.createElement('span');
-    readable.className = 'spark-readable';
-    readable.textContent = text;
-    word.append(readable);
+    const readable = document.createElement('span'); readable.className = 'spark-readable'; readable.textContent = text; word.append(readable);
     copy.replaceChildren(...[...text].map((letter) => {
-      const span = document.createElement('span');
-      span.className = 'spark-letter';
-      span.setAttribute('aria-hidden', 'true');
-      span.textContent = letter === ' ' ? '\u00a0' : letter;
-      return span;
+      const span = document.createElement('span'); span.className = 'spark-letter'; span.textContent = letter; return span;
     }));
   }
-  let timer;
-  let lastPlayed = -Infinity;
+  const counter = document.createElement('span');
+  if (kind === 'counter') { counter.className = 'spark-counter'; counter.setAttribute('aria-hidden', 'true'); word.append(counter); }
+  let timers = [], motions = [], touch = null;
   const reset = () => {
-    clearTimeout(timer);
+    timers.forEach(clearTimeout); timers = [];
     word.classList.remove('is-active');
-    word.getAnimations({ subtree: true }).forEach((motion) => motion.cancel());
+    motions.forEach((motion) => motion.cancel()); motions = [];
+    word.style.removeProperty('--cursor-x');
+  };
+  const motion = (element, frames, duration = 600, delay = 0) => {
+    if (!element) return;
+    const animation = animate(element, frames, { duration, delay, fill: word.contains(element) ? 'both' : 'none' });
+    if (animation) motions.push(animation);
   };
   const play = () => {
-    if (performance.now() - lastPlayed < 700) return;
-    reset();
-    lastPlayed = performance.now();
-    word.classList.add('is-active');
-    for (const [i, letter] of [...word.querySelectorAll('.spark-letter')].entries()) {
-      let frames;
-      if (kind === 'jitter') frames = [{ transform: 'none' }, { transform: 'translateX(-1px)' }, { transform: 'translateX(1px)' }, { transform: 'none' }];
-      else if (kind === 'number') frames = [{ transform: 'none' }, { transform: 'translateY(-2px)' }, { transform: 'none' }];
-      else frames = [{ transform: 'none' }, { transform: `translateY(${kind === 'jump' ? -4 : -2}px)` }, { transform: 'none' }];
-      animate(letter, frames, { duration: kind === 'jitter' ? 220 : 360, delay: i * 22 });
+    reset(); word.classList.add('is-active');
+    const bars = [...mark.querySelectorAll('i')];
+    switch (kind) {
+      case 'record': motion(bars[0], [{ opacity: .3 }, { opacity: 1 }, { opacity: .3 }, { opacity: 1 }], 900); break;
+      case 'counter':
+        counter.textContent = text;
+        if (!reducedMotion.matches) ['000,', '071,', '142,', text].forEach((value, i) => timers.push(setTimeout(() => { counter.textContent = value; }, i * 85)));
+        break;
+      case 'timeline': motion(bars[0], [{ transform: 'translateX(0)' }, { transform: `translateX(${word.offsetWidth - 1}px)` }], 800); break;
+      case 'terminal': motion(mark, [{ clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0 0 0)' }], 400); break;
+      case 'braces': motion(mark, [{ transform: 'scaleX(.8)' }, { transform: 'scaleX(1)' }], 300); break;
+      case 'brush':
+        motion(bars[0], [{ clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0 0 0)' }]);
+        motion(document.querySelector('.story-portrait img'), [{ filter: 'grayscale(1)' }, { filter: 'grayscale(0)' }], 800); break;
+      case 'rewind': motion(mark, [{ transform: 'scaleX(1)' }, { transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], 650); break;
+      case 'volume': motion(copy, [{ transform: 'none' }, { transform: 'translate(-1px,-1px)' }, { transform: 'none' }]); break;
+      case 'selection': motion(mark, [{ opacity: 0 }, { opacity: .8 }], 180); break;
+      case 'network': motion(mark.querySelector('.spark-packet'), [{ transform: 'translateX(0)' }, { transform: 'translateX(94px)' }], 800); break;
+      case 'ballot': motion(mark.querySelector('.spark-check'), [{ strokeDasharray: '14', strokeDashoffset: '14' }, { strokeDasharray: '14', strokeDashoffset: '0' }], 350); break;
+      case 'podium': motion(bars[2], [{ transform: 'scaleY(0)' }, { transform: 'scaleY(1)' }], 350); break;
+      case 'equalizer': bars.forEach((bar, i) => motion(bar, [{ transform: 'scaleY(.5)' }, { transform: `scaleY(${i % 3 + 1})` }, { transform: 'scaleY(1)' }], 400, i * 30)); break;
+      case 'live': [...mark.querySelectorAll('path')].forEach((arc, i) => motion(arc, [{ opacity: 0 }, { opacity: 1 }, { opacity: .2 }], 550, i * 100)); break;
+      case 'drums': bars.forEach((bar, i) => motion(bar, [{ transform: 'scale(.6)', opacity: .3 }, { transform: 'scale(1.35)', opacity: 1 }, { transform: 'scale(1)', opacity: .6 }], 180, i * 180)); break;
+      case 'metronome': motion(mark.querySelector('.spark-pendulum'), [{ transform: 'rotate(-24deg)' }, { transform: 'rotate(24deg)' }, { transform: 'rotate(-24deg)' }, { transform: 'none' }], 1000); break;
+      case 'together': [...copy.children].forEach((letter, i) => motion(letter, [{ transform: `translateX(${(i - 3) * 1.3}px)` }, { transform: 'none' }], 450)); break;
+      case 'interaction': motion(mark, [{ opacity: 0 }, { opacity: .8 }], 180); break;
+      case 'waiting': bars.forEach((dot, i) => motion(dot, [{ opacity: .15 }, { opacity: 1 }, { opacity: .15 }], 550, i * 140)); break;
+      case 'leap': motion(copy, [{ transform: 'none' }, { transform: 'translateY(-4px) rotate(-2deg)', offset: .35 }, { transform: 'none' }], 500); break;
+      case 'settle': motion(mark, [{ transform: 'scaleY(1)' }, { transform: 'scaleY(.15)' }], 950); break;
+      case 'build': bars.forEach((block, i) => motion(block, [{ opacity: 0, transform: 'translateY(-3px)' }, { opacity: 1, transform: 'none' }], 250, i * 160)); break;
     }
-    word.querySelectorAll('.spark-wave i').forEach((bar, i) => {
-      animate(bar, [{ transform: 'scaleY(.5)' }, { transform: `scaleY(${i % 3 === 0 ? 2 : 1.3})` }, { transform: 'scaleY(.5)' }], { duration: kind === 'beat' ? 240 : 380, delay: (i % 4) * 45, iterations: 2 });
-    });
-    const trace = word.querySelector('.spark-trace');
-    if (trace) animate(trace, [{ clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)' }], { duration: 320, easing: 'steps(12, end)' });
-    timer = setTimeout(reset, 1500);
+    timers.push(setTimeout(reset, 1600));
   };
   word.addEventListener('pointerenter', (event) => { if (event.pointerType !== 'touch') play(); });
-  word.addEventListener('pointerleave', (event) => { if (event.pointerType !== 'touch') reset(); });
-  // A short tap plays the detail; a swipe remains ordinary page scrolling.
-  let touch = null;
-  word.addEventListener('pointerdown', (event) => {
-    if (event.pointerType === 'touch') touch = { x: event.clientX, y: event.clientY };
+  word.addEventListener('pointermove', (event) => {
+    if (kind !== 'interaction' || reducedMotion.matches || event.pointerType === 'touch') return;
+    word.style.setProperty('--cursor-x', `${Math.max(0, Math.min(word.offsetWidth - 8, event.clientX - word.getBoundingClientRect().left))}px`);
   });
+  word.addEventListener('pointerleave', (event) => { if (event.pointerType !== 'touch') reset(); });
+  word.addEventListener('pointerdown', (event) => { if (event.pointerType === 'touch') touch = { x: event.clientX, y: event.clientY }; });
   word.addEventListener('pointerup', (event) => {
-    if (touch && Math.hypot(event.clientX - touch.x, event.clientY - touch.y) < 10) play();
-    touch = null;
+    if (touch && Math.hypot(event.clientX - touch.x, event.clientY - touch.y) < 10) play(); touch = null;
   });
   word.addEventListener('pointercancel', () => { touch = null; reset(); });
   reducedMotion.addEventListener('change', reset);
